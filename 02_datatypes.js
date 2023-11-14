@@ -23,3 +23,24 @@ console.log(typeof(Boolean(seriesCentury)));
 //Here we convert the number into string using Stirng() method.
 console.log(String(playerScore));
 console.log(typeof(String(playerScore)));
+
+//Primitive data types uses Stack memory.
+//Non-Primitive data types uses Heap memory.
+// Stack memory : When you are changing value in variable it gives a copy of that variable.
+// Heap memory : when you are changing value in array and object then it changing the value in
+//               array's and object's original value.
+
+//Example: Stack Memory
+let myYoutubeName = "Cric Mic";
+let myOtherYoutube = myYoutubeName;
+myYoutubeName = "Swanik Feast";
+console.log(myYoutubeName);
+console.log(myOtherYoutube);
+
+//Example: Heap Memory
+let userOne = {
+    username: "niil",
+    userAge : 35
+};
+userOne.username = "nikhil";
+console.log(userOne.username);
