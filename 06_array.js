@@ -50,3 +50,8 @@ console.log(Array.from(myTech));
 const myProject1 = "ecommerce";
 const myProject2 = "calculator";
 console.log(Array.of(myProject1,myProject2));
+
+//Array Destructuring
+const myBio = ["Nikhil", 3, "React Js", "Flipkart"];
+const [name, exp, skill, company] = myBio;
+console.log(skill);
