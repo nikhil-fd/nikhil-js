@@ -43,6 +43,7 @@ myJob();
 //Example:
 //👉 When use {} callibraces in arrow function then we must use "return".
 //👉 When use () parenthesis in arrow function then no need to use "return" only put result inside that parenthesis.
+//   IIFE function takes 2 parenthesis()(), 1 is for function declaration and another one is for function execution.
 //   And this () parenthesis technique mostly used in React.
 
 //👉 Use {} in Arrow Function
