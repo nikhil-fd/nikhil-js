@@ -43,7 +43,6 @@ myJob();
 //Example:
 //👉 When use {} callibraces in arrow function then we must use "return".
 //👉 When use () parenthesis in arrow function then no need to use "return" only put result inside that parenthesis.
-//   IIFE function takes 2 parenthesis()(), 1 is for function declaration and another one is for function execution.
 //   And this () parenthesis technique mostly used in React.
 
 //👉 Use {} in Arrow Function
@@ -80,6 +79,7 @@ console.log(myPoint(8, 9));
 //🚩IIFE Function (Immediately Invoked Function Expression)🚩
 // Sometimes we have to face problem from global scope pollution(like global scope valriable or any other),
 // so to avoid this pollution we need to use IIFE Function. Also IIFE function immediately execute the function.
+// IIFE function takes 2 parenthesis()(), 1 is for function declaration and another one is for function execution.
 
 //Simple Function (Named IIFE)
 (function myOrg(){
