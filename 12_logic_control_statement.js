@@ -165,3 +165,4 @@ console.log((myAge > 18)?"eligible for vote":"not eligible");
 //Example2:
 const myBloodPressure = 220;
 (myBloodPressure < 300)? console.log("Pressure is low"):console.log("Pressure is high");
+
