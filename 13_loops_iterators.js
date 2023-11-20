@@ -124,10 +124,17 @@ for(const players of footballPlayers){
 //🚩for..in loop/iterators🚩
 // it returns index no. of array and it returns key of object.
 
-//👉Object {} :
+//👉Object {}:
 const favGames = {game1: "igi", game2: "nfs", game3: "vice-city"};
 for(let gamesKey in favGames){
     console.log(`${gamesKey} ${favGames[gamesKey]}`);
+} 
+
+
+//👉Array []:
+const topGames = ["igi", "nfs", "vice-city"];
+for(let games in topGames){
+    console.log(`${games}`);
 } 
 
 
