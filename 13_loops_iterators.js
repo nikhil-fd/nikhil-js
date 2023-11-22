@@ -1,7 +1,7 @@
 //🚩for..loop🚩
 // in for..loop takes initialization, condition and iteration.
 // for..lopp 1st check condition like while loop, if the condition is true then it enter into scope,
-// if condition is false it won't enter into scope.
+// if condition is false it won't enter into scope..
 
 for(let num = 0; num <= 10; num++){
     console.log(num);
