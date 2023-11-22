@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Ua-Compatible" content="IE-edge">
+    <title>DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div>Tuesday</div>
+        <div>Wednesday</div>
+        <div>Thursday</div>
+        <div>Friday</div>
+    </div> 
+
+    <script>
+        const ourParent = document.querySelector(".parent");
+        // document.write(ourParent);
+        console.log(ourParent);
+        //👉In below we are getting/accessing parent's children2 tag using "children"
+        console.log(ourParent.children[2]);
+        //output: <div>Wednesday</div>
+
+        //👉In below we are getting/accessing the value of children3 using "innerHTML"
+        console.log(ourParent.children[3].innerHTML);
+        //output: Thursday
+
+        //👉In below we are getting/accessing all value of all children's
+        for(let i = 0; i < ourParent.children.length; i++){
+            console.log(ourParent.children[i].innerHTML);
+        }
+        //output: Monday Tuesday Wednesday Thursday Friday
+
+        //🚩"firstElementChild"---It Accessing parent's 1st child 
+        console.log(ourParent.firstElementChild);
+        //output: <div class="day">Monday</div>
+
+        //🚩"lastElementChild"---It Accessing parent's last child 
+        console.log(ourParent.lastElementChild);
+        //output: <div>Friday</div>
+        ourParent.lastElementChild.style.color="yellow";
+
+
+        //Here takeing reference by class name and then applying the style.
+        const dayRef = document.querySelector(".day");
+        console.log(dayRef);
+        console.log(dayRef.innerHTML);
+        dayRef.style.color="red";
+        
+
+        //🚩"parentElement" -- find out the child's parent 
+        console.log(dayRef.parentElement);
+        //output:  <div class="parent">...</div>
+
+
+        //🚩"nextElementSibling" -- find out child's brother/sister
+        console.log(dayRef.nextElementSibling);
+        //output:  <div>Tuesday</div>
+
+
+        //🚩"childNodes" -- it counts the total nodes of parent's child
+        console.log(ourParent.childNodes);
+        //output : 11 node
+        //        1st node - There is multiple line break <br> inside parent element but it counts only 1 <br> line break.
+        //                   After parent we started adding div in next line so here 1 line break is coming same here is multipe div.
+        //                   but it counts only 1 <br> line break.
+        //        2nd node - first div.class
+        //        3rd node- first div textnode(first div value is called text node)
+        //        4th node- second div
+        //        5th node- second div text node
+        //        6th node- third div
+        //        7th node- third div text node
+        //        8th node- fourth div
+        //        9th node- fourth div text node  
+        //        10th node - fifth div
+        //        11th node - fifth div text node
+
+    </script>
+</body>
+</html>
