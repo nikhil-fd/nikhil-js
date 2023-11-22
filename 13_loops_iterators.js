@@ -139,7 +139,8 @@ for(let games in topGames){
 
 
 //🚩forEach() loop/iterators🚩
-// it returns elment, index and array.
+// it returns elment, index and array when we are not storeing in variable.
+// But when we are storeing that forEach() value,index & array in a variable at that time it returns undefined.
 // mostly it is used when you are accessing array of object values.
 // forEach() loop uses callback function.
 // A functin without name i.e. called callback function. 
@@ -150,7 +151,15 @@ Array.forEach((element, index, array) => {
 })
 
 
-//Example1: forEach() here used function() without name i.e. call back funciton
+//Example1: forEach() value store in variable
+const myCourses = ["sap","react","python","java"];
+const storeValues = myCourses.forEach((elem, index, array) => {
+    console.log(`${elem} ${index} ${array}`);
+});
+console.log(storeValues);
+
+
+//Example2: forEach() here used function() without name i.e. call back funciton
 const myGames = [
     {game: "counter-strike", type: "action"},
     {game: "igi", type: "action"},
@@ -163,7 +172,7 @@ myGames.forEach(function(elem){
 })
 
 
-//Example2: forEach() here used arrow function () => and it is not haviing any name i.e. also call back funciton
+//Example3: forEach() here used arrow function () => and it is not haviing any name i.e. also call back funciton
 const myCars = [
     {brand: "bmw", model: "X5", price: 15000},
     {brand: "audi", model: "R8", price: 55000},

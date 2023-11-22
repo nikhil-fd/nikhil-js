@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="En-In">
+    <head>
+        <title>JavaScript DOM</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="main-div">
+            <h1 id="heading">JavaScript DOM</h1>
+            <p id="msg">DOM means Document <span style="display: none;">Nikhil</span> Object Model</p>
+            <input type="text">
+            <ul>
+                <li class="listitems">Home</li>
+                <li class="listitems">About</li>
+                <li class="listitems">Contact</li>
+                <li class="listitems">Gallery</li>
+            </ul>
+        </div>
+        <script>
+            //🚩In order to get the reference of html element use 🚩
+            //👉document.getElementById("id value")
+            //👉document.querySelector(".class value/#id value/name value/element or tag name") -- it selects only 1st matched element not all element.
+            //👉document.querySelectorAll("tag name")  -- (i) when we are getting reference of tag/element at that time it returns "nodelist prototype" so, we can't get the referece.
+            //                                             (ii) nodelist provides some property like "forEach" loop and others some. 
+            //                                             (iii) so using "forEach()" loop we can easily get reference from nodelist.
+            //                                             (iv) Also we can use "for..loop" and "for..of" loop to get reference from nodelist.
+            //                                             (v) But we can't use "map()" method. if we use "map()" method,then we need to add these nodelist in an array by using "Array.from(nodelistreference)".
+                                                    
+            //👉document.getElementsByClassName("class value") -- (i) when we are getting reference of tag/element using class name at that time it returns "html collection prototype" so, we can't get the referece.
+            //                                                     (ii) "html collection" provides some property like length,constructor etc but it doesn't provide forEach() loop or map() method.. 
+            //                                                     (iii) But we can use "for..loop" and "for..of" loop to get reference from "html collection".
+            //                                                     (iv) So if you want to use map() method and forEach() loop then we need to add "html collection" in array using "Array.from(htmlcollection_ref)""
+
+            //👉document.getElementsByName("name value")
+            //👉document.getElementsByTagName("tag name")
+
+
+            //🚩Below These 4 through we can get the value and add the value inside html element,
+            // and those element must be container type(those element contains start tag and end tag),
+            // like <div></div> <h1></h1> <p></p> etc...🚩
+
+            //👉.innerHTML -- it override the new value in existing value inside an element. 
+            //                 it allows style format also like we can use <h1><p><div><font> etc..
+            //👉.innerText -- it override the new value in existing value inside an element.
+            //                 it allows plain text only.No style format allowed.
+            //👉.outerHTML -- it removes the existing value add add the new value in that place.
+            //                 it allows style format also like we can use <h1><p><div><font> etc..
+            //👉.textContent -- it bring/display all hide and unhide value. suppose inside an element if,
+            //                   you hide any child element then this method can get all hide details also. 
+
+
+            //🚩How to print the value/how to display the output🚩
+            //👉document.write(value) -- it prints the value in browser
+            //👉alert("value")        -- it gets a popup box in browser and it contains only ok option.
+            //👉confirm("value")      -- it same like alert but it contains cancel and ok options.
+            //👉console.log(value)    -- it prints the value in node enviornment
+            //👉console.warn(value)   --
+            //👉console.error(value)
+            //👉console.debug(value)
+            //👉console.info(value)
+
+
+            //🚩How to give the input🚩
+            //👉prompt() -- it gets a popup box in browser where we can give the input value.
+            
+            const heading = document.getElementById("heading").innerHTML;
+            const hideData = document.getElementById("msg").innerHTML;
+            const unhideData = document.getElementById("msg").textContent;
+            document.querySelector("input[type=text]");
+            document.write(heading);
+            document.write(`hide value -${hideData} unhide value- ${unhideData}`);
+
+
+            //🚩"document.querySelectorAll()" -- getting reference of all li element/tag🚩
+            const listData = document.querySelectorAll("li");
+            console.log(listData);
+            // But in above it didn't return reference, it returned "nodelist" prototype.
+            // 1st Way -- from "nodelist" we can get reference of all li elements by using "for..loop" or "for..of" loop or "forEach()" loop.
+            // 2nd Way -- To get reference from "nodelist" using map() for that,
+            //            we need to convert these nodelist into array using "Array.from(listData)".
+            
+            //Example1: using for..loop
+            for(let m = 0; m < listData.length; m++){
+                console.log(listData[m]);
+                //output: <li class="listitems">Home</li>
+                //        <li class="listitems">About</li>
+                //        <li class="listitems">Contact</li>
+                //        <li class="listitems">Gallery</li>
+                console.log(listData[m].innerHTML);
+                //output: Home About Contact Gallery
+            }
+
+            //Example2: using for..of loop
+            for(let data of listData){
+                console.log(data);
+                //output: <li class="listitems">Home</li>
+                //        <li class="listitems">About</li>
+                //        <li class="listitems">Contact</li>
+                //        <li class="listitems">Gallery</li>
+                console.log(data.innerHTML);
+                //output: Home About Contact Gallery
+
+            }
+
+            //Example3: using forEach()
+            listData.forEach((elemLi) => {
+                elemLi.innerHTML="Sports Blog"
+                elemLi.style.color="red"
+            });
+
+            //And here it applies effect individually according to given index no.
+            listData[2].innerHTML="News Blog";
+            listData[2].style.color="green";
+
+
+            //🚩"document.getElementsByClassName("listitems")" -- getting reference of all li element
+            const listClass = document.getElementsByClassName("listitems");
+            console.log(listClass);
+            // But in above it didn't return reference, it returned "html collection" prototype.
+            // 1st Way -- from "html collection" we can get reference of all li elements by using "for..loop" or "for..of" loop.
+            // 2nd Way -- To get reference from "html collection" using map() or forEach() for that,
+            //            we need to convert these into array using "Array.from(listClass)".
+            const liItems = document.querySelectorAll('li');
+            console.log(liItems);
+            //Example1:
+            for(let items of liItems){
+                console.log(items);
+                //output: <li class="listitems">Home</li>
+                //        <li class="listitems">About</li>
+                //        <li class="listitems">Contact</li>
+                //        <li class="listitems">Gallery</li>
+                console.log(items.innerHTML);
+                //output: Home About Contact Gallery
+            }
+
+            //OR
+            //Example2:
+            for(let x = 0; x <liItems.length; x++){
+                console.log(liItems[x]);
+                //output: <li class="listitems">Home</li>
+                //        <li class="listitems">About</li>
+                //        <li class="listitems">Contact</li>
+                //        <li class="listitems">Gallery</li>
+                console.log(liItems[x].innerHTML);
+                 //output: Home About Contact Gallery
+            }
+
+            //OR
+            //Example3:
+            const arrLi = Array.from(liItems)
+            arrLi.map((elem) => {
+                elem.style.border="5px solid yellow"
+            });
+        </script>
+    </body>
+</html>
