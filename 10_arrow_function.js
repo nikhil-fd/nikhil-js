@@ -44,7 +44,7 @@ myJob();
 //👉 When use {} callibraces in arrow function then we must use "return" keyword, if you are returning any result like(+,-,/,*,%).
 //                if you are not returning any result, only printing any value then no need to use "return" keyword.
 //👉 When use () parenthesis in arrow function then no need to use "return" only put result inside that parenthesis.
-//   And this () parenthesis technique mostly used in React.
+//   And this () parenthesis technique mostly used in React..
 //🙏NOTE: "return" do use, when you are returning any result like performing +, -, *, /, %, arithmatic operation,
 //          after this operation performeed then we get a result so "return" keyword returnig this result. 
 
