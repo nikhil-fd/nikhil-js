@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoM 4</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+
+    <script>
+        function addLang(softlang){
+            const li = document.createElement("li");
+            li.innerHTML = `${softlang}`;
+            document.querySelector(".language").appendChild(li);
+        }
+        addLang("React js");
+        addLang("TypeScript");
+
+        //OR👇
+        //🚩For better optimization(In real time big project approach this way to put value inside an element)
+        function addOptiLang(langname){
+            const li = document.createElement('li')
+            li.appendChild(document.createTextNode(`${langname}`))
+            document.querySelector(".language").appendChild(li)
+        }
+        addOptiLang("Big Data");
+
+        //🚩"replaceWith()" -- Edit/Replace🚩 -- Edit/Replace value of any li element
+        const newLi = document.createElement('li');
+        newLi.textContent = "Python Nikhil";
+        //Here below we selected 3rd li or you can say took reference of 3rd li element
+        const thirdLi = document.querySelector("li:nth-child(3)")
+        thirdLi.replaceWith(newLi);
+
+        //OR
+        //🚩"outerHTML" -- Edit/Replace🚩 -- through this also we can Edit/Replace value of any li element
+        //                                -- "outerHTML" remove the exisiting value on element and add there new value.
+        const secondLang = document.querySelector("li:nth-child(2)");
+        secondLang.outerHTML = "<li>Mongo DB Nikhil</li>";
+
+        //🚩remove() -- delete -- it deleteing the element
+        const fourthLi = document.querySelector("li:last-child");
+        fourthLi.remove();
+    </script>
+</body>
+</html>
