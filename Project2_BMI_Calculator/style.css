@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #212121;
+    color: white;
+}
+.main{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+}
+h2{
+    text-align: center;
+    color: yellow;
+}
+.h-container, .w-container{
+    margin-top: 10px;
+}
+.btn-container{
+    text-align: center;
+    margin-top: 20px;
+}
+button{
+    width: 150px;
+    padding: 7px;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
+.guide-box{
+    text-align: center;
+    margin-top: 20px;
+    color: orange;
+}
+p{
+    text-align: center;
+    margin-top: 5px;
+}
+input{
+    height: 30px;
+}
+.result-box{
+    margin-top: 15px;
+    text-align: center;
+    color: yellow;
+}
+
+    
