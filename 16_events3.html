@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>setTimeout & setInterval</title>
+</head>
+<body>
+    <h2>Events in JavaScript</h2>
+    <h3>setTimeout function👇</h3>
+    <button id="stops">Stop</button>
+
+    <h3>setInterval function👇</h3>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <script>
+
+        //🚩setTimeout() -- it takes 2 parameter 1 is callback function another one is second
+        //                   it executes once after the given time second.
+        //🚩clearTimeout() -- it stops the setTimeout() function using that's reference.
+
+        //🚧Example1: setTimeout
+        setTimeout(() => {
+            console.log("Welcome Mr. Coder");
+        }, 3000)
+
+
+        //🚧Example2: setTimeout
+        const sayMyName = function(){
+            console.log("Hey Nikhil");
+        }
+        //This is called handler/callback it uses another function as a handler.
+        setTimeout(sayMyName, 2000);
+
+
+        //🚧Example3: setTimeout, clearTimeout
+        let msg = setTimeout(() => {
+            console.log("Virat is Back");
+        }, 4000)
+
+        document.getElementById("stops").addEventListener('click', (e) => {
+            clearTimeout(msg);
+            console.log("Message Stopped");
+            document.querySelector("#stops").innerHTML = "You Stopped Message";
+        }, false)
+
+
+        //🚩setInerval() -- it takes 3 parameter 1 is callback function 2nd one is second and 
+        //                3rd one is string msg, if you takes parameter then here you can pass message for that parameter
+        //                It executes after the given time second repeatedly.
+        //🚩clearInterval() -- it stops the setInerval function.
+
+        
+        //🚧Example4: setInerval, clearInterval
+        document.getElementById("start").addEventListener('click', () => {
+            const startMsg = setInterval(() => {
+                console.log("Nikhil Started Codeing");
+            }, 1000 );
+            document.getElementById("stop").addEventListener('click', () => {
+                clearInterval(startMsg);
+                console.log("Nikhil Stopped Codeing");
+            }, false);
+        }, false);
+
+        
+    </script>
+</body>
+</html>
