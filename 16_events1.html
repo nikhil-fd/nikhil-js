@@ -64,8 +64,10 @@
         alert("About Clicked");
       };
 
-      //🚩3rd approach --BEST👌 -- In realtime everybody approaches this technique
-      //                        -- Third parameter is "false" if you not mention bydefault it takes false.
+      //🚩3rd approach -- addEventListener() --BEST👌 
+      //                        -- In realtime everybody approaches this technique
+      //                        --  it takes 3 parameter 1 is event(click,submit etc..) 2nd is callback function and 3rd is event propagation.
+      //                        -- Third parameter is "true/false" if you not mention anything in 3rd parameter bydefault it takes false.
       //                        -- addEventListener('click', function(){}, false) -- it takes 3 parameter
       //                        -- The 3rd parameter is known as "event propagation".
       //                        -- In event propagation when we use "false" that means it is called "event bubbling"(bottom to top).
@@ -109,6 +111,8 @@
       }, true)
       //Note: "false" is defalut whether you can physically write or not write no problem
       //       but for "true" you have to write.
+
+      
     </script>
   </body>
 </html>
