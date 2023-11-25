@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Hide image</title>
+</head>
+<body>
+    <ul class="main">
+        <li><img width="350px" height="250px" src="car1.jpg" alt="ferrari" class="pics"></li>
+        <br>
+        <li><img width="350px" height="250px" src="car2.jpg" alt="laborgini" class="pics"></li>
+    </ul>
+
+
+    <script>
+        let photos = document.querySelectorAll(".pics")
+        photos.forEach((elem) => {
+            console.log(elem);
+            elem.addEventListener('click', function(e){
+                //here "parentNode" properties giving the img tag's parent 
+                //we took refernece of img when clcik on img then it remove img parent li using remove() function.
+                let removeImg = e.target.parentNode;
+                removeImg.remove();
+            }, false)
+        })
+    </script>
+</body>
+</html>

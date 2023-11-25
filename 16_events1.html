@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+    <style>
+      ul {
+        list-style: none;
+      }
+      li {
+        width: 100px;
+        height: 50px;
+        border: 5px solid;
+        background-color: red;
+        color: white;
+        cursor: pointer;
+        margin-top: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #parent{
+        width: 100px;
+        height: 100px;
+        background-color: rgb(255, 247, 0);
+        border: 5px solid rgb(255, 247, 0);
+        position: relative;
+        cursor: pointer;
+      }
+      #child{
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-color: green;
+        border: 5px solid green;
+        margin-left: 20px;
+        margin-top: 20px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Events we can define in 3 way -->
+    <!-- In any html element we can use events not only "button" but also all element 
+         like <div>,<span>,<p>,<a> <etc class=""></etc> -->
+
+    <ul>
+      <!--🚩1st approach -->
+      <li onclick="confirm('Home Clicked')">Home</li>
+      <li id="aboutus">About</li>
+      <li id="contactus">Contact</li>
+    </ul>
+
+    <!-- Example: Event Propagation -->
+    <h3>👇Event Propagation</h3>
+    <div id="parent">
+        <div id="child"></div>
+    </div>
+
+    <script>
+      //🚩2nd approach
+      document.getElementById("aboutus").onclick = function () {
+        alert("About Clicked");
+      };
+
+      //🚩3rd approach --BEST👌 -- In realtime everybody approaches this technique
+      //                        -- Third parameter is "false" if you not mention bydefault it takes false.
+      //                        -- addEventListener('click', function(){}, false) -- it takes 3 parameter
+      //                        -- The 3rd parameter is known as "event propagation".
+      //                        -- In event propagation when we use "false" that means it is called "event bubbling"(bottom to top).
+      //                        -- In event propagation when we use "true" that means it is called "event capturing"(top to bottom).
+
+      document.getElementById("contactus").addEventListener(
+        "click",
+        (event) => {
+          alert("Contact clicked");
+          console.log(event);
+        },
+        false
+      );
+
+      //🚩Get the knowledge about these object it comes through "event"--👇
+      // type, timestamp, defaultPrevented, target, toElement, srcElement,
+      // currentTarget, clientX, clientY, screenX, screenY, altket, shiftkey, keyCode
+
+      //🚩Event Propagation🚩
+      // Event propagation is defined in 2 phases--
+      //(1) Event Bubbling -- In event bubbling 1st event is captured and handled by innermost element,
+      //                      and propagated to outermost element. Event bubbling is "false" in addEventListener().
+      //                      Example: suppose we have defined a child div inside a parent div so if the 
+      //                               event is triggered in parent div then at first child div will execute,
+      //                               after that parent div will execute(bottom to top). 
+      //(2) Event Capturing -- In event Capturing 1st event is captured and handled by outermost element,
+      //                      and propagated to innermost element. Event Capturing is "true" in addEventListener().
+      //                      Example: suppose we have defined a child div inside a parent div so if the 
+      //                               event is triggered in child div then at first parent div will execute,
+      //                               after that child div will execute(bottom to top). 
+
+      //👉stopPropagation(): if you want to stop propagation then use this method
+
+      //Example: same check "false" instead of "true" 
+      document.getElementById("parent").addEventListener('click', (e) => {
+        console.log("parent executed");
+      }, true)
+      document.getElementById("child").addEventListener('click', (e) => {
+        console.log("child executed");
+        // e.stopPropagation();
+      }, true)
+      //Note: "false" is defalut whether you can physically write or not write no problem
+      //       but for "true" you have to write.
+    </script>
+  </body>
+</html>
