@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>xmlHttpRequest API</title>
+  </head>
+  <body>
+    <h3>xmlHttpRequest</h3>
+    <i>xmlHttpRequest is used for API. Read more about it in mdn</i>
+    <br>
+    <b>We can use the API bu using 👉"xmlHttpRequest" & 👉"fetch"</b>
+
+    <script>
+      //🚩 NOTEs👇
+
+      // Value	State	            Description
+      // 0	    UNSENT	            Client has been created. open() not called yet.
+      // 1	    OPENED	            open() has been called.
+      // 2	    HEADERS_RECEIVED	send() has been called, and headers and status are available.
+      // 3	    LOADING	            Downloading; responseText holds partial data.
+      // 4	    DONE	            The operation is complete.
+
+      //Example:
+      const apiUrl = "https://randomuser.me/api/";
+      //new: "new" creating a object for xmlHttpRequest() method.
+      const xhr = new XMLHttpRequest();
+      //"open" takes 2 parameter -- (1)GET"/"POST"/etc.. these are request. (2)API url
+      //After use "open" method still its not yet called, for call it use "send" method
+      xhr.open("GET", apiUrl);
+      xhr.onreadystatechange = function () {
+        //below it shows the status code(value)
+        console.log(xhr.readyState);
+        if (xhr.readyState === 4) {
+          //Actually in url data stored in object.
+          //But when that data comeing by url its data type is becoming "string".
+          //So we need to convert into object by using "JSON.parse" so that we can access the data from api.
+          // let data = this.responseText;
+          //console.log(data);
+          // let data = typeof(this.responseText);
+          //console.log(data);
+
+          let data = JSON.parse(this.responseText);
+          console.log(typeof data);
+          console.log(data.info);
+          console.log(data.info.seed);
+        }
+      };
+      //Above "open" not yet called, for call we need to use "send".
+      xhr.send();
+    </script>
+  </body>
+</html>
