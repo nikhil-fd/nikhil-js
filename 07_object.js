@@ -1,7 +1,7 @@
-//object: object is a collection of properties, properties contains key and value pair
-//        properties value can be a fucntion and different data types.
-//        object defined in two ways 1.object literals 2.object constructor
-//        object literal not create single ton but object constructor create single ton
+//🚩object: object is a collection of properties, properties contains key and value pair
+//          properties value can be a fucntion and different data types.
+//          object defined in two ways 1.object literals 2.object constructor
+//          object literal not create single ton but object constructor create single ton
 
 //😎Example1: object literal(Non-singletone object)😎
 const myDetails = {
@@ -111,8 +111,35 @@ console.log(objKey);
 console.log(Object.entries(dbData[1]));
 
 //***********************************************************************************
-//Object Destructuring */
+//🚩Object Destructuring */
 const myBio = {name: "nikhil", exp: 3, skill: "ReactJs"}
 const {name, exp, skill} = myBio;
 console.log(exp);
+
+
+//🚩Object Literal: "this" concept
+//👉"this" refers to object and it returns current context.
+//👉"this" object can have different values depends on where it is placed.
+//"this" returns current context in 2 place:👇
+//1️⃣If the variable is declared globally that means outside the function here it returns "current context".
+//2️⃣Inside object if there is a simple function defined so in that simple function if we use "this" it returns "current context".
+
+const userDetails = {
+    userName: "niil",
+    signedIn: true,
+    loginAttempt: 5,
+    saluteMsg: function(){
+        console.log(this.userName);
+        // console.log(userDetails.userName);
+        //👉when we are accessing object properties inside object at that time we can use "this"
+        //  Although instead of "this" we can use same object_name also, but "this" mostly do refer.
+    }
+}
+console.log(userDetails.saluteMsg());
+console.log(this.loginAttempt);
+//Output: undefined
+//👉Above here we are accessing object properties using "this" keyword in outside object so,
+//  in this situation "this" can't access it returns "undefined". Here we use only object_name.
+console.log(userDetails.loginAttempt);
+//Output: 5
 
