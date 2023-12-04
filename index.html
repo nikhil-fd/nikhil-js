@@ -3,10 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Analog Clock</title>
+    <style>
+        body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.clock {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border: 2px solid #333;
+    border-radius: 50%;
+}
+
+.hour, .minute, .second {
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    background-color: #333;
+    top: 50%;
+    transform-origin: 100%;
+    transform: rotate(90deg);
+}
+
+.hour {
+    height: 4px;
+    background-color: #555;
+    z-index: 3;
+}
+
+.minute {
+    height: 3px;
+    background-color: #666;
+    z-index: 2;
+}
+
+.second {
+    height: 2px;
+    background-color: #ff0000;
+    z-index: 1;
+}
+    </style>
 </head>
 <body>
-    
+    <div class="clock">
+        <div class="hour" id="hour"></div>
+        <div class="minute" id="minute"></div>
+        <div class="second" id="second"></div>
+    </div>
+
+    <script src="script.js">
+        function updateClock() {
+    const now = new Date();
+    const hours = now.getHours() % 12; // Convert to 12-hour format
+    const minutes = now.getMinutes();
+    const seconds = now.getSeconds();
+
+    const hourElement = document.getElementById('hour');
+    const minuteElement = document.getElementById('minute');
+    const secondElement = document.getElementById('second');
+
+    const hourDeg = (360 / 12) * hours + (360 / 12) * (minutes / 60);
+    const minuteDeg = (360 / 60) * minutes + (360 / 60) * (seconds / 60);
+    const secondDeg = (360 / 60) * seconds;
+
+    hourElement.style.transform = `rotate(${hourDeg}deg)`;
+    minuteElement.style.transform = `rotate(${minuteDeg}deg)`;
+    secondElement.style.transform = `rotate(${secondDeg}deg)`;
+}
+
+setInterval(updateClock, 1000);
+updateClock(); // Initial update
     </script>
 </body>
 </html>
