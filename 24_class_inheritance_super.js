@@ -6,7 +6,7 @@
 //            * When calling the "super()" method in the "constructor()" method, that means
 //              calling the parent "constructor()" method and gets access to the parent's properties and methods.                
 
-//Example:
+//Example:1
 //Parent class👇
 class UserDetails{
     constructor(username){
