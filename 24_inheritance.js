@@ -34,4 +34,6 @@ console.log(userCoursedata);
 userCoursedata.modifyUser();
 userCoursedata.addCourse();
 
+//👍Note: Here modifyUser() & addCourse() are method.
+
 
