@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bind</title>
+</head>
+<body>
+    <button>Click Here</button>
+
+    <script>
+        //🚩 bind(): 
+        //Syntax: function.prototype.bind()
+        //👉In bind() method we can bind an object to a common function. so that the function gives different results 
+        //   when needed. Otherwise it gives the same result or gives an error while the code is executing.   
+        //👉We use the bind() method to call a function with "this" value, "this" keyword refers to the same object
+        //   which is currently selected.
+        //👉In other words bind() method allows us to easily set which object will be bound by "this" keyword when a 
+        //   function or method is invoked.
+
+        class User{
+            constructor(){
+                this.website = "mdn";
+                this.server = "https://mdn.com";
+                document
+                .querySelector("button")
+                .addEventListener('click', this.handleClicked.bind(this));
+                //Here bind() method it gets all the "this" reference value.
+            }
+            handleClicked(){
+                console.log("Button is clicked");
+                console.log(this);
+                console.log(this.server);
+            }
+        }
+        const userData = new User();
+    </script>
+</body>
+</html>
