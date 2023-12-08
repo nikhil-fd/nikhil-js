@@ -2,10 +2,16 @@
 //👉"getter" & "setter" is defined by using "get" & "set" keyword.
 //👉When we are defining getter & setter that means we are defining a method that is 
 //  associated with a paritcular property of an object.
+
 //👉"get" keyword is used to get the value.
 //👉"set" keyword is used to set the value.
+
 //👉Inside "set" keyword/setter define "value"(value-just a reference name we can give any other name also) as a parameter.
 //  "set" is used to set the value that's why takeing "value" as a parameter.
+
+//👉Inside "get" & "set" always use _(underscore) before properties as prefix.
+//   Because _(underscore) define as private properties not local.
+
 //👉Both "get" & "set" can used also in class, function & object .  
 
 //👌Benefit: "getter" & "setter" benefit is inside the class whatever value is there if somebody
