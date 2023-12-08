@@ -6,6 +6,10 @@
 //👉"set" keyword is used to set the value.
 //👉Both "get" & "set" used also in class.  
 
+//👌Benefit: "getter" & "setter" benefit is inside the class whatever value is there if somebody
+//            wants to access these value they can't access directly.But without "get" & "set" method everybody
+//            can access these value easily so to avoid this type of thing we can use "get" & "set" method.
+
 class User{
     constructor(username, password){
         this.username = username
