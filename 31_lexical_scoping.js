@@ -29,8 +29,3 @@ outerFunc();
 //      can access parent function data but both child can not get access another child data
 //      (like func1 can't access fun2 data and func2 can't access fun1 data).
 
-//only execution context khali return hauni ta sahito lexical scope bhi return hauchi.
-//closure returns karuchi pura function(parent function ku) jodi sey parent function
-//bhitore child function bhi achi ta hele b child + parent sabu return hei jibo by closure.
-
-//Interview: closure return karuchi pura funcion sirf function nuha pura lexical scope hine return karuchi.
