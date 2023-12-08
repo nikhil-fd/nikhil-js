@@ -4,7 +4,9 @@
 //  associated with a paritcular property of an object.
 //👉"get" keyword is used to get the value.
 //👉"set" keyword is used to set the value.
-//👉Both "get" & "set" used also in class.  
+//👉Inside "set" keyword/setter define "value"(value-just a reference name we can give any other name also) as a parameter.
+//  "set" is used to set the value that's why takeing "value" as a parameter.
+//👉Both "get" & "set" can used also in class, function & object .  
 
 //👌Benefit: "getter" & "setter" benefit is inside the class whatever value is there if somebody
 //            wants to access these value they can't access directly.But without "get" & "set" method everybody
