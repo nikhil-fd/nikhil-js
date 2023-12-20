@@ -16,13 +16,20 @@ let seriesCentury = 1;
 // console.log(typeof(Number(jerseyNo)));
 // console.log(typeof(jerseyNo));
 
+//🚩Boolean() method
 //Here we convert the Number into Boolean using Boolean() method.
-console.log(Boolean(seriesCentury));
-console.log(typeof(Boolean(seriesCentury)));
+console.log(Boolean(seriesCentury));           //💥Output: true
+console.log(typeof(Boolean(seriesCentury)));   //💥Output: boolean
 
+//🚩Stirng() method
 //Here we convert the number into string using Stirng() method.
-console.log(String(playerScore));
-console.log(typeof(String(playerScore)));
+console.log(String(playerScore));           //💥Output: "78"
+console.log(typeof(String(playerScore)));   //💥Output: String
+
+//🚩Number() method
+//Here we convert the string into number using Number() method.
+console.log(Number(jerseyNo));          //💥Output: 18
+console.log(typeof(Number(jerseyNo)));  //💥Output: Number
 
 //Primitive data types uses Stack memory.
 //Non-Primitive data types uses Heap memory.
