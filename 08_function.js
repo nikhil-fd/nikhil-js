@@ -113,6 +113,12 @@ console.log(todayNotiMsg(250,300,350));
 //********************************************************************************************* */
 
 //🎈How to Access Object value in Function🎈
+//So we can access object in function using 3 method.
+    //1️⃣ We can take object name as a parameter in function but in parmeter don't keep same object name just change the object name.
+    //2️⃣ We can take object name as an argument in function.
+    //3️⃣ We can directly pass object in function argument.
+
+//Mehod1️⃣    
 const ourState = {
     id: 25,
     name: "odisha"
@@ -125,7 +131,7 @@ function callState(myState){
 callState(ourState);
 
 
-//OR
+//Mehod2️⃣
 const ourDist = {
     code: 1,
     name: "bls"
@@ -137,8 +143,7 @@ function distList(dist){
 console.log(distList(ourDist));
 
 
-//OR(direct pass object in argument)
-
+//Mehod3️⃣
 function myHotels(rooms){
     console.log(`Room no is ${rooms.id} and name is ${rooms.name}`)
 }
@@ -151,6 +156,11 @@ myHotels({
 //********************************************************************************************** */
 
 //🎈How to Access Array value in Function🎈
+//we can access array in fucntion in two ways
+    //1️⃣ we can pass array name as an argument in function and will return value in array.
+    //2️⃣ Also we can pass array directly in argument.
+
+//Method1️⃣    
 const myMarks = [78, 85, 56, 68];
 function classResult(marks){
     return marks;
@@ -158,7 +168,7 @@ function classResult(marks){
 console.log(classResult(myMarks));
 
 
-//OR
+//Method2️⃣
 function myPincode(pincode){
     console.log(pincode);
 }
