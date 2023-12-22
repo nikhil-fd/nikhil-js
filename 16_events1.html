@@ -90,28 +90,53 @@
       // Event propagation is defined in 2 phases--
       //(1) Event Bubbling -- In event bubbling 1st event is captured and handled by innermost element,
       //                      and propagated to outermost element. Event bubbling is "false" in addEventListener().
-      //                      Example: suppose we have defined a child div inside a parent div so if the 
-      //                               event is triggered in parent div then at first child div will execute,
-      //                               after that parent div will execute(bottom to top). 
+      //                      Example: suppose we have defined a child div inside a parent div. 
+      //                    💥if the event is triggerd in child div then at a time first child div will execute after that parent div will execute (bottom to top).
+      //                    💥if the event is triggered in parent div then at first parent div will execute only but child div will not execute. 
+      //                                
+
       //(2) Event Capturing -- In event Capturing 1st event is captured and handled by outermost element,
       //                      and propagated to innermost element. Event Capturing is "true" in addEventListener().
-      //                      Example: suppose we have defined a child div inside a parent div so if the 
-      //                               event is triggered in child div then at first parent div will execute,
-      //                               after that child div will execute(top to bottom). 
+      //                      Example: suppose we have defined a child div inside a parent div. 
+      //                            💥if the event is triggered in child div then at first parent div will execute,afer that child div will execute(top to bottom). 
+      //                            💥if the event is triggerd in parent div then only parent div will execute but child div will not execute.
 
       //👉stopPropagation(): if you want to stop propagation then use this method
 
-      //Example: same check "false" instead of "true" 
+      //Example1: same check "false" instead of "true" 
       document.getElementById("parent").addEventListener('click', (e) => {
         console.log("parent executed");
       }, true)
       document.getElementById("child").addEventListener('click', (e) => {
         console.log("child executed");
-        // e.stopPropagation();
       }, true)
       //Note: "false" is defalut whether you can physically write or not write no problem
       //       but for "true" you have to write.
 
+
+
+      //Example2: event.stopPropagation()
+      document.getElementById("parent").addEventListener('click', (e) => {
+        console.log("parent executed");
+        e.stopPropagation();
+      }, true)
+      document.getElementById("child").addEventListener('click', (e) => {
+        console.log("child executed");
+      }, true)
+      //Note: In the above example if the event is triggered on child div then only parent div will execute,
+      //      but child div will not execute because after parent div we used stopPropagation() it will stop to execute child div.
+      
+
+      //Example3: event.stopPropagation()
+      document.getElementById("parent").addEventListener('click', (e) => {
+        console.log("parent executed");
+      }, false)
+      document.getElementById("child").addEventListener('click', (e) => {
+        console.log("child executed");
+        e.stopPropagation();
+      }, false)
+      //Note: In the above example if the event is triggered on child div then only child div will execute,
+      //      but parent div will not execute because after child div we used stopPropagation() it will stop to execute parent div.
       
     </script>
   </body>
