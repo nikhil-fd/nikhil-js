@@ -44,7 +44,7 @@
         let startCount;
         const stops = document.getElementById("stops");
         const msg = document.getElementById("msg");
-        
+
         document.getElementById("starts").addEventListener("click", function(){
             msg.innerHTML ="Loading....🕐";
             startCount = setInterval(function(){
@@ -57,8 +57,10 @@
             clearInterval(startCount);
         });
 
-        //Note: When you are stopped setInterval/setTimeout function at that time store
-        //      setInterval/setTimeout function in a reference then only you can stop or else you can't stop. 
+        //Note: #1. When you are stopped setInterval/setTimeout function at that time store
+        //          setInterval/setTimeout function in a reference then only you can stop or else you can't stop. 
+        //      #2. Always initialized the value(let num = 1) outside the setInterval/setTimeout function, if we initialize
+        //          inside function then it won't work.
     </script>
 </body>
 </html>
