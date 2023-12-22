@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <style>
+        div{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        button{
+            width: 100px;
+            height: 50px;
+            color: white;
+            font-size: larger;
+            cursor: pointer;
+        }
+        #starts{
+            background-color: green;
+            margin-right: 30px;
+        }
+        #stops{
+            background-color: red;
+            margin-left: 30px;
+        }
+        p{
+            color: yellow;
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body style="background-color: #212121;">
+    <div>
+    <span><button id="starts">Start</button></span>
+    <span><p id="msg"></p></span>
+    <span><button id="stops">Stop</button></span>
+    </div>
+
+    <script>
+        let num = 1;
+        let startCount;
+        const stops = document.getElementById("stops");
+        const msg = document.getElementById("msg");
+        
+        document.getElementById("starts").addEventListener("click", function(){
+            msg.innerHTML ="Loading....🕐";
+            startCount = setInterval(function(){
+                msg.innerHTML = `${num}`;
+                num++;
+            }, 1000)
+        })
+
+        stops.addEventListener("click", function(){
+            clearInterval(startCount);
+        });
+
+        //Note: When you are stopped setInterval/setTimeout function at that time store
+        //      setInterval/setTimeout function in a reference then only you can stop or else you can't stop. 
+    </script>
+</body>
+</html>
