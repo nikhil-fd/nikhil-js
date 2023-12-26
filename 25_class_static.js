@@ -1,5 +1,6 @@
 //🚩"static" : * "static" keyword define static methods for classes.
-//             * "static" methods are called directly on the class, without creating an instance/object.
+//             * "static" methods are called/accessed directly on the class, without creating an instance/object.
+//             * "static" method can not be called/accessed directly on instances of class.
 
 class User{
     constructor(username){
@@ -25,4 +26,5 @@ class UserCourse extends User{
 
 const uniqueUser = new UserCourse("mahirat", "mahi@google.com");
 console.log(uniqueUser);
-console.log(uniqueUser.createUserId());
+console.log(User.createUserId());         //Directly it can be access     //💥Output: 590
+console.log(uniqueUser.createUserId());    //It can't be access directly //💥Output: Error
