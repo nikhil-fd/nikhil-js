@@ -33,7 +33,8 @@
                 console.log(this.server);
             }
         }
-        const userData = new User();
+        // User();                     //NOTE: if we are using bind() mehod then without new the User() can not be invoked/called.
+        const userData = new User();  //NOTE: Here we use new in User() so that it can be invoked/called. 
     </script>
 </body>
 </html>
