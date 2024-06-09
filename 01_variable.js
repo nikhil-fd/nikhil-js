@@ -88,3 +88,7 @@ console.table([accountId, accountName, accountPwd, instaId]);
 // │ 2       │ 'Happy@1222' │
 // │ 3       │ 'arya236'    │
 // └─────────┴──────────────┘
+
+//🔔NOTE: variable re amey to jemiti hou value assign karidauchey, not only variable but also 
+//        other javascript code, but taku final analyse/check nkaruchi "NodeJS" whether the written code
+//        is correct or not if correct then "NodeJS" execute the code orelese return error.
