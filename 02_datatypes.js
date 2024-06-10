@@ -43,18 +43,30 @@ console.log(userOne.username);
 
 
 //Example: All Datatypes
+//String
 let myFavPlayer = "virat";
+//Number
 let playerScore = 78;
+//Boolean
 let isPlayerRetire = false;
+//Undefined
 let playerAge;
+//Null
 let playerCentury = null;
 let jerseyNo = "18";
 let seriesCentury = 1;
+//BigInt
+let maxNum = Number.MAX_SAFE_INTEGER;
+let minNum = Number.MIN_SAFE_INTEGER;
+let bigNum = 9007199254740991n + 10n;
+console.log(maxNum);                   //💥Output: 9007199254740991
+console.log(minNum);                  //💥Output:  -9007199254740991
+console.log(bigNum);                 //💥Output:  9007199254741001n
 
 //🚩typeOf() -- it is used to check that what type of data and return that data type.
 //🚩isNaN()  -- it is used to check whether it is a Number or not, and return boolean value true or false.
 
-console.table([typeof(myFavPlayer),typeof(playerScore), typeof(isPlayerRetire), typeof(playerAge), typeof(playerCentury)]);
+console.table([typeof(myFavPlayer),typeof(playerScore), typeof(isPlayerRetire), typeof(playerAge), typeof(playerCentury), typeof(jerseyNo), typeof(bigNum)]);
 //💥Output👇
 // ┌─────────┬───────────┐
 // │ (index) │  Values   │
@@ -63,9 +75,9 @@ console.table([typeof(myFavPlayer),typeof(playerScore), typeof(isPlayerRetire), 
 // │    1    │ 'number'  │
 // │    2    │ 'boolean' │
 // │    3    │'undefined'│
-// │    4    │   'null'  |
+// │    4    │ 'object'  |
 // │    5    |  'string' |
-// |    6    | 'number'  |
+// |    6    | 'bigint'  |
 // └─────────┴───────────┘
  console.table([isNaN(myFavPlayer), isNaN(playerScore), isNaN(isPlayerRetire), isNaN(playerAge), isNaN(playerCentury)]);
  //💥Output: Here output will come in boolean value.
