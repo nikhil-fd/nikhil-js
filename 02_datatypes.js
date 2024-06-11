@@ -29,17 +29,18 @@
 //Example: Stack Memory
 let myYoutubeName = "Cric Mic";
 let myOtherYoutube = myYoutubeName;
-myYoutubeName = "Swanik Feast";
-console.log(myYoutubeName);
-console.log(myOtherYoutube);
+myOtherYoutube = "Swanik Feast";
+console.log(myYoutubeName);         //💥Output: Cric Mic  (it returns copy of existing value after changing with new value)
+console.log(myOtherYoutube);        //💥Output: Swanik Feast
 
 //Example: Heap Memory
 let userOne = {
     username: "niil",
     userAge : 35
 };
-userOne.username = "nikhil";
-console.log(userOne.username);
+let userTwo = userOne;
+userTwo.username = "nikhil";
+console.log(userOne.username);     //💥Output: nikhil (it returns new value changing the original value)
 
 
 //Example: All Datatypes
