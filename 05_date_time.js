@@ -14,10 +14,15 @@ console.log(new Date().toJSON());                     //💥Output: 2023-12-21T0
 //🚩Date.now():
 //It returns numerical value in milliseconds since 01 jan 1970 to till date.
 console.log(Date.now());                    //💥Output: 1703122901955
+
+//Below we divided the millisecond into 1000 so that it can convert from millisecond to second.
 console.log(Date.now()/1000);                //💥Output: 1703123210.942
 console.log(Math.floor(Date.now()/1000));     //💥Output: 1703123280
 
+//YYYY-MM-DD
 console.log(new Date("2023-11-16"));
+//DD-MM-YYYY
+console.log(new Date("21-06-2024"));
 console.log(date.getHours());
 console.log(date.getMinutes());
 console.log(date.getSeconds());
@@ -35,3 +40,49 @@ console.log(date.getMonth());       //💥Output: 11
 //It retuns day in number.
 //0-sun 1-mon 2-tue 3-wed 4-thu 5-fri 6-sat 
 console.log(date.getDay());       //💥Output: 4
+
+
+//🎯How to get Date and Time?
+const dtTime = new Date();
+//🎁getHours()             [0-23]
+console.log(dtTime.getHours());
+
+//🎁getMinutes()           [0-59]
+console.log(dtTime.getMinutes());
+
+//🎁getSeconds()           [0-59]
+console.log(dtTime.getSeconds());
+
+//🎁getDate()              [current date]
+console.log(dtTime.getDate());
+
+//🎁getMonth()              [0/1/2/3/4/5/6/7/8/9/10/11]
+console.log(dtTime.getMonth());
+
+//🎁getFullYear()           [2024/2025...]
+console.log(dtTime.getFullYear());
+
+//🎁getDay()                [0/1/2/3/4/5/6]
+console.log(dtTime.getDay());
+
+
+//🎯How to set Date and Time?
+//🎁setHours()             
+//🎁setMinutes()           
+//🎁setSeconds()           
+//🎁setMilliSeconds()      
+//🎁setDate()              
+//🎁setMonth()              
+//🎁setFullYear()           
+//🎁setDay()       
+
+//🎁toLocaleString()
+const myDt = new Date()
+console.log(myDt.toLocaleString("default", {            //use ctrl+space for suggestion
+    dateStyle: "long",
+    calendar: "calendar"
+}));                        
+
+//💥Output- June 20, 2024
+
+
