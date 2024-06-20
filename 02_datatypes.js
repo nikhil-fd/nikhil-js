@@ -4,7 +4,7 @@
 //    value can be store in variable.
 //#3. In JavaScript there are 2 types of data type:
 //         1️⃣Primitive Datatype - "Number", "String", "Boolean", "Null", "Undefined", "bigInt", "symbol".
-//         2️⃣Non-primitive Datatype - "Array", "Object", "Regular Expression", "function", "map".
+//         2️⃣Non-primitive Datatype - "Array", "Object", "function".
 
 //1️⃣Primitive Datatype:
 //#1. Primitive Datatypes are immutable type. immutable means once defined the value later we can't change the value.
@@ -116,4 +116,19 @@ console.log(typeof(Boolean(seriesCentury)));   //💥Output: boolean
 console.log(String(playerScore));           //💥Output: "78"
 console.log(typeof(String(playerScore)));   //💥Output: String
 
+
+//🎯check the data types of non-primitive data
+//🎁Array
+const myArr = ["ro", "vi", "sh"]
+console.log(typeof myArr);                  //💥Output: Object
+
+//🎁Object
+const myObj = {name: "niil", id: 6032}
+console.log(typeof myObj);                  //💥Output: Object
+
+//🎁Function
+function mySound(){
+    console.log(typeof mySound);
+}
+mySound();                                  //💥Output: function
 
