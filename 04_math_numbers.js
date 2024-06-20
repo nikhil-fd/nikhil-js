@@ -111,5 +111,10 @@ console.log((Math.random() * 10) + 1);     //💥Output: 8.5689635
 const min = 10;
 const max = 20;
 console.log(Math.floor(Math.random() * (max - min + 1)) + min);   //💥Output: 11
+//In above 1st we got random number and it gave between o.1 to 0.9
+//2nd we convert random number into integer number by multiplying (max-min) but it includes 0 as well.
+//3rd to avoid 0 number then we added 1.
+//4th to get the number between 10 to 20 then we added min number.
+//5th we returned number into an integer by using Math.floor(). 
 
 
