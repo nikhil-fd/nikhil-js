@@ -61,8 +61,8 @@ console.log(char5.search("j"));        //💥Output: 4
 console.log(char5.search("t"));        //💥Output: -1
 
 //🎁slice()-
-//slice() method is used to extract string character and return that extracted part. it takes start argument
-//and end argument. it starts extracting from start argument to till before end argument. it doesn't include end argument.
+//slice() method is used to extract string character and return that extracted part. it takes 2 argument i.e. start number
+//and end number. It starts extracting from start number to till before end number. it doesn't include end argument.
 const char6 = "virat kohli"
 console.log(char6.slice(2, 8));                                          //💥Output: rat ko
 console.log(char6.slice(char6.indexOf("a"),char6.lastIndexOf("i")));     //💥Output: at kohl
@@ -124,6 +124,11 @@ console.log(char15.toLowerCase());          //💥Output:   hitesh chaudhary
 const char17 = "    swati das     ";
 console.log(char17);                         //💥Output:      swati das     (here both side space is there)
 console.log(char17.trim());                  //💥Output: swati das  (here both side space is not there)
+
+//🎁includes()-
+//includes() method is used to serarching the charcter in string if found then return true if not return false.
+const checkAvl = "nikhil6032@gmail.com"
+console.log(checkAvl.includes("@"));         //💥Output: true
 
 //🎁parseInt()-
 //this method is used to convert the string into number/integer.
