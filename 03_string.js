@@ -25,6 +25,14 @@ console.log(myHobby[2]);               //💥Output: i
 const myCar = "honda";
 console.log(myCar.__proto__);       //💥Output: {}
 
+
+//🎁Escape character
+let myDrivePath = "we know the \"SAP\" best courese"
+let myKnow = 'we saw best movie "Panchayat" in amazon prime'
+console.log(myDrivePath);                //💥Output: we know the "SAP" best courese
+console.log(myKnow);                     //💥Output: we saw best movie "Pachayat" in amazon prime
+
+
 //🎁indeOf()-
 //indexOf() method/function is used to searching the character in string in forwardwise and return the 
 //index no. of 1st occurence of character. if not found the return -1.
@@ -176,14 +184,34 @@ console.log(char23.toLocaleString('En-In'));    //💥Output: 5,00,000
 //NOTE: follow Sudhakar sharma note.
 
 
-//🔔how to use all prototype of string?
+//🎯How to use all prototype of string?
 const latestMovie = "Pachayat";
 console.log(latestMovie.bold());             //💥Output: <b>Pachayat</b>
 console.log(latestMovie.toUpperCase());      //💥Output: PACHAYAT
 console.log(latestMovie.charAt(3));          //💥Output: h
 console.log(latestMovie.indexOf("y"));       //💥Output: 5
 
-//🔔How to get all prototype from browser?
+// const myWifeName = "Swati Das";
+// for(let i = myWifeName.length; i >= 0; i--){
+//     let revName = " ";
+//     revName += myWifeName[i]
+//     console.log(revName);
+// }
+
+
+//🔴🟠🟡Very Very Important--Interview Question
+//How to reverse string character and return these reverse character?
+function myWifeyName(str){
+    let revName = "";
+    for(let i = str.length -1; i >= 0; i--){
+        revName += str[i]
+    }
+    console.log(revName);
+}
+myWifeyName("swati das")
+
+
+//🎯How to get all prototype from browser?
 //Goto --browser console--and write below --console
 console.log(new String("Nikhil"))           //💥Output: Nikhil
 
