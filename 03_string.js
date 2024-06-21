@@ -32,7 +32,6 @@ let myKnow = 'we saw best movie "Panchayat" in amazon prime'
 console.log(myDrivePath);                //💥Output: we know the "SAP" best courese
 console.log(myKnow);                     //💥Output: we saw best movie "Pachayat" in amazon prime
 
-
 //🎁indeOf()-
 //indexOf() method/function is used to searching the character in string in forwardwise and return the 
 //index no. of 1st occurence of character. if not found the return -1.
@@ -212,7 +211,7 @@ myWifeyName("swati das")
 
 
 //🎯How to get all prototype from browser?
-//Goto --browser console--and write below --console
+//Goto --browser console--and write below
 console.log(new String("Nikhil"))           //💥Output: Nikhil
 
 // [[Prototype]]: String
