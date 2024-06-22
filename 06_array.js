@@ -1,7 +1,20 @@
 //🚩Array: We can store multiple element in mutliple data types on a single variable i.e. called Array.
 //          Also we can store function as well.
+//         In array we can store string, number, boolean, array and object as well.
 
-//We can access Array's element/value in 5 ways.
+//🎯We can define Array in 2 ways-
+//1️⃣way-
+const myArr1 = [25,55,65,75,85]
+console.log(myArr1[3]);
+
+//2️⃣way-
+const myArr2 = new Array(95,105,205,305,405,505)
+console.log(myArr2[4]);
+//Also we can check length of Array.
+console.log(myArr2.length);
+
+
+//🎯We can access Array's element/value in 5 ways.
 //1️⃣Index no.
 //2️⃣Loop (for, while, do-while)
 //3️⃣Iterators (for..in, for..of)
@@ -138,9 +151,10 @@ console.log(flatArr);
         
 //🚩sort():  1.sort() method is used to arranges the array element in ascending order,
 //              and return these element in a new array.
+//           It arranges 1st-negative number, 2nd-positive number, 3rd-special charcter, 4th-charcter/alphabet
 
-        const alphaVal = ["P", "S", "N", "R", "B", "J", 4, 2, 3];
-        console.log(alphaVal.sort());  //💥Output: [2, 3, 4, 'B', 'J', 'N', 'P', 'R', 'S']
+        const alphaVal = ["P", "S", "N", "R", "B", "J", 4, 2, 3, -10, 10, "@niil"];
+        console.log(alphaVal.sort());  //💥Output: [-10, 10, 2, 3, 4, '@niil', 'B', 'J', 'N', 'P', 'R', 'S']
 
 
 //🚩reverse():  1.reverse() mehod is used to arranges the array element in reverse order.
@@ -286,3 +300,58 @@ console.log(skill);
 //🚩Array.from(data)
 //It converts any type of data into array.
 //check the example in file "dom.html"
+
+
+//🎯Check Prototype of Array.
+// const myArr = [1,2,3,5]
+// myArr
+// (4) [1, 2, 3, 5]
+// 0: 1
+// 1: 2
+// 2: 3
+// 3: 5
+// length: 4
+// [[Prototype]]: Array(0)
+// at: ƒ at()
+// concat: ƒ concat()
+// constructor: ƒ Array()
+// copyWithin: ƒ copyWithin()
+// entries: ƒ entries()
+// every: ƒ every()
+// fill: ƒ fill()
+// filter: ƒ filter()
+// find: ƒ find()
+// findIndex: ƒ findIndex()
+// findLast: ƒ findLast()
+// findLastIndex: ƒ findLastIndex()
+// flat: ƒ flat()
+// flatMap: ƒ flatMap()
+// forEach: ƒ forEach()
+// includes: ƒ includes()
+// indexOf: ƒ indexOf()
+// join: ƒ join()
+// keys: ƒ keys()
+// lastIndexOf: ƒ lastIndexOf()
+// length: 0
+// map: ƒ map()
+// pop: ƒ pop()
+// push: ƒ push()
+// reduce: ƒ reduce()
+// reduceRight: ƒ reduceRight()
+// reverse: ƒ reverse()
+// shift: ƒ shift()
+// slice: ƒ slice()
+// some: ƒ some()
+// sort: ƒ sort()
+// splice: ƒ splice()
+// toLocaleString: ƒ toLocaleString()
+// toReversed: ƒ toReversed()
+// toSorted: ƒ toSorted()
+// toSpliced: ƒ toSpliced()
+// toString: ƒ toString()
+// unshift: ƒ unshift()
+// values: ƒ values()
+// with: ƒ with()
+// Symbol(Symbol.iterator): ƒ values()
+// Symbol(Symbol.unscopables): {at: true, copyWithin: true, entries: true, fill: true, find: true, …}
+// [[Prototype]]: Object
