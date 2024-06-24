@@ -92,30 +92,23 @@ const moresPlay = myGoPlayers.forEach((element, index) => {
 
 
 
-
-
-//🚩join(): it adds all the elements of array into a string and separeated by comma bydefault.
+//🎁join(): it adds all the elements of array into a string and separeated by comma bydefault.
 //          comma is bydefaut but we can add our own symbol instead of comma like arrow,star etc..
 //          it returns value in string.
-const myFavPlayers = ["Virat",18,true,"Rahul",1,false,"Rohit",42,true];
-const newArr = myFavPlayers.join("-->");
-console.log(newArr);
+const myFavPlayers = ["Virat","Rahul","Rohit"];
+const newArr = myFavPlayers.join();
+console.log(newArr);                    //💥Output: Virat,Rahul,Rohit
+console.log(typeof newArr);            //💥Output: string
 
-
-//🚩spread operator...
-const myIplBatsman = ["virat","dhoni","ishan","surya","maxwell"];
-const myIplBowlers = ["chahal","shami","siraj","kuldeep"];
-const mergeAllPlayers = [...myIplBatsman,...myIplBowlers];
-console.log(mergeAllPlayers);
-
-
-//🚩flat():
+//🎁flat(): * It is used to flattern all sub array and return a new array. 
+//          * Returns a new array with all sub-array elements concatenated into it recursively 
+//            up to the specified depth.
 const favJesey = [18,7,1,[17,25,100],[65,87,95]];
 const flatArr = favJesey.flat(Infinity);
 console.log(flatArr);
 
 
-//🚩reduce(): 1.reduce() method is used to reduce the 2dimensional and 3dimensional array into a single dimensional array
+//🎁reduce(): 1.reduce() method is used to reduce the 2dimensional and 3dimensional array into a single dimensional array
 //              also it is used for data manipulation like addition, sub, div, mul and return a single value.
 //              it takes 4 arguments accumulator,element,index & array. accumulator stores the current value. 
 //            2.reduce() method does not change the original value.
@@ -127,7 +120,7 @@ console.log(flatArr);
         console.log(result);
 
         
-//🚩find():  1.find() method is used to search the element/value in an array and returns the 1st occurence element
+//🎁find():  1.find() method is used to search the element/value in an array and returns the 1st occurence element
 //              as per the given condition.
 //            2.if condition not matched then it returns undefined.
 
@@ -138,7 +131,7 @@ console.log(flatArr);
         console.log(scoreResult);   //💥Output: 25
 
         
-//🚩filter():  1.filter() method is used to search the element/value in an array and returns all matched element/value
+//🎁filter():  1.filter() method is used to search the element/value in an array and returns all matched element/value
 //                in a new array as per the given condition.
 //              2.If the condition not matched then it returns empty array [].
 
@@ -149,7 +142,7 @@ console.log(flatArr);
         console.log(preResult);   //💥Output: [15, 18, 22] 
         
         
-//🚩sort():  1.sort() method is used to arranges the array element in ascending order,
+//🎁sort():  1.sort() method is used to arranges the array element in ascending order,
 //              and return these element in a new array.
 //           It arranges 1st-negative number, 2nd-positive number, 3rd-special charcter, 4th-charcter/alphabet
 
@@ -157,14 +150,14 @@ console.log(flatArr);
         console.log(alphaVal.sort());  //💥Output: [-10, 10, 2, 3, 4, '@niil', 'B', 'J', 'N', 'P', 'R', 'S']
 
 
-//🚩reverse():  1.reverse() mehod is used to arranges the array element in reverse order.
+//🎁reverse():  1.reverse() mehod is used to arranges the array element in reverse order.
 //                 (bottom to top / right to left)
 
         const alphaNumVal = ["P", "S", "N", "R", "B", "J", 4, 2, 3];
         console.log(alphaNumVal.reverse()); //💥Output: [3, 2, 4, 'J', 'B', 'R', 'N', 'S', 'P']
 
 
-//🚩findIndex():  1. findIndex() metod can serach and returns the index no. of 1st occurnece of element,
+//🎁findIndex():  1. findIndex() metod can serach and returns the index no. of 1st occurnece of element,
 //                   as per given condition. 
 //                2. if condition not matched then it returns -1.
         const scores = [5, 10, 15, 20, 25];
@@ -174,7 +167,7 @@ console.log(flatArr);
         console.log(scoresResult);  //💥Output: 4
 
 
-//🚩indexOf():   1. This method is used to return the index no. of 1st occurence of element as per the given value.
+//🎁indexOf():   1. This method is used to return the index no. of 1st occurence of element as per the given value.
 //               2. If the value not matched then it returns -1.
 //               3. indexOf() seraching the value forwardwise.
         const players = ["virat", "dhoni", "rahul", "sikhar"];
@@ -182,14 +175,14 @@ console.log(flatArr);
         console.log(playResult);    //💥Output: 2
 
 
-//🚩lastIndexOf():   1. This method is used to search the value reverse wise and return the index no of 
+//🎁lastIndexOf():   1. This method is used to search the value reverse wise and return the index no of 
 //                       last occurence of element as per the given condition.
 
         const playerSus = ["virat", "dhoni", "rahul", "sikhar", "rahul", "dhoni"];
         const playResults = players.lastIndexOf("rahul");
         console.log(playResults);
 
-//🚩push():  1.push() method is used to add one or more element in the end of an array.
+//🎁push():  1.push() method is used to add one or more element in the end of an array.
 //              And returns the new length of an array.        
 
         const films = ["fadar", "rohini", "tejas"];
@@ -198,7 +191,7 @@ console.log(flatArr);
         console.log(films);  //💥Output: [ 'fadar', 'rohini', 'tejas', 'animals', 'tiger3' ]
 
 
-//🚩unshift():   1.unshift() method is used to add one or more element in the beginning of an array.
+//🎁unshift():   1.unshift() method is used to add one or more element in the beginning of an array.
 //                 And returns the new length of an array.        
 
         const favGames = ["igi", "nfs", "gta"];
@@ -207,7 +200,7 @@ console.log(flatArr);
         console.log(favGames);  //💥Output: [ 'spy', 'bird', 'igi', 'nfs', 'gta' ]
 
 
-//🚩pop():   1. pop() method is used to remove the last element of an array and return the removed element.
+//🎁pop():   1. pop() method is used to remove the last element of an array and return the removed element.
 //           2. This method changes the length of an array.
         
         const filmss = ["fadar", "rohini", "tejas"];
@@ -215,7 +208,7 @@ console.log(flatArr);
         console.log(allFilmss); //💥Output: tejas
 
 
-//🚩shift(): 1. shift() method is used to remove the first elment of an array and returns that removed element.
+//🎁shift(): 1. shift() method is used to remove the first elment of an array and returns that removed element.
 //           2. This method changes the length of an array.
 
         const favGamess = ["igi", "nfs", "gta"];
@@ -223,13 +216,13 @@ console.log(flatArr);
         console.log(allGamess);  //💥Output: igi
 
 
-//🚩splice(): this method is usually used for adding and removing element into a specific location
+//🎁splice(): this method is usually used for adding and removing element into a specific location
 //            into an array.it takes 3 arguments start index,delete count and new element.
 //            if you are deleteing any element into an array then it returns the deleted element into an array.
 //            if you are not deleteing any element only adding element then it returns empty array.
-
-        const ourPlayers = ["virat","rahul","rohit","iyer"];
-        const updatedPlayers = ourPlayers.splice(1,3);
+//            delete count strat from 1,2,3....
+        const ourPlayers = ["virat","rahul","rohit","iyer","gill"];
+        const updatedPlayers = ourPlayers.splice(1,3);        //removing start from start count to till delete count 3
         const allPlayers = ourPlayers.splice(3,0,"gill");
         console.log("A ", updatedPlayers); //💥Output: A [ 'rahul', 'rohit', 'iyer' ]
         console.log("C ", allPlayers);     //💥Output: C []
@@ -246,37 +239,72 @@ console.log(flatArr);
         console.log(favActor); //💥Output: ['salman', 'hrithik', 'bipasa', 'nanapatekar']
 
 
-//🚩slice(): it returns the extracted element and it starts extracting from start index number
-//            to till before the end index no.it doesn't include end argument.
+//🎁slice(): it returns the extracted element in a new array and it starts extracting from start number 
+//            to till before the end number. it doesn't include end number.
 
         let mySkill = ["sap","html","css","js","react js","bootstrap"];
         let sliceValue = mySkill.slice(1,4);
-        console.log(sliceValue); //💥Output: [ 'html', 'css', 'js' ]
+        console.log(sliceValue);             //💥Output: [ 'html', 'css', 'js' ]
+        console.log(mySkill);               //💥Output: ['sap', html', 'css', 'js', 'react js', 'bootstrap']
 
+//🎯Difference between slice() and splice() method ?        
+//slice() -- slice() method doesn't mutating(changing) the original array when extracting element in array.
+const extElem = [10,20,30,40,50,60]
+const elemNew = extElem.slice(2,4)
+console.log(elemNew);               //💥Output: [ 30, 40 ]
+console.log(extElem);              //💥Output:  [ 10, 20, 30, 40, 50, 60 ]   --same original array
 
+//splice() -- splice() method mutating(changing) the original array when performing add or remove or replace element.  
+const remoElem = [100,200,300,400,500,600,700]
+const elemsNew = remoElem.splice(1,2,1000)
+console.log(elemsNew);               //💥Output: [ 200, 300 ]
+console.log(remoElem);              //💥Output:  [ 100, 1000, 400, 500, 600, 700 ]  --changed original array 
 
-//😍how to make your string value into an array?
+//🎁concat(): concat() method is used to combine/merge/concatenate two or more array and it returns a 
+//            new array without modifying the existing array.
+//            "spread operator" also working same as it is concat(), in real-time mostly use "spread operator"
+//             instead of concat() method.
+const team1Elem = ["dc", "rcb"]
+const team2Elem = ["mi", "srh"]
+const team3Elem = ["csk", "kkr"]
+console.log(team1Elem.concat(team2Elem,team3Elem));    //💥Output: ['dc','rcb','mi','srh','csk','kkr']
+console.log(team1Elem);                         //💥Output:  [ 'dc', 'rcb']
+//OR
+//By using push(): Below push() method adds 'bowlElem' full array inside 'batsElem' array.
+const batsElem = ["virat", "kohli", "pant"]
+const bowlElem = ["bumrah", "siraj", "arshdeep"]
+const allPlyerElem =  batsElem.push(bowlElem);
+console.log(allPlyerElem);                 //💥Output: 4
+console.log(batsElem);                    //💥Output: [ 'virat', 'kohli', 'pant', [ 'bumrah', 'siraj', 'arshdeep' ] ]
+console.log(batsElem[3][1]);              //💥Output: siraj
+
+//🎁spread operator(...)
+//It is used to merge the number of array or object and return a new single array or object.
+const myIplBatsman = ["virat","dhoni","ishan",];
+const myIplBowlers = ["chahal","shami","siraj","kuldeep"];
+const mergeAllPlayers = [...myIplBatsman,...myIplBowlers];
+console.log(mergeAllPlayers);        //💥Output: ['virat','dhoni','ishan','chahal','shami','siraj','kuldeep']
+
+//😍how to check whether it is Array or String in array?
 //1st it checks is it array value or not.
-//🚩Array.isArray()
-console.log(Array.isArray("NIKHIL"));
+//🎁Array.isArray()
+console.log(Array.isArray("NIKHIL DAS"));       //💥Output: false  
 
-
-//2nd it converts that string value into an array.
-//🚩Array.from()
-console.log(Array.from("NIKHIL"));
+//🎁Array.from()
+//It can convert single string value into an array. Also it can convert object by it's key and value.
+console.log(Array.from("NIKHIL DAS"));      //💥Output: ['N', 'I', 'K', 'H','I', 'L', ' ', 'D','A','S']
 
 const myName = "Nihil Das";
-console.log(Array.isArray(myName));
+console.log(Array.isArray(myName));        //💥Output: false   
 
-const myTech = "ReactJS Developer";
-console.log(Array.from(myTech));
+const myTech = "Developer";
+console.log(Array.from(myTech));           //💥Output: ['D', 'e', 'v','e', 'l', 'o','p', 'e', 'r']
 
-
-//it converts all the variable value into an array.
-//🚩Array.of()
+//🎁Array.of()
+//it converts multiple string value into single/an array.
 const myProject1 = "ecommerce";
 const myProject2 = "calculator";
-console.log(Array.of(myProject1,myProject2));
+console.log(Array.of(myProject1,myProject2));    //💥Output: [ 'ecommerce', 'calculator' ] 
 
 
 //🚩Array Destructuring:
@@ -287,7 +315,7 @@ console.log(myBioss[0]);
 console.log(myBioss[1]);
 console.log(myBioss[2]);
 console.log(myBioss[3]);
-//Note: Above Here we have to metnion array[0] repeateldly.
+//Note: Above Here we have to metnion array[0] repeateldly/recursively.
 //      But below we used Array destructuring and there no need to use array[0] repeatedly,
 //      we can access only thorugh reference name.
 
@@ -298,7 +326,7 @@ console.log(skill);
 
 
 //🚩Array.from(data)
-//It converts any type of data into array.
+//It converts any type of data(i.e. string,object) into array .
 //check the example in file "dom.html"
 
 
