@@ -111,6 +111,7 @@ console.log(char11.concat(" ",char12));      //💥Output: anushka sharma
 
 //🎁split()-
 //split() method is used to convert the string into array.
+//Note: Also we can use Array.from() or Array.of()  -- check out in 06_array.js
 const char13 = "kiara advani"
 console.log(char13.split(" "));             //💥Output: [ 'kiara', 'advani' ]    
 const char14 = "k,a,t,r,i,n,a"
