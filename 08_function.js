@@ -1,17 +1,84 @@
+//🚩function:
+//A function is a block of code designed to perform particular task.
+//when function define at that time you need to call function then function can execute.
+
+//🎯why need function?
+//using function we can reuse code.
+//Define code once and use it many times, only change argument to produce different output.
+
+//🎯How to define function?   
+function myData(){                     //👈function define 
+    console.log("Developer Das");
+    console.log("frontend developer");
+}
+myData       //👈function's reference
+myData()     //👈function's execution/calling
+
+//🎯what is function parameter?
+//function parameter are the names listed in the function definition.
+//function parameter name can be string, number, boolean, null, undefined, symbol, array and object.
+
+//🎯what is function argument?
+//function argument are the rela values passed to the function.
+
 //🎈How to render function value in Simple Function🎈
-//1st way -- using parameter and argument:👇
+//1️⃣way -- using parameter and argument:👇
 function myLastName(lname){
     return lname;
 }
-console.log(myLastName("Das"));
+console.log(myLastName("Das"));        //💥Output: Das
 
+//🔔NOTE: "return" can't print value it return only result.
+//         only console.log() can print value. 
+//         so when using "return" at that time you need to use console.log also for print output.
 
-//2nd way -- using parameter and argument:👇
+//2️⃣way -- using parameter and argument:👇
 function myMiddleName(mname){
     console.log(mname);
 }
-myMiddleName("Ranjan");
+myMiddleName("Ranjan");           //💥Output: Ranjan
 
+//🕑Example1:
+function myBio(num1, num2){
+    console.log(num1 * num2);
+}
+const dayResult = myBio(10,20)
+console.log(dayResult);             //💥Output: undefined
+
+
+//🕑Example2:
+function myCar(){
+    let car1 = 2000
+    let car2 = 5000
+    return car1 + car2
+}
+console.log(myCar());             //💥Output: 7000
+
+
+//🕑Example3:
+function myHobby(hoby){
+    return `my passion is ${hoby}`
+}   
+console.log(myHobby("playing carrom"))          //💥Output: my passion is playing carrom
+
+
+//🕑Example4:
+function jooPark(animal){
+    return `${animal}`
+}
+console.log(jooPark())                    //💥Output: undefined  (not given value in argument)
+
+
+//🕑Example5:
+//🔔Important🔔-In this example we have not given value in argument but we can give a default value in parameter.
+function myJourney(vacation="goa"){
+    if(!vacation){
+        console.log("please give argument value")
+    }else{
+        console.log(`here trip to ${vacation}`)
+    }
+}
+myJourney()
 
 //🎈How to render function value in Arrow Function🎈
 
