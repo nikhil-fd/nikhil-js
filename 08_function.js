@@ -73,74 +73,82 @@ console.log(jooPark())                    //💥Output: undefined  (not given va
 //🔔Important🔔-In this example we have not given value in argument but we can give a default value in parameter.
 function myJourney(vacation="goa"){
     if(!vacation){
-        console.log("please give argument value")
+        console.log("please give vacation value")
+    }
+    return `Yeah! We got trip to ${vacation}`
+}
+console.log(myJourney());         //💥Output: Yeah! We got trip to goa                    
+//🔴OR🔴  (In below same above type code written only added else and didn't use return that's why it returns undefined)
+function myTrip(vacationtrip="thailand"){
+    if(!vacationtrip){
+        console.log("please give vacation value")
     }else{
-        console.log(`here trip to ${vacation}`)
+        console.log(`Yeah! We got trip to ${vacationtrip}`);
     }
 }
-myJourney()
+console.log(myTrip());           //💥Output: Yeah! We got trip to thailand
+                                //            undefined  (because of return)        
 
 //🎈How to render function value in Arrow Function🎈
-
-//1st way -- using parameter and argument:👇
+//1️⃣way -- using parameter and argument:👇
 const myJob = (developer) => {
     return developer;
 }
-console.log(myJob("React JS Frontend Developer"));
+console.log(myJob("React JS Frontend Developer"));        //💥Output: React JS Frontend Developer
 
-//2nd way -- using parameter and argument:👇
+
+//2️⃣way -- using parameter and argument:👇
 const mySalary = (salary) => {
     console.log(salary);
 }
-mySalary(35789);
+mySalary(35789);                      //💥Output: 35789
 
 
-//NOTE: After function execution "return" keyword returns the result of that function,
-//      Once "return" keword defined after that you can't render any output using console.log() or any others.
-//      You can do console.log() before "return" statement.
-//      Only "return" value we can do console.log().
+//🔔NOTE: After function execution "return" keyword returns the result of that function,
+//        Once "return" keword defined after that you can't render any output using console.log() or any others.
+//        You can do console.log() before "return" statement.
+//        Only "return" value we can do console.log().
 
-//Example 1:👇
+//🕑Example 1:
 function myDetails(a, b){
     let result = a + b;
     return result;
     // console.log(result);
 }
 let result = myDetails(8, 9);
-console.log(result);
+console.log(result);              //💥Output: 17
 
 
-//Example2:👇
+//🕑Example2:
 //Jodi amey khali "return" karideba tahele ouput render heboni.
-//After return you have to mention what you want to do that "return" value,
+//After return you have to mention what you want to do "return" value,
 //like you want to do console.log() or simply store that value in a variable.
 //In this example i rendered that "return" value in console.log().
 //console.log() means print. 
-function myBio(uname){
+function myBook(uname){
     if(uname === undefined){
         console.log("(Plese enter a username)");
     }
-    return `i am ${uname} as a React JS developer`;
+    return `i am ${uname} working as a React JS developer`;
 }
 // myBio("Nikhil Das");
-console.log(myBio("Nikhil"));
-
-//NOTE: In function we have mentioned (parameter) but we are not passing any value (in Argument),
-//      then it returns "undefined". 
-
-//OR
-
+console.log(myBook("Nikhil"));           //💥Output: i am Nikhil working as a React JS developer         
+//🔴OR🔴
 function myBio(uname){
     if(!uname){
-        console.log("(Plese enter a username)");
+        console.log("Plese enter a username");
     }
-    return `i am ${uname} as a React JS developer`;
+    return `${uname}`
 }
 // myBio("Nikhil Das");
-console.log(myBio());
+console.log(myBio());       //💥Output: Plese enter a username
+                            //          undefined  (myBio() argument didn't pass any value that's why got undefined)
+
+//🔔NOTE: In function we have mentioned (parameter) but we are not passing any value (in Argument),
+//        then it returns "undefined". 
 
 
-//Example3:👇
+//🕑Example3:👇
 //Here in parameter we are passing a default value so that if we are not passing any value in,
 //argument then it can't return "undefined" because already we passed a default value in parameter.
 //Suppose you are passing any value in argument then that value will be override in existing parameter value.
@@ -151,92 +159,100 @@ console.log(mySkill());
 console.log(mySkill("SAP"));
 
 //******************************************************************************************** */
-//🎈Rest Parameter🎈
+//🎁Rest Parameter(...)
+// A single parameter(formal parameter) can allow multiple actual value/argument value.
+// Rest parameter return these multiple value in an array.
+// If you have multiple parameter, in this case use rest parameter in the end of parameter list.
+
 // Without Rest parameter, if we are passing multiple value in argument then it render only,
 // 1st argument value it can't render all multiple value.
 // So, in this case we use Rest Parameter(...), if we passing multiple value in argument it can 
 // render all value and it retuns those value in an array.
 
-//With Rest Parameter👇
+//🕑Example1: With Rest Parameter👇
 function todayExpectScore(...score){
     return score;
 }
-console.log(todayExpectScore(250,300,350));
+console.log(todayExpectScore(250,300,350));       //💥Output: [250,300,350]
+
+
+//🕑Example2:
+function myCompany(...compname){
+    console.log(compname);
+}
+myCompany("dxc","capgemini","accenture","pwc")        //💥Output: ['dxc', 'capgemini', 'accenture', 'pwc']
+
+
+//🕑Example3:
+function myCompanyList(company1,company2,...favcompany){
+    return `${favcompany} ${company1} ${company2}`
+}
+console.log(myCompanyList("dxc",1,"pwc",2,"capgemini",3));   //💥Output: pwc,2,capgemini,3 dxc 1
+
 
 //🎯OR(Interview Question)
-//Here 100 occupied for value1 and 200 occupied for value2 and then remaining all occupied by value3.
+//Here 100 occupied for value1 and 200 occupied for value2 and then remaining all occupied by value3 i.e. rest parameter.
+//🕑Example4:
 function multiValue(value1, value2, ...value3){
     return value3;
 }
-console.log(multiValue(100,200,300,400,500));
+console.log(multiValue(100,200,300,400,500));      //💥Output: [300,400,500]
 
 
-//Without Rest Parameter👇
+//🕑Example5: Without Rest Parameter👇
 function todayNotiMsg(msg){
     return msg;
 }
-console.log(todayNotiMsg(250,300,350));
+console.log(todayNotiMsg(250,300,350));          //💥Output: 250
 
-//********************************************************************************************* */
 
+//🎁Use object in function argument.
 //🎈How to Access Object value in Function🎈
-//So we can access object in function using 3 method.
+//So we can access object in function's argument/function in 2 method.
     //1️⃣ We can take object name as a parameter in function but in parmeter don't keep same object name just change the object name.
-    //2️⃣ We can take object name as an argument in function.
-    //3️⃣ We can directly pass object in function argument.
+    //2️⃣ We can directly pass object in function's argument.
 
 //Mehod1️⃣    
 const ourState = {
     id: 25,
     name: "odisha"
 };
-//here below instead of "ourState" we kept "myState" object name bcz same object name we can't mention in parameter,
-// that's why object name changed and gave "myState".
-function callState(myState){
+//here below instead of "ourState" we kept "myState" as object name bcz same object name we can't mention in parameter,
+// that's why object name👇 changed and gave "myState".
+function callState(myState){       
     console.log(`my state code is ${myState.id} and state name is ${myState.name}`);
 }
-callState(ourState);
+callState(ourState);               //💥Output: my state code is 25 and state name is odisha
 
 
 //Mehod2️⃣
-const ourDist = {
-    code: 1,
-    name: "bls"
-};
-
-function distList(dist){
-    return dist;
-}
-console.log(distList(ourDist));
-
-
-//Mehod3️⃣
-function myHotels(rooms){
+function myHotels(rooms){        //👈Rule: This "rooms" is object's name  
     console.log(`Room no is ${rooms.id} and name is ${rooms.name}`)
 }
 myHotels({
     id: 32,
     name: "nikhil"
-});
+});                       //💥Output: Room no is 32 and name is nikhil
 
 
-//********************************************************************************************** */
-
+//🎁Use array in function argument.
 //🎈How to Access Array value in Function🎈
 //we can access array in fucntion in two ways
-    //1️⃣ we can pass array name as an argument in function and will return value in array.
-    //2️⃣ Also we can pass array directly in argument.
+    //1️⃣ We can take array name as a parameter in function but in parmeter don't keep same array name just change the array name.(same like object case)
+    //2️⃣ Also we can pass array directly in function's argument.
 
 //Method1️⃣    
 const myMarks = [78, 85, 56, 68];
-function classResult(marks){
-    return marks;
+function classResult(marks){      //👈Rule - changed array name as "marks" instead of "myMarks" (same like object case)
+    return marks[2];
 }
-console.log(classResult(myMarks));
+console.log(classResult(myMarks));        //💥Output: 56 
 
 
 //Method2️⃣
-function myPincode(pincode){
-    console.log(pincode);
+function myPincode(pincode){        //👈Rule: This "pincode" is array's name
+    console.log(pincode[1]);
 }
-myPincode([756036,560100,560037]);
+myPincode([756036,560100,560037]);        //💥Output: 560100
+
+
