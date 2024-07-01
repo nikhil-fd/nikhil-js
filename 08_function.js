@@ -219,17 +219,17 @@ function todayNotiMsg(msg){
 console.log(todayNotiMsg(250,300,350));          //💥Output: 250
 
 
-//🎁Use object in function argument.
-//🎈How to Access Object value in Function🎈
+//🎁How to Access Object value in Function🎈
 //So we can access object in function's argument/function in 2 method.
     //1️⃣ We can take object name as a parameter in function but in parmeter don't keep same object name just change the object name.
     //2️⃣ We can directly pass object in function's argument.
 
-//Mehod1️⃣    
+//Mehod1️⃣    (If object defined outside function) 
 const ourState = {
     id: 25,
     name: "odisha"
 };
+//👇Rule-
 //here below instead of "ourState" we kept "myState" as object name bcz same object name we can't mention in parameter,
 // that's why object name👇 changed and gave "myState".
 function callState(myState){       
@@ -238,7 +238,7 @@ function callState(myState){
 callState(ourState);               //💥Output: my state code is 25 and state name is odisha
 
 
-//Mehod2️⃣
+//Mehod2️⃣    (If object defined in function argument) 
 function myHotels(rooms){        //👈Rule: This "rooms" is object's name  
     console.log(`Room no is ${rooms.id} and name is ${rooms.name}`)
 }
@@ -248,13 +248,12 @@ myHotels({
 });                       //💥Output: Room no is 32 and name is nikhil
 
 
-//🎁Use array in function argument.
-//🎈How to Access Array value in Function🎈
+//🎁How to Access Array value in Function🎈
 //we can access array in fucntion in two ways
     //1️⃣ We can take array name as a parameter in function but in parmeter don't keep same array name just change the array name.(same like object case)
     //2️⃣ Also we can pass array directly in function's argument.
 
-//Method1️⃣    
+//Method1️⃣     (If array defined outside function)    
 const myMarks = [78, 85, 56, 68];
 function classResult(marks){      //👈Rule - changed array name as "marks" instead of "myMarks" (same like object case)
     return marks[2];
@@ -262,7 +261,7 @@ function classResult(marks){      //👈Rule - changed array name as "marks" ins
 console.log(classResult(myMarks));        //💥Output: 56 
 
 
-//Method2️⃣
+//Method2️⃣    (If array defined in function argument) 
 function myPincode(pincode){        //👈Rule: This "pincode" is array's name
     console.log(pincode[1]);
 }
