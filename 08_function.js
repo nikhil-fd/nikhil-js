@@ -90,10 +90,8 @@ console.log(myTrip());           //💥Output: Yeah! We got trip to thailand
                                 //            undefined  (because of return)        
 
 
-//🎁Arrow function:                                
+//🎁Arrow function:   (for arrow function follow 10_arrow_function_this_object.js)                             
 //🎈How to render function value in Arrow Function🎈
-//In arrow function if you use {} caliibraces then you have to use "return" keyword.
-//In arrow function if you use () paranthesis then no need to use "return" keyword.
 //1️⃣way -- using parameter and argument:👇
 const myJob = (developer) => {
     return developer;
