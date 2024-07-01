@@ -1,4 +1,5 @@
-//🚩object: object is a collection of properties, properties contains key and value pair
+//🚩object: 
+//          object is a collection of properties, properties contains key and value pair
 //          properties value can be a fucntion and different data types.
 //          object defined in two ways 1️⃣object literals 2️⃣object constructor
 //          object literal not create single ton but object constructor create single ton
@@ -39,7 +40,7 @@ console.log(myDetails["myFunc"]());                //💥Output: Be prepare for 
 console.log(myDetails.myFunc());                  //💥Output: Be prepare for board exam 3.  
 
 
-//🕑Example:   In object function can define without key and with key
+//🕑Example:   In object function can define without key and with key.
 const myCompany = {
     name: "dxc technology",
     profile: "React Developer",
@@ -190,7 +191,7 @@ const reactObj = ({id}) => {
 }
 reactObj(id="6032niil")
 
-//🎁"this" concept:
+//🎁"this" concept: (also can follow 10_arrow_function_this_object.js)
 //👉"this" refers to object and it returns current context.
 //👉 current context means inside callibrace whatever context(context means value) is their i.e. called current context.
 //👉"this" object can have different values depends on where it is placed.

@@ -1,16 +1,24 @@
+//🚩Arrow function:
 // Before learning arrow function 1st we need to understand about "this" object.
 
 //🚩"this":🚩 "this" keyword is used to return current context and it refers to object.
-//"this" return different value because it depends on where it is placed.
-//it returns current context in 2 situation:
-//1: if inside an object used a simple function and inside that function used "this" then it returns current context.
-//2: it returns current context if the variable is defined globally that means variable is declared outside the function.
+//👉"this" refers to object and it returns current context.
+//👉 current context means inside callibrace whatever context(context means value) is their i.e. called current context.
+//👉"this" object can have different values depends on where it is placed.
+//👉"this" can use only inside object, if you use inside function then it unable to return current context.
 
-//it returns window object in 3 situation:
+//"this" returns current context in 1 place:👇
+//1️⃣Inside object if there is a simple function defined so in that simple function if we use "this" it returns "current context",
+//  instead of simple function if we use arrow function then it returns window object not current context.
+
+//If the variable is declared globally that means outside the function here it returns "current context".❌(but in real time it not true.)
+
+//"this" returns window object in 3 situation:
 //1: suppose direct you are printing "this" using console.log(this).
 //2: inside an object if you define a arrow function and use "this" inside that arrow then it returns window object.
 //3: when define "this" inside a normal function then it returns window object. 
 
+//Place1️⃣
 const myBio = {
     username: "Nikhil",
     price: 399,
@@ -19,14 +27,14 @@ const myBio = {
         console.log(this);
     }
 }
-myBio.welcomemsg();
-console.log(this);
+myBio.welcomemsg();                        //💥Output: Helo Nikhil welcome to our website
+console.log(this);                         //💥Output: 
 
 //Returing window object(global object).
 function f1(){
     console.log(this);
 }
-f1();
+f1();                            //💥Output: 
 
 //When "this" define inside arrow function and access the variable value then it returns {} undefined.
 //if you direct print "this" then it is returning {} empty object.

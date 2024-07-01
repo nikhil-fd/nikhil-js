@@ -89,7 +89,11 @@ function myTrip(vacationtrip="thailand"){
 console.log(myTrip());           //💥Output: Yeah! We got trip to thailand
                                 //            undefined  (because of return)        
 
+
+//🎁Arrow function:                                
 //🎈How to render function value in Arrow Function🎈
+//In arrow function if you use {} caliibraces then you have to use "return" keyword.
+//In arrow function if you use () paranthesis then no need to use "return" keyword.
 //1️⃣way -- using parameter and argument:👇
 const myJob = (developer) => {
     return developer;
@@ -102,6 +106,17 @@ const mySalary = (salary) => {
     console.log(salary);
 }
 mySalary(35789);                      //💥Output: 35789
+
+//🕑Example:
+const myPot = (num1, num2) => {
+    return num1 + num2
+}
+console.log(myPot(10,20), "arrow function");           //💥Output: 30 arrow function
+//OR
+//🎯Implicity return:
+//In arrow function if there is one line of code then no need to mention {} and return i.e. called implicity return.
+const myHot = (num3, num4) => num3 * num4;
+console.log(myHot(50,60), "arrow function implicity return");     //💥Output: 3000 arrow function implicity return
 
 
 //🔔NOTE: After function execution "return" keyword returns the result of that function,
