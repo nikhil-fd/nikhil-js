@@ -330,6 +330,27 @@ console.log(skill);
 //check the example in file "dom.html"
 
 
+//🎁How to Access Array value in Function🎈
+//we can access array in fucntion in two ways
+    //1️⃣ We can take array name as a parameter in function but in parmeter don't keep same array name just change the array name.(same like object case)
+    //2️⃣ Also we can pass array directly in function's argument.
+
+//Method1️⃣     (If array defined outside function)    
+const myMarks = [78, 85, 56, 68];
+function classResult(marks){      //👈Rule - changed array name as "marks" instead of "myMarks" (same like object case)
+    return marks[2];
+}
+console.log(classResult(myMarks));        //💥Output: 56 
+
+
+//Method2️⃣    (If array defined in function argument) 
+function myPincode(pincode){        //👈Rule: This "pincode" is array's name
+    console.log(pincode[1]);
+}
+myPincode([756036,560100,560037]);        //💥Output: 560100
+
+
+
 //🎯Check Prototype of Array.
 // const myArr = [1,2,3,5]
 // myArr
