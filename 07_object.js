@@ -195,9 +195,11 @@ reactObj(id="6032niil")
 //👉 current context means inside callibrace whatever context(context means value) is their i.e. called current context.
 //👉"this" object can have different values depends on where it is placed.
 //👉"this" can use only inside object, if you use inside function then it unable to return current context.
-//"this" returns current context in 2 place:👇
-//1️⃣If the variable is declared globally that means outside the function here it returns "current context".
-//2️⃣Inside object if there is a simple function defined so in that simple function if we use "this" it returns "current context".
+//"this" returns current context in 1 place:👇
+//1️⃣Inside object if there is a simple function defined so in that simple function if we use "this" it returns "current context",
+//  instead of simple function if we use arrow function then it returns window object not current context.
+
+//If the variable is declared globally that means outside the function here it returns "current context".❌(but in real time it not true.)
 
 //Place1️⃣ (This process is correct✅)
 const userDetails = {
