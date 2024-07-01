@@ -254,6 +254,34 @@ function myHero(){
 myHero();                   //💥Output: global object and some methods
 
 
+//🎁How to Access Object value in Function🎈
+//So we can access object in function's argument/function in 2 method.
+    //1️⃣ We can take object name as a parameter in function but in parmeter don't keep same object name just change the object name.
+    //2️⃣ We can directly pass object in function's argument.
+
+//Mehod1️⃣    (If object defined outside function) 
+const ourState = {
+    id: 25,
+    name: "odisha"
+};
+//👇Rule-
+//here below instead of "ourState" we kept "myState" as object name bcz same object name we can't mention in parameter,
+// that's why object name👇 changed and gave "myState".
+function callState(myState){       
+    console.log(`my state code is ${myState.id} and state name is ${myState.name}`);
+}
+callState(ourState);               //💥Output: my state code is 25 and state name is odisha
+
+//Mehod2️⃣    (If object defined in function argument) 
+function myHotels(rooms){        //👈Rule: This "rooms" is object's name  
+    console.log(`Room no is ${rooms.id} and name is ${rooms.name}`)
+}
+myHotels({
+    id: 32,
+    name: "nikhil"
+});  
+
+
 //🟠🔴🟡Check all prototype of object
 // const obj = {nmae: "sak"}
 // undefined
