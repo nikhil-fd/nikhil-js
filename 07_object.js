@@ -39,6 +39,21 @@ console.log(myDetails["myFunc"]());                //💥Output: Be prepare for 
 console.log(myDetails.myFunc());                  //💥Output: Be prepare for board exam 3.  
 
 
+//🕑Example:   In object function can define without key and with key
+const myCompany = {
+    name: "dxc technology",
+    profile: "React Developer",
+    company(){
+        console.log(`${this.name}`);
+    },
+    exitFunc: function(){
+        console.log(`${this.profile} people are existed.`);
+    }
+}
+myCompany.company();                    //💥Output: dxc technology
+myCompany.exitFunc();                  //💥Output: React Developer people are existed.
+
+
 //🎁"Object.values()"
 //we can access all value using "Object.values()" method and it stores all vlaue in an array.
 console.log(Object.values(myDetails));   //💥Output: ['virat kohli','Nikhil', 3, true, 11, ['flipkart', 'myntra'], { tiffin: 'milton', gbox: 'natraj', scale: 2 },undefined]
@@ -175,13 +190,16 @@ const reactObj = ({id}) => {
 }
 reactObj(id="6032niil")
 
-//🎁Object Literal: "this" concept
+//🎁"this" concept:
 //👉"this" refers to object and it returns current context.
+//👉 current context means inside callibrace whatever context(context means value) is their i.e. called current context.
 //👉"this" object can have different values depends on where it is placed.
+//👉"this" can use only inside object, if you use inside function then it unable to return current context.
 //"this" returns current context in 2 place:👇
 //1️⃣If the variable is declared globally that means outside the function here it returns "current context".
 //2️⃣Inside object if there is a simple function defined so in that simple function if we use "this" it returns "current context".
 
+//Place1️⃣ (This process is correct✅)
 const userDetails = {
     userName: "niil",
     signedIn: true,
@@ -199,6 +217,38 @@ console.log(this.loginAttempt);            //💥Output: 5
 //👉Above here we are accessing object properties using "this" keyword in outside object so,
 //  in this situation "this" can't access it returns "undefined". Here we use only object_name.
 console.log(userDetails.loginAttempt);     //💥Output: 5
+
+
+//Place2️⃣   (This process is not correct❌)
+let saluteMsg = {id: 3659, msg: "Good Morning"}
+function mySalute(){
+    console.log(this.msg)
+}
+mySalute();                 //💥Output: undefined
+
+//🕑Example1:
+function myBoy(){
+    let hisName = "Anirudh"
+    console.log(this.hisName, "myBoy function");
+}
+myBoy();                   //💥Output: undefined
+
+
+//🔔NOTE:
+//1️⃣If you use "this" object in browser console.log then it returns window object.
+//goto browser console-and then type below-
+console.log(this);       //💥Output: Window {0: Window, window: Window, self: Window, document: document, name: '', location: Location, …}
+
+//2️⃣If you use "this" object in node enviornment(Node.js) console.log then it returns empty object {}.
+console.log(this)
+//goto cmd/bash--node 07_object.js       💥Output: {}
+
+//3️⃣If you use "this" inside a simple function, then in node enviorment "this" returns some method and global object.
+//   method like setTimeout, clearTimeout, setInterval, clearInterval and global object like fetch, navigator etc.
+function myHero(){
+    console.log(this);
+}
+myHero();                   //💥Output: global object and some methods
 
 
 //🟠🔴🟡Check all prototype of object
