@@ -16,6 +16,16 @@
 //                 node enviornment -- Global execution context is different
 
 
+//👇Execution Context Flow/Process after run code file👇
+//1️⃣Global Execution Context created inside CallStack/Execution Stack
+//2️⃣Memory Creation Phase created inside CallStack/Execution Stack
+//3️⃣Execution Phase created inside CallStack/Execution Stack
+//4️⃣After execution completed then that execution context gets deleted.
+
+//🔔Note: If you want more better understanding regarding "Execution Context" then check out Thapa Technical Event Loop vdo,
+//         image in thapa technical js folder.
+
+
 
 
 
