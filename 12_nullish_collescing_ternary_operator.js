@@ -59,14 +59,21 @@ console.log(myArr4);                        //💥Output: [ 'nikhil', 'virat', '
 //It is the shortest way of if-else condition.
 //Here we can write if-else condition in one line.
 //It is the only operator in JS it takes 3 operand.
-//Syntax:
+//In ternary operator condition's () paranthesis and if_statement's or else_statement's ""(double qute) is not mandatory it is complete optional.
+//👇Syntax:
 (condition)?"true_statement":"false_statement"
+//OR
+condition ? true_statement:false_statement;
 
-//Example1:
+
+//🕑Example1:
 const myAge = 25;
-console.log((myAge > 18)?"eligible for vote":"not eligible");
+console.log((myAge > 18)?"eligible for vote":"not eligible");        //💥Output: eligible for vote
 
-
-//Example2:
+//🕑Example2:
 const myBloodPressure = 220;
-(myBloodPressure < 300)? console.log("Pressure is low"):console.log("Pressure is high");
+(myBloodPressure < 300)? console.log("Pressure is low"):console.log("Pressure is high");  //💥Output: Pressure is low
+
+//🕑Example3:
+const myTime = 1230
+myTime >= 1130 ? console.log("It's time for my lunch"):console.log("It's not lunch time"); //💥Output: it's time for lunch time
