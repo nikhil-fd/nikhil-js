@@ -6,6 +6,11 @@
 //using function we can reuse code.
 //Define code once and use it many times, only change argument to produce different output.
 
+//🎁Callback function?
+//👉Callback function is a function that passed as an argument to another function or method and it is executed after some operation,
+//   has been completed.
+//👉Callback function mostly used to handle asynchronous operation such as reading files, making network request and handling events.
+
 //🎯How to define function?   
 function myData(){                     //👈function define 
     console.log("Developer Das");
