@@ -99,8 +99,8 @@ if(year%4 === 0){
 //   if we not use break then wherever the case condition gets matched from that case to till the end all cases will get print include default.
 
 //🎁"continue":
-//It keeps on checkig cases wherever case's condition get matched then "continue" will skip that case and keep on checking
-//ahead, remaining other cases except default.    
+// "continue" is used to skip the current scope/case where condition gets matched with the specified value, 
+//  and keep on checking ahead, remaining other cases except default.    
 
 //🎁return:
 //"return" is used to stop execution and terminate the program.
