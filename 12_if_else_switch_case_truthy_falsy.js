@@ -72,14 +72,14 @@ if(haveLoggedInEmail || haveLoggedInGoogle){
 // A Switch is execute only the block of statment that matches the given value or expression
 //🎁"break": 
 //  "break" is used to terminate the current block or current case which case value gets matched with the given condition 
-//    and then it won't check ahead, remaining other cases. 
+//    and then it won't check ahead, remaining other cases except default. 
 
 //🎁If not use "break":
-//   if we not use break then wherever the case condition gets matched from that case to till the end all cases will get print.
+//   if we not use break then wherever the case condition gets matched from that case to till the end all cases will get print include default.
 
 //🎁"continue":
 //It keeps on checkig cases wherever case's condition get matched then "continue" will skip that case and keep on checking
-//ahead, remaining other cases.    
+//ahead, remaining other cases except default.    
 
 //🎁return:
 //"return" is used to stop execution and terminate the program.
