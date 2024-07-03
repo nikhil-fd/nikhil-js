@@ -171,6 +171,119 @@ for(let x = 10; x <= 30; x = x + 10){
 // 30 * 9 = 270
 // 30 * 10 = 300
 
+//🎯Print table 2 to 10 till 10 each table except table 5 and 7.
+for(let i = 2; i <= 10; i++){
+    console.log(`Table of ${i}`);
+    if(i === 5){
+        console.log(`Don't print table 5`);
+        continue;
+    }else if(i === 7){
+        console.log(`Don't print table 7`);
+        continue;
+    }
+    for(let j = 1; j <= 10; j++){
+        console.log(`${i} * ${j} = ${i * j}`);
+    }
+}
+//👆OR👇  (instead of if-else used switch-case)
+for(let i = 2; i <= 10; i++){
+    console.log(`Table of ${i}`);
+    switch (i){
+        case 5:
+            console.log(`Don't print Table 5`);
+            continue;
+            case 7:
+                console.log(`Don't print Table 7`);
+                continue;
+    }
+    for(let j = 1; j <= 10; j++){
+        console.log(`${i} * ${j} = ${i * j}`);
+    }
+}
+//💥Output:👇
+// Table of 2
+// 2 * 1 = 2
+// 2 * 2 = 4
+// 2 * 3 = 6
+// 2 * 4 = 8
+// 2 * 5 = 10
+// 2 * 6 = 12
+// 2 * 7 = 14
+// 2 * 8 = 16
+// 2 * 9 = 18
+// 2 * 10 = 20
+// Table of 3
+// 3 * 1 = 3
+// 3 * 2 = 6
+// 3 * 3 = 9
+// 3 * 4 = 12
+// 3 * 5 = 15
+// 3 * 6 = 18
+// 3 * 7 = 21
+// 3 * 8 = 24
+// 3 * 9 = 27
+// 3 * 10 = 30
+// Table of 4
+// 4 * 1 = 4
+// 4 * 2 = 8
+// 4 * 3 = 12
+// 4 * 4 = 16
+// 4 * 5 = 20
+// 4 * 6 = 24
+// 4 * 7 = 28
+// 4 * 8 = 32
+// 4 * 9 = 36
+// 4 * 10 = 40
+// Table of 5
+// Don't print Table 5
+// Table of 6
+// 6 * 1 = 6
+// 6 * 2 = 12
+// 6 * 3 = 18
+// 6 * 4 = 24
+// 6 * 5 = 30
+// 6 * 6 = 36
+// 6 * 7 = 42
+// 6 * 8 = 48
+// 6 * 9 = 54
+// 6 * 10 = 60
+// Table of 7
+// Don't print Table 7
+// Table of 8
+// 8 * 1 = 8
+// 8 * 2 = 16
+// 8 * 3 = 24
+// 8 * 4 = 32
+// 8 * 5 = 40
+// 8 * 6 = 48
+// 8 * 7 = 56
+// 8 * 8 = 64
+// 8 * 9 = 72
+// 8 * 10 = 80
+// Table of 9
+// 9 * 1 = 9
+// 9 * 2 = 18
+// 9 * 3 = 27
+// 9 * 4 = 36
+// 9 * 5 = 45
+// 9 * 6 = 54
+// 9 * 7 = 63
+// 9 * 8 = 72
+// 9 * 9 = 81
+// 9 * 10 = 90
+// Table of 10
+// 10 * 1 = 10
+// 10 * 2 = 20
+// 10 * 3 = 30
+// 10 * 4 = 40
+// 10 * 5 = 50
+// 10 * 6 = 60
+// 10 * 7 = 70
+// 10 * 8 = 80
+// 10 * 9 = 90
+// 10 * 10 = 100
+
+
 //🎁for..loop used in Array👈
 let myArr = ["virat","rahul","jaddu","iyer"];
 for(let score = 0; score < myArr.length; score++){
