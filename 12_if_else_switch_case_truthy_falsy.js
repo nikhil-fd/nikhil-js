@@ -4,9 +4,9 @@
 // when this if condition will get true then it will enter into scope, orelse if condition false then it won't enter into scope.
 // Remember 1 thing always think in condition whether we are doing questioning the value in yes or no, yes means true and no means false.
 // In condition we always check value using these operator   "==", "===", "<", ">", "<=", ">=", "!=", "!==","true","false"
-// if (condition) {
+if (condition) {
 
-// }
+}
 
 //🕑example:
 if(2 == "2"){
@@ -110,14 +110,14 @@ if(year%4 === 0){
 
 
 //👉Syntax:
-// switch (key) {            //👈key is variable's name
-//     case value:          //👈value is variable's value
+switch (key) {            //👈key is variable's name
+    case value:          //👈value is variable's value
         
-//         break;
+        break;
 
-//     default:
-//         break;
-// }
+    default:
+        break;
+}
 
 //🕑Example1:
 const month = "november";
