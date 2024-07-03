@@ -4,9 +4,9 @@
 // when this if condition will get true then it will enter into scope, orelse if condition false then it won't enter into scope.
 // Remember 1 thing always think in condition whether we are doing questioning the value in yes or no, yes means true and no means false.
 // In condition we always check value using these operator   "==", "===", "<", ">", "<=", ">=", "!=", "!==","true","false"
-if (condition) {
+// if (condition) {
 
-}
+// }
 
 //🕑example:
 if(2 == "2"){
@@ -68,8 +68,29 @@ if(haveLoggedInEmail || haveLoggedInGoogle){
 }
 
 
+//🕑Example3: Thapa Yechnical🚨
+//Check which year is leap year?
+//Leap Year Formula: if the year is divided by 4 and remainder gets 0 then it is leap year.
+//                   if the year is divided by 100 and remainder gets 0 then it is not a leap year.
+//                   if the year is divided by 400 and remainder gets 0 then it is leap year.
+let year = 2025;
+if(year%4 === 0){
+    if(year%100 === 0){
+        if(year%400 === 0){
+            console.log(`The year ${year} is a leap year`);
+        }else{
+            console.log(`The year ${year} is not a leap year`);
+        }
+    }else{
+        console.log(`The year ${year} is a leap year`);
+    }
+}else{
+    console.log(`The year ${year} is not a leap year`);
+}
+
+
 //🚩Switch-Case Statement🚩
-// A Switch is execute only the block of statment that matches the given value or expression
+// A Switch statement execute only the block of statment that matches the given value or expression.
 //🎁"break": 
 //  "break" is used to terminate the current block or current case which case value gets matched with the given condition 
 //    and then it won't check ahead, remaining other cases except default. 
@@ -89,14 +110,14 @@ if(haveLoggedInEmail || haveLoggedInGoogle){
 
 
 //👉Syntax:
-switch (key) {            //👈key is variable's name
-    case value:          //👈value is variable's value
+// switch (key) {            //👈key is variable's name
+//     case value:          //👈value is variable's value
         
-        break;
+//         break;
 
-    default:
-        break;
-}
+//     default:
+//         break;
+// }
 
 //🕑Example1:
 const month = "november";
@@ -118,6 +139,25 @@ switch(month){
             break;
     
 }                                      //💥Output: This is birthday month
+
+
+//🕑Example2: Thapa Technical🚨
+let area = "triangle";
+let h=10, b=20, w=30, l=40, PI=3.142, r=50;
+switch (area){
+    case "circle":
+        console.log(PI*r*r);
+        break;
+        case "reactangle":
+            console.log(w*l);
+            break;
+            case "triangle":
+                console.log(h*b/2);
+                break;
+                default:
+                    console.log("Please enter the valid area");
+                    break;
+}                                                                        //💥Output: 100
 
 
 //🚩Truthy & Falsy Value🚩
