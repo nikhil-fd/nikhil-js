@@ -527,3 +527,10 @@ for(let [key, value] of myData){                 //👈 here you can keep your o
 }
 
 
+//🎯Can you use [key, value] in for..of on simple object? 
+//Ans: No.
+const mycars = {name: "jaguar", price: 358966, model: 2022}
+for(const [key, value] of mycars){
+    console.log(value);                         //💥Output: error
+}
+
