@@ -90,7 +90,9 @@ if(year%4 === 0){
 
 
 //🚩Switch-Case Statement🚩
-// A Switch statement execute only the block of statment that matches the given value or expression.
+//  A Switch statement execute only the block of statment that matches the given value or expression.
+//👉 "break", "continue" we can use in "if-else" and "switch-case" as well.
+
 //🎁"break": 
 //  "break" is used to terminate the current block or current case which case value gets matched with the given condition 
 //    and then it won't check ahead, remaining other cases except default. 
