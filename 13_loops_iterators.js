@@ -443,6 +443,8 @@ for(let games in topGames){
 // forEach() loop uses callback function.
 // Callback function is a function that is passed as an argument to another function or method and it is executed
 // after some operation has been completed.  
+//👉 forEach() loop returns value without mutating the original array, same as map() method. But the difference between,
+//   forEach() and map() is returning value forEach() return "undefined" whereas map() return "element in a new array".
 
 //🔔Syntax:
 //1️⃣
@@ -455,8 +457,13 @@ Array.forEach((element, index, array) => {
 })                                         //💥Output: undefined (store this forEach() in a variable and use console.log() then it returns "undefined")     
 
 
+//🕑Example1: forEach() return value without mutating the original array
+const myBday = [1992, 1993, 1994]
+myBday.forEach((elem) => console.log(elem + 2))          //💥Output: 1994 1995 1996
+console.log(myBday);                              //💥Output: [1992, 1993, 1994]   (without mutating the original array)
 
-//🕑Example1: forEach() value store in variable
+
+//🕑Example2: forEach() value store in variable
 const myCourses = ["sap","react","python","java"];
 const storeValues = myCourses.forEach((elem, index, array) => {
     return(`${elem} ${index} ${array}`);
@@ -464,7 +471,7 @@ const storeValues = myCourses.forEach((elem, index, array) => {
 console.log(storeValues);                  //💥Output: undefined
 
 
-//🕑Example2:
+//🕑Example3:
 const allExam = ["neet", "upsc", "jee", "cad"]
 allExam.forEach((elem, index, array) => {
     console.log(`${elem} -- ${index} -- ${array}`);
@@ -476,7 +483,7 @@ allExam.forEach((elem, index, array) => {
 // cad -- 3 -- neet,upsc,jee,cad
 
 
-//🕑Example3: forEach() here used function() without name i.e. call back funciton
+//🕑Example4: forEach() here used function() without name i.e. call back funciton
 const myGames = [
     {game: "counter-strike", type: "action"},
     {game: "igi", type: "action"},
@@ -489,7 +496,7 @@ myGames.forEach(function(elem){
 })
 
 
-//🕑Example4: forEach() here used arrow function () => and it is not haviing any name i.e. also call back funciton
+//🕑Example5: forEach() here used arrow function () => and it is not haviing any name i.e. also call back funciton
 const myCars = [
     {brand: "bmw", model: "X5", price: 15000},
     {brand: "audi", model: "R8", price: 55000},
