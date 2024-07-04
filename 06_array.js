@@ -100,7 +100,7 @@ console.log(myBday);                                //💥Output: [1992, 1993, 1
 
 //🎁Difference Between map() method & forEach()🎁     
 // The main difference between map() and forEach() is returning value.
-//✅map() --1. map() mehod is used to return the element in a new array when use "return" statement.
+//✅map() --1. map() mehod is used to return the "element" in a new array when use "return" statement. map() also return "index" and "array".
 //          2. When not storing map() method into a variable and use console.log instead of "return" statement at that time
 //             it returns value without array.
 //          3. map() method returing value without mutating the original array.
