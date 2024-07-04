@@ -81,14 +81,36 @@ const moresPlay = myGoPlayers.forEach((element, index) => {
     console.log(element);      //💥Output: Undefined
 });
 
+//🕑Example:
+//forEach() returning value without mutating the original array.
+const myBday = [1992, 1993, 1994]
+myBday.forEach((elem) => console.log(elem + 2))            //💥Output: 1994 1995 1996
+console.log(myBday);                                //💥Output: [1992, 1993, 1994]
 
-//💯Difference Between map() method & forEach().
-//✅map() --1. map() mehod is used to return the element in a new array without mutating the original array,
-//             when storeing the map() method into a variable.
-//          2. When not storing map() method into a variable at that time it returns only value not in array format.
+//🕑Example:
+//map() returning value without mutating the original array.
+const meBday = [1992, 1993, 1994]
+myBday.map((elem) => console.log(elem + 2))            //💥Output: 1994 1995 1996
+console.log(myBday);                                //💥Output: [1992, 1993, 1994]
 
-//✅forEach() --1. whereas forEach() method returns undefined when storing the forEach() method into a variable.
-//              2. When not storing forEach() method into a variable at that time it returns only value not in array format.
+
+
+//🚨🚨Follow file no. "14_array_methods.js" for better explained map() and forEach()🚨🚨
+
+
+//🎁Difference Between map() method & forEach()🎁     
+// The main difference between map() and forEach() is returning value.
+//✅map() --1. map() mehod is used to return the element in a new array when use "return" statement.
+//          2. When not storing map() method into a variable and use console.log instead of "return" statement at that time
+//             it returns value without array.
+//          3. map() method returing value without mutating the original array.
+//          4. map() method is a chainable method after performing map() we can add again map(), filter(), sort(), reduce() etc..
+
+//✅forEach() --1. Whereas forEach() method returns "undefined" when use "return" statement.
+//              2. When not storing forEach() method into a variable or instead of "return" statement use console.log
+//                 at that time it returns value without array. 
+//              3. forEach() method also returing value without mutating the original array. 
+//              4. forEach() method is not a chainable method.
 
 
 
