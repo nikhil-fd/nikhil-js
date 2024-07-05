@@ -177,9 +177,6 @@ const popularCourses = [
     {course4: "database developer", price: 12000},
     {course4: ".net", price: 22000}
 ];
-const totalCoursePrice = popularCourses.filter((elem) => {
-    return elem > 10000
-}).reduce((accu, elem) => {
-    return accu + elem
-}, 0)
-console.log(totalCoursePrice);               //💥Output: error coming have to check code..pending..
+const courseFiltered = popularCourses.filter((elem) => elem.price <= 15000);
+const totalFilterCoursePrice = courseFiltered.reduce((accu, elem) => accu + elem.price, 0)
+console.log(totalFilterCoursePrice);               //💥Output: 40000
