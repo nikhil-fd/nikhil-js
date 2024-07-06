@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <title>DoM & BOM</title>
+</head>
+<body>
+    <div id="box1" class="container">
+        <h2 id="heading2" title="india" class="main-heading">Champion India</h2>
+        <input type="text">
+        <p id="msg"></p>
+    </div>
+
+    <div id="box2" class="container">
+        <h3>Player List</h3>
+    </div>
+
+    <script>
+        //🎁innerHTML
+        //How to bring the value from inside element(which element containes start tag and end tag).
+        //  over here instead of "innerHTML" can use "innerText", "outerHTML", "textContent".
+
+        // <h2 id="heading2" title="india" class="main-heading">Champion India</h2>
+        document.write(document.getElementById("heading2").innerHTML);
+        //💥Output: Champion India
+
+        //🎁textContent
+        //How to add/insert value inside element (which element containes start tag and end tag ).
+        //over here instead of "innerHTML" can use "innerText", "outerHTML", "textContent".
+
+        // <p id="msg"></p>
+        console.log(document.getElementById("msg").textContent = "india won T20 world cup in 2024")
+        document.write(document.getElementById("msg").textContent = "india won T20 world cup in 2024")
+        //💥Output: <p id="msg">india won T20 world cup in 2024</p>
+
+        //🎁getAttributeNames()
+        //How to get all attribute name from an elment.
+
+        // <h2 id="heading2" title="india" class="main-heading">Champion India</h2>
+        document.write(document.querySelector("h2").getAttributeNames())           //💥Output: id,title,class
+
+        //🎁getAttribute()
+        //How to get attribute's value from an element.
+
+        // <h2 id="heading2" title="india" class="main-heading">Champion India</h2>
+        document.write(document.querySelector("h2").getAttribute("class"))      //💥Output: main-heading
+
+        //🎁setAttribute()
+        //How to set value on attribute in an element.
+
+        // <h2 id="heading2" title="india" class="main-heading">Champion India</h2>
+        document.querySelector("h2").setAttribute("class", "footer-head");
+        document.write(document.querySelector("h2").getAttribute("class"))      //💥Output: footer-head
+
+        //🎁className
+        //How to get class's value off an elment.
+
+        // <h2 id="heading2" title="india" class="main-heading">Champion India</h2>
+        document.write(document.getElementById("heading2").className)       //💥Output: footer-head
+
+        //🚩child🚩
+
+        //🎁firstChild
+        //it return 1st child of body or other element but it can be either "text" and element. 
+        //"text" containg "space", "enter", "tab" etc. it means after <body> element if you hit enter and then,
+        //mentioning any other element then it returns "text". 
+        //if you are not using "enter", "space", "tab" after <body> element then it returns "child element".    
+        
+ //🔔NOTE: if you are giving more than 1 enter/space/tab then it will be count only 1 "#text".🔔
+
+        document.write(document.body.firstChild)     //💥Output: text
+        console.log(document.body.firstChild)      //💥Output: #text
+        document.write(document.getElementById("box1").firstChild)     //💥Output: #text 
+        
+
+        //🎁lastChild
+        //Same defination as firstChild but it returns last child element of body or other element.
+        //It also returns "text".
+        document.write(document.body.lastChild)                         //💥Output: #text
+        document.write(document.getElementById("box1").lastChild)       //💥Output: #text   
+
+
+        //🎁firstElementChild
+        // it returns only body's or other element's 1st child element but it doesn't include "text" only return element.
+        document.write(document.body.firstElementChild)         //💥Output: [object HTMLDivElement]
+        console.log(document.body.firstElementChild)           
+        //💥Output:👇
+        // <div id="box1" class="container">
+        // <h2 id="heading2" title="india" class="main-heading">Champion India</h2>
+        // <input type="text">
+        // <p id="msg"></p>
+        // </div>
+        console.log(document.getElementById("box1").firstElementChild);
+        //💥Output: <h2 id="heading2" title="india" class="main-heading">Champion India</h2>
+
+
+        //🎁lastElementChild
+        //it returns only body's or other element's last child element but it doesn't include "text" only return element.
+        console.log(document.body.lastElementChild);                      //💥Output: <script>...
+        document.write(document.body.lastElementChild);                  //💥Output: [object HTMLScriptElement]
+        console.log(document.getElementById("box1").lastElementChild);   //💥Output: <p id="msg"></p>
+
+
+        //🎁childNodes
+        //It returns all child element of body's element and other element's also it includes "text"(contains space,enter,tab etc..)
+        document.write(document.body.childNodes)             //💥Output: [object NodeList]
+        console.log(document.body.childNodes)
+        //💥Output:👆 NodeList(7) [text, div#box1.container, text, div#box2.container, text, script, text]
+
+
+        //🎁children
+        // it returns exact all child/children of body's element and other element's it doesn't include "text".
+        console.log(document.body.children);
+        //💥Output:👆 HTMLCollection(3) [div#box1.container, div#box2.container, script, box1: div#box1.container, box2: div#box2.container]
+
+        console.log(document.getElementById("box1").children);
+        //💥Output:👆 HTMLCollection(3) [h2#heading2.footer-head, input, p#msg, heading2: h2#heading2.footer-head, msg: p#msg]
+
+
+        //🎁hasChildNodes()
+        // It checks whether body element or any other element's has child or not and return boolean value true and false.
+        console.log(document.body.hasChildNodes());                        //💥Output: true
+        console.log(document.getElementById("box1").hasChildNodes());     //💥Output: true
+
+
+        //🎁documentElement
+        //It returns root element of document that is "html".
+        console.log(document.documentElement);                   //💥Output: html
+
+        //🎁head
+        //it returns only head's element.
+        console.log(document.head);
+        //💥Output:👆
+        // <head>
+        // <meta charset="UTF-8">
+        // <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        // <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+        // <title>DoM & BOM</title>
+        // </head>
+        
+        //🎁body
+        //it returns only body's element.
+        console.log(document.body);          //💥Output: <body>
+
+       //🚩Sibling🚩
+
+       //🎁previousSibling
+       //it returns body's and other element's previous sibling(body's/other element brother/sister) it can include "text".
+       console.log(document.body.previousSibling);                    //💥Output: #text     
+       console.log(document.getElementById("box2").previousSibling);  //💥Output: #text  
+
+       //🎁previousElementSibling
+       //it returns body's or other element's exact previous sibling(body's/other element's brother/sister) but it doesn't include "text".
+       console.log(document.body.previousElementSibling);           //💥Output: <head>
+        console.log(document.getElementById("box2").previousElementSibling);
+        //💥Output:  <div id="box1" class="container">...</div>
+
+
+        //🎁nextSibling
+        //it returns head's or other element's sibling(head's/other element's brother/sister) but it can include "text".
+        console.log(document.head.nextSibling);                        //💥Output: #text 
+        console.log(document.getElementById("box1").nextSibling);       //💥Output: #text
+        
+        //🎁nextElementSibling
+        console.log(document.head.nextElementSibling);                        //💥Output: <body>
+        console.log(document.getElementById("box1").nextElementSibling);     //💥Output: div#box2.container     
+
+
+        //🚩Parent🚩
+
+        //🎁parentNode
+        //it returns the parent element of body's element and other element's.
+        console.log(document.body.parentNode);                        //💥Output: <html>
+        console.log(document.getElementById("box1").parentNode);     //💥Output: body
+
+        //🎁parentElement
+        //it returns only parent element of body element and other element.
+        console.log(document.body.parentElement);                          //💥Output: <html>
+        console.log(document.getElementById("box1").parentElement);       //💥Output: body 
+
+
+        //🧡💛💚We can apply style for html element in browser-->inspect-->console section.
+        //1st select any element's/page's content anywhere in page 
+        // $0.style.color = "red"💥
+        //it will apply color on particular element, that element value mention after end tag i.e. "==$0"
+
+        // $0.style.fontsize = "50px"💥
+        //it will apply font-size on particular element, that element value mention after end tag i.e. "==$0"
+
+        // $0.innerText/innerHTML = "Nikhil"💥
+        //it will add value inside html element, that element value mention after end tag i.e. "==$0"
+        
+        //document.body.style.background = "red"💥
+        //it will apply background color on body.
+    </script>
+</body>
+</html>
