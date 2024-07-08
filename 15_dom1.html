@@ -9,7 +9,9 @@
         <div class="main-div">
             <h1 id="heading">JavaScript DOM</h1>
             <p id="msg">DOM means Document <span style="display: none;">Nikhil</span> Object Model</p>
-            <input type="text">
+            <input type="text" id="txtfield">
+            <input type="password" name="pwd" id="pwdfield">
+            <input type="number" name="num" id="numfield">
             <ul>
                 <li class="listitems">Home</li>
                 <li class="listitems">About</li>
@@ -68,8 +70,21 @@
             const hideData = document.getElementById("msg").innerHTML;
             const unhideData = document.getElementById("msg").textContent;
             document.querySelector("input[type=text]");
-            document.write(heading);
-            document.write(`hide value -${hideData} unhide value- ${unhideData}`);
+            document.write(heading);                                            //💥Output: JavaScript DOM
+            console.log(`hide value -${hideData} unhide value- ${unhideData}`);
+            //💥Output:👆 hide value -DOM means Document <span style="display: none;">Nikhil</span> Object Model unhide value- DOM means Document Nikhil Object Model
+
+            
+            //🚩How to select the "input" element or get the reference of input element🚩
+            //we can give without " "/' ' in type=text/password/number...
+            console.log(document.querySelector("input[type=password]"));
+            //💥Output: <input type="password" name="pwd" id="pwdfield">
+
+            console.log(document.querySelector("input[type='number']"));
+            //💥Output: <input type="number" name="num" id="numfield">
+
+            console.log(document.querySelectorAll("input"));
+            //💥Output: NodeList
 
 
             //🚩"document.querySelectorAll()" -- getting reference of all li element/tag🚩
