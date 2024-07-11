@@ -13,11 +13,18 @@
             <input type="password" name="pwd" id="pwdfield">
             <input type="number" name="num" id="numfield">
             <ul>
-                <li class="listitems">Home</li>
-                <li class="listitems">About</li>
-                <li class="listitems">Contact</li>
-                <li class="listitems">Gallery</li>
+                <li id="home" class="listitems">Home</li>
+                <li id="about" class="listitems">About</li>
+                <li id="contact" class="listitems">Contact</li>
+                <li id="home"gallery class="listitems">Gallery</li>
             </ul>
+            <h2>HTML</h2>
+            <h2>CSS</h2>
+            <h2>JavaScript</h2>
+            <h2>BootStrap</h2>
+            <h2>Tailwind</h2>
+            <h2>ReactJS</h2>
+            <h2>MSsql</h2>
         </div>
         <script>
             //🚩In order to get the reference of html element use 🚩
@@ -66,6 +73,9 @@
             //🚩How to give the input🚩
             //👉prompt() -- it gets a popup box in browser where we can give the input value.
             
+
+            //🎁How to get the value from inside html element.
+            //We can get the value by -- innerHTML, outerHTML, innerText, textContent.
             const heading = document.getElementById("heading").innerHTML;
             const hideData = document.getElementById("msg").innerHTML;
             const unhideData = document.getElementById("msg").textContent;
@@ -87,9 +97,25 @@
             //💥Output: NodeList
 
 
+    //🎁By using CSS slector How to get the reference of html element or how to select the html element.
+        const refHead2 =  document.querySelectorAll("h2:nth-child(2n)")            
+        refHead2.forEach((elem) => {
+            console.log(elem, "By css selector");
+        })
+         //💥Output:👇 
+         //<h2>CSS</h2>        'By css seletor'
+        // <h2>BootStrap</h2>   'By css seletor'
+       // <h2>ReactJS</h2>      'By css seletor'
+
+
             //🚩"document.querySelectorAll()" -- getting reference of all li element/tag🚩
             const listData = document.querySelectorAll("li");
-            console.log(listData);
+            console.log(listData, "mama");     //💥Output: Nodelist [li.listitems, li.listitems, li.listitems, li.listitems] 'mama'
+            console.log(listData[0], "getting ref of html element");
+            //💥Output: <li id="home" class="listitems">Home</li>  "getting ref of html element"
+            console.log(listData[0].innerHTML);
+            //💥Output: Home
+
             // But in above it didn't return reference, it returned "nodelist" prototype.
             // 1st Way -- from "nodelist" we can get reference of all li elements by using "for..loop" or "for..of" loop or "forEach()" loop.
             // 2nd Way -- To get reference from "nodelist" using map() for that,
