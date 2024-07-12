@@ -41,9 +41,14 @@
             //                                                     (iii) But we can use "for..loop" and "for..of" loop to get reference from "html collection".
             //                                                     (iv) So if you want to use map() method and forEach() loop then we need to add "html collection" in array using "Array.from(htmlcollection_ref)""
 
+            //🔔NOTE: When "querySelectorAll" and "getElementsByClassName" returns "nodelist" and "html collection",
+            //        these are not array but it looks like "array". That's why we can access these "nodelist" an "html collection"
+            //        like "array[indexno.]".  
+
             //👉document.getElementsByName("name value")
             //👉document.getElementsByTagName("tag name")
 
+            
 
             //🚩Below These 4 through we can get the value and add the value inside html element,
             // and those element must be container type(those element contains start tag and end tag),
@@ -57,7 +62,12 @@
             //                 it allows style format also like we can use <h1><p><div><font> etc..
             //👉.textContent -- it bring/display all hide and unhide value. suppose inside an element if,
             //                   you hide any child element then this method can get all hide details also. 
-
+            //                   It overrides the new value with existing value inside an elment.
+            //                   it doesn't allow style format.
+            //👉document.createTextNode("value") -- Using this method we can add value inside html element.
+            //                                      This approach creates better optimization.
+            //                                      It doesn't override the new value with existing value, the new value gets add after existing value.
+            //🚨check example of document.createTextNode("value") in file "15_dom3.html"🚨  
 
             //🚩How to print the value/how to display the output🚩
             //👉document.write(value) -- it prints the value in browser

@@ -18,10 +18,21 @@
     <script>
         const ourParent = document.querySelector(".parent");
         // document.write(ourParent);
-        console.log(ourParent);
+        console.log(ourParent); 
+        //💥Output:👇 
+    // <div class="parent">
+    //     <div class="day">Monday</div>
+    //     <div>Tuesday</div>
+    //     <div>Wednesday</div>
+    //     <div>Thursday</div>
+    //     <div>Friday</div>
+    // </div> 
+
         //👉In below we are getting/accessing parent's children2 tag using "children"
         console.log(ourParent.children[2]);
-        //output: <div>Wednesday</div>
+        //💥output: <div>Wednesday</div>
+        //Here we are getting the value of children2 element's
+        console.log(ourParent.children[2].innerHTML);            //💥Output: Wednesday
 
         //👉In below we are getting/accessing the value of children3 using "innerHTML"
         console.log(ourParent.children[3].innerHTML);

@@ -6,15 +6,24 @@
     <title>JS DoM</title>
 </head>
 <body style="background-color: #212121; color: #fff;">
+    <div id="parent">
+        <div class="cap">capgemini</div>
+        <div class="tcs">tcs</div>
+        <div class="pwc">pwc</div>
+        <div class="inf">infosys</div>
+    </div>
+
     <script>
         const div = document.createElement("div");
         div.className = "main";
         div.id = Math.round(Math.random() * 10);
         div.innerHTML="Coder Nikhil";
         //👉OR - we can also add value inside div in this way for better optimization.
-        //        Both "innerHTML" and "createTextNode" are same but "createTextNode" is better optimization. 
-        // const addText = document.createTextNode("Coder Nikhil")
-        // div.appendChild(addText);
+        //🟢     Both "innerHTML" and "createTextNode" are same but "createTextNode" is better optimization. 
+        //🟢     "createTextNode()" will not override the value.
+        //🟢     If there is any existing value then this "createTextNode()" value gets add next to the existing value.
+        //🟢 const addText = document.createTextNode("Coder Nikhil")
+        //🟢 div.appendChild(addText);
 
         //👉"setAttribute" -- adding custom attribute in key value pair like attribute is title, name etc..
         div.setAttribute("title","fashion container");
@@ -23,6 +32,14 @@
         div.style.padding="12px";
         document.body.appendChild(div)
         console.log(div);
+
+        
+        //💛💚🧡Best approach for optimization when putting value inside element.
+        //🎁document.createTextNode("value")
+        const refPwc = document.querySelector(".pwc")
+        const addValue = document.createTextNode("Mindtree")
+        refPwc.appendChild(addValue)
+        //💥Output: pwcMindtree   (here new value not overriding with existing value)
     </script>
 </body>
 </html>

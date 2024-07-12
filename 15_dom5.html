@@ -54,12 +54,18 @@
         document.write(document.querySelector("h2").getAttribute("class"))      //💥Output: main-heading
 
         //🎁setAttribute()
-        //How to set value on attribute in an element.
+        //Using this we can create new attribute and can set value on new attribute in an element.
+        //Also we can set value on existing attribute.
 
         // <h2 id="heading2" title="india" class="main-heading">Champion India</h2>
         document.querySelector("h2").setAttribute("class", "footer-head");
         document.write(document.querySelector("h2").getAttribute("class"))      //💥Output: footer-head
 
+        document.querySelector("h2").setAttribute("name", "india")
+        console.log(document.querySelector("h2").getAttributeNames());     //💥Output: ['id', 'title', 'class', 'name']
+        console.log(document.querySelector("h2").getAttribute("name"), "chiku");   //💥Output: india
+
+        
         //🎁className
         //How to get class's value off an elment.
 
@@ -69,12 +75,12 @@
         //🚩child🚩
 
         //🎁firstChild
-        //it return 1st child of body or other element but it can be either "text" and element. 
+        //it return 1st child of body or other element but it can be either "text" node and element. 
         //"text" containg "space", "enter", "tab" etc. it means after <body> element if you hit enter and then,
-        //mentioning any other element then it returns "text". 
+        //mentioning any other element then it returns "text" node. 
         //if you are not using "enter", "space", "tab" after <body> element then it returns "child element".    
         
- //🔔NOTE: if you are giving more than 1 enter/space/tab then it will be count only 1 "#text".🔔
+ //🔔NOTE: if you are giving more than 1 enter/space/tab then it will be count only 1 "#text" node.🔔
 
         document.write(document.body.firstChild)     //💥Output: text
         console.log(document.body.firstChild)      //💥Output: #text
@@ -89,7 +95,7 @@
 
 
         //🎁firstElementChild
-        // it returns only body's or other element's 1st child element but it doesn't include "text" only return element.
+        // it returns only body's or other element's 1st child element but it doesn't include "text" node only return element.
         document.write(document.body.firstElementChild)         //💥Output: [object HTMLDivElement]
         console.log(document.body.firstElementChild)           
         //💥Output:👇
@@ -103,27 +109,80 @@
 
 
         //🎁lastElementChild
-        //it returns only body's or other element's last child element but it doesn't include "text" only return element.
+        //it returns only body's or other element's last child element but it doesn't include "text" node only return element.
         console.log(document.body.lastElementChild);                      //💥Output: <script>...
         document.write(document.body.lastElementChild);                  //💥Output: [object HTMLScriptElement]
         console.log(document.getElementById("box1").lastElementChild);   //💥Output: <p id="msg"></p>
 
 
         //🎁childNodes
-        //It returns all child element of body's element and other element's also it includes "text"(contains space,enter,tab etc..)
+        //It returns "NodeList" of all child element, not returning "reference" which belong to body's child element and other element's child element also it includes "text" node(contains space,enter,tab, comment etc..)
+        //So we can get refernce of all child's element from "NodeList" by using "forEach()", for loop and for..of loop.
+        //Also we can use map() method but for that we need to convert nodelist to array by using "Array.from(nodelistname)". 
         document.write(document.body.childNodes)             //💥Output: [object NodeList]
         console.log(document.body.childNodes)
         //💥Output:👆 NodeList(7) [text, div#box1.container, text, div#box2.container, text, script, text]
-
+        console.log(document.body.childNodes[0], "bhai re bhai");      //💥Output: #text 
+        console.log(document.body.childNodes[1], "yes bro");            //💥Output: div#box1.container
 
         //🎁children
-        // it returns exact all child/children of body's element and other element's it doesn't include "text".
+        // It returns "HTMLCollection", not "reference" of  all child/children which belong to body's element or other element's it doesn't include "text" node.
+        // So to get reference from "HTMLCollection" then access as array i.e. chldren[indexno.] or use for loop, for..of loop.
+        // You can also use map() and forEach() method but for that we have to convert "HTMLCollection" into "array" by using "Array.from(htmlcollection name)"
+
         console.log(document.body.children);
         //💥Output:👆 HTMLCollection(3) [div#box1.container, div#box2.container, script, box1: div#box1.container, box2: div#box2.container]
+        console.log(document.body.children[0], "sona here");    
+        //💥Output:👆
+        // <div id="box1" class="container">
+        //     <h2 id="heading2" title="india" class="main-heading">Champion India</h2>
+        //     <input type="text">
+        //     <p id="msg"></p>
+        // </div>
+        console.log(document.body.children[0].innerHTML, "sona baby");   
+        //💥Output:👆
+        // <h2 id="heading2" title="india" class="main-heading">Champion India</h2>
+        // <input type="text">
+        // <p id="msg"></p>
+        
+        const box1Children1Data = document.getElementById("box1")
+        console.log(box1Children1Data, "sonydarl");
+        //💥Output:👆
+        // <div id="box1" class="container">
+        //    <h2 id="heading2" title="india" class="main-heading">Champion India</h2>
+        //    <input type="text">
+        //    <p id="msg"></p>
+        // </div>
+        console.log(box1Children1Data.firstElementChild, "sona tuu")
+        //💥Output:👆 <h2 id="heading2" title="india" class="main-heading">Champion India</h2>
 
-        console.log(document.getElementById("box1").children);
-        //💥Output:👆 HTMLCollection(3) [h2#heading2.footer-head, input, p#msg, heading2: h2#heading2.footer-head, msg: p#msg]
+        console.log(box1Children1Data.firstElementChild.innerHTML, "sona result"); 
+        //💥Output:👆 Champion India
+        
+        const allBox1ChildrenData = box1Children1Data.children
+        console.log(allBox1ChildrenData, "guddu here");
+        //💥Output:👆 HTMLCollection(3) [h2#heading2.footer-head, input, p#msg, heading2: h2#heading2.footer-head, msg: p#msg] 'guddu here'
+        for(let i = 0; i < allBox1ChildrenData.length; i++){
+            console.log(allBox1ChildrenData[i], "sovanam here");
+        }
+        //💥Output:👆  here returned reference of html element.
+        // <h2 id="heading2" title="india" class="main-heading">Champion India</h2>
+        // <input type="text">
+        // <p id="msg"></p>
 
+        for(const box1data of allBox1ChildrenData){
+            console.log(box1data, "munna tripathy");
+            const head2 = document.getElementById("heading2")
+            console.log(head2.innerHTML, "kalim bhaiya");        //💥Output: Champion India 'kalim bhaiya'
+        }
+        //💥Output:👆
+        // <h2 id="heading2" title="india" class="main-heading">Champion India</h2>
+        // <input type="text">
+        // <p id="msg"></p>       'munna tripathy'
+        
+        //🎁childElementCount
+        //It counts the number of child element is present under a parent.
+        console.log(document.getElementById("box1").childElementCount, "gino re");    //💥Output: 3  
 
         //🎁hasChildNodes()
         // It checks whether body element or any other element's has child or not and return boolean value true and false.
@@ -153,19 +212,19 @@
        //🚩Sibling🚩
 
        //🎁previousSibling
-       //it returns body's and other element's previous sibling(body's/other element brother/sister) it can include "text".
+       //it returns body's and other element's previous sibling(body's/other element brother/sister) it can include "text" node.
        console.log(document.body.previousSibling);                    //💥Output: #text     
        console.log(document.getElementById("box2").previousSibling);  //💥Output: #text  
 
        //🎁previousElementSibling
-       //it returns body's or other element's exact previous sibling(body's/other element's brother/sister) but it doesn't include "text".
+       //it returns body's or other element's exact previous sibling(body's/other element's brother/sister) but it doesn't include "text" node .
        console.log(document.body.previousElementSibling);           //💥Output: <head>
         console.log(document.getElementById("box2").previousElementSibling);
         //💥Output:  <div id="box1" class="container">...</div>
 
 
         //🎁nextSibling
-        //it returns head's or other element's sibling(head's/other element's brother/sister) but it can include "text".
+        //it returns head's or other element's sibling(head's/other element's brother/sister) but it can include "text" node.
         console.log(document.head.nextSibling);                        //💥Output: #text 
         console.log(document.getElementById("box1").nextSibling);       //💥Output: #text
         
