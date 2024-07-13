@@ -13,8 +13,8 @@
 //     default value.
 //     preventDefault() it won't take if input box has any defalut value so it avoid input default value.
 // #5--When "submit" event gets fire?
-//     (i) When user clicks on "submit" button i.e. &lt;button type="submit"&gt;&lt;/button&gt;.
-//     (ii) Wehen user presses the "Enter" key while editing the "input" field &lt;input type="text"&gt; 
+//     (i) When user clicks on "submit" button i.e. <button type="submit"></button>.
+//     (ii) Wehen user presses the "Enter" key while editing the "input" field <input type="text"> 
 //          in a form.
 //     (iii) When a script calls the "form.requestSubmit()" method.
 
