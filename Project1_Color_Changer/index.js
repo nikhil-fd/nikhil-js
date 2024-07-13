@@ -27,3 +27,45 @@ buttons.forEach((btn) => {
         }
     })
 })
+
+//👇This below code written by myself in my own technique.👇Both above and below doing same work.
+const refColorChngBtn = document.querySelectorAll(".colorChngBtn")
+for(const chngbtn of refColorChngBtn){
+    console.log(chngbtn);
+    chngbtn.addEventListener("click", () => {
+        switch (chngbtn.getAttribute("id")){
+            case "grey":
+                document.body.style.backgroundColor = `${chngbtn.getAttribute("id")}`;
+                break;
+                case "white":
+                    document.body.style.backgroundColor = `${chngbtn.getAttribute("id")}`;
+                    break;
+                    case "blue":
+                        document.body.style.backgroundColor = `${chngbtn.getAttribute("id")}`;
+                        break;
+                        case "yellow":
+                            document.body.style.backgroundColor = `${chngbtn.getAttribute("id")}`;
+                            break;
+                            default:
+                                document.body.style.backgroundColor = "red";
+                                break;
+        }
+    })
+}
+
+//👇OR Code written by myself in my own mind.👇
+// const refColorChngBtn = document.querySelectorAll(".colorChngBtn")
+// for(const chngbtn of refColorChngBtn){
+//     console.log(chngbtn);
+//     chngbtn.addEventListener("click", () => {
+//         if(chngbtn.getAttribute("id") === "grey"){
+//             document.body.style.backgroundColor = `${chngbtn.getAttribute("id")}`
+//         }else if(chngbtn.getAttribute("id") === "white"){
+//             document.body.style.backgroundColor = `${chngbtn.getAttribute("id")}`
+//         }else if(chngbtn.getAttribute("id") === "blue"){
+//             document.body.style.backgroundColor = `${chngbtn.getAttribute("id")}`
+//         }else if(chngbtn.getAttribute("id") === "yellow"){
+//             document.body.style.backgroundColor = `${chngbtn.getAttribute("id")}`
+//         }
+//     })
+// }
