@@ -12,6 +12,11 @@
 // #4--Always remember when deal with form element then use "event.preventDefault()" it will not allow form's any existing value or
 //     default value.
 //     preventDefault() it won't take if input box has any defalut value so it avoid input default value.
+// #5--When "submit" event gets fire?
+//     (i) When user clicks on "submit" button i.e. &lt;button type="submit"&gt;&lt;/button&gt;.
+//     (ii) Wehen user presses the "Enter" key while editing the "input" field &lt;input type="text"&gt; 
+//          in a form.
+//     (iii) When a script calls the "form.requestSubmit()" method.
 
 const form = document.querySelector("form");
 form.addEventListener('submit', (e) => {
