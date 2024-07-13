@@ -11,3 +11,9 @@
 
 #4--Always remember when deal with form element then use "event.preventDefault()" it will not allow if form element's input element has any existing value or
     default value.
+
+#5--When "submit" event gets fire?
+    (i) When user clicks on "submit" button i.e. &lt;button type="submit"&gt;&lt;/button&gt;.
+    (ii) Wehen user presses the "Enter" key while editing the "input" field &lt;input type="text"&gt; 
+         in a form.
+    (iii) When a script calls the "form.requestSubmit()" method.         
