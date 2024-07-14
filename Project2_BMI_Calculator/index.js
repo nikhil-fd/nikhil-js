@@ -18,6 +18,9 @@
 //          in a form.
 //     (iii) When a script calls the "form.requestSubmit()" method.
 
+// #6--Html "button" default type is submit. so if we are not mentioning <button type="submit"></button>
+//     only we mentioned <button></button> even then it will react as "submit" button.
+
 const form = document.querySelector("form");
 form.addEventListener('submit', (e) => {
     e.preventDefault();
