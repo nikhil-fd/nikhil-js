@@ -16,4 +16,11 @@
     (i) When user clicks on "submit" button i.e. &lt;button type="submit"&gt;&lt;/button&gt;.
     (ii) Wehen user presses the "Enter" key while editing the "input" field &lt;input type="text"&gt; 
          in a form.
-    (iii) When a script calls the "form.requestSubmit()" method.         
+    (iii) When a script calls the "form.requestSubmit()" method.   
+
+# html &lt;button>&lt;/button> how react?
+```Text
+Html "button" default "type" attribute value is submit. so if we are not mentioning 
+<button type="submit"></button>,
+only we mentioned <button></button> even then it will react as "submit" button.
+```         
