@@ -23,4 +23,16 @@
 Html "button" default "type" attribute value is submit. so if we are not mentioning 
 <button type="submit"></button>,
 only we mentioned <button></button> even then it will react as "submit" button.
-```         
+```    
+# "event" and "event.target" what returns?
+```Text
+1️⃣"event"-- When we are handling any event such as click, submit, mouseover and so on. at that time we can 
+            pass "event" as a parameter in that click event/submit event parenthesis then it returns you click on web page which position and it can access properties like "keycode", "clientX", "clientY", "keyvalue".
+
+2️⃣"event.target" -- When we are handling any event such as click, submit, mouseover and so on. at that time 
+                    we are passing "event" as a parameter in that click event/submit event's parenthesis. 
+
+                    Then It returns refernce of html element, when we click mouse on any html element or when we do mouse over in a html element at that time it select that html element. After click/mouseover in html element we can access all properties of html element such as "id", "class", "name", "title" etc. using "event.target.id" or "event.target.class" like this we can get value of id, class, name or other properties.
+
+3️⃣"event.type"   -- It tells what type of event such as click/submit/moouseover etc.
+```     
