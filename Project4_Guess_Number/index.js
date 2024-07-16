@@ -1,3 +1,5 @@
+//Guess Number Project Vdo Time Stamp--3:15:00-3:21:00
+
 let randomNumber = parseInt(Math.random() * 100 + 1);
 
 const userInput = document.getElementById("numguess");
