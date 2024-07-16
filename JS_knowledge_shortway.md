@@ -27,7 +27,8 @@ only we mentioned <button></button> even then it will react as "submit" button.
 # "event" and "event.target" what returns?
 ```Text
 1️⃣"event"-- When we are handling any event such as click, submit, mouseover and so on. at that time we can 
-            pass "event" as a parameter in that click event/submit event parenthesis then it returns you click on web page which position and it can access properties like "keycode", "clientX", "clientY", "keyvalue".
+            pass "event" as a parameter in that click event/submit event parenthesis then it returns you click on web page which position and it can access properties like "keycode", "clientX", "clientY", "keyvalue". We can keep any name for "event" like "e"/"event"/"nikhil" etc.
+            (event.clientX)/(e.clientY)/(e.keyvalue)/(nikhil.timeStamp)
 
 2️⃣"event.target" -- When we are handling any event such as click, submit, mouseover and so on. at that time 
                     we are passing "event" as a parameter in that click event/submit event's parenthesis. 
