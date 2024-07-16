@@ -87,6 +87,7 @@
       // currentTarget, clientX, clientY, screenX, screenY, altket, shiftkey, keyCode
 
       //🚩Event Propagation🚩
+      //Event propagation determines that in which order element receive the event.
       // Event propagation is defined in 2 phases--
       //(1) Event Bubbling -- In event bubbling 1st event is captured and handled by innermost element,
       //                      and propagated to outermost element. Event bubbling is "false" in addEventListener().
@@ -101,7 +102,7 @@
       //                            💥if the event is triggered in child div then at first parent div will execute,afer that child div will execute(top to bottom). 
       //                            💥if the event is triggerd in parent div then only parent div will execute but child div will not execute.
 
-      //👉stopPropagation(): if you want to stop propagation then use this method
+      //🎁stopPropagation(): if you want to stop propagation then use this method
 
       //Example1: same check "false" instead of "true" 
       document.getElementById("parent").addEventListener('click', (e) => {
@@ -138,6 +139,100 @@
       //Note: In the above example if the event is triggered on child div then only child div will execute,
       //      but parent div will not execute because after child div we used stopPropagation() it will stop to execute parent div.
       
+
+      //🎁check "event" all method/properties.
+      //we can give any name for "event". Over below we gave "e" 👇as event
+      document.getElementById("child").addEventListener("click", (e) => {
+        console.log(e);
+        console.log(e.pageX);          //💥Output: 105   (we get this "pageX" properties from "e" event)
+        console.log(e.shiftKey);      //💥Output: false
+        console.log(e.timeStamp);    //💥Output: 2,356.7
+        //We can access other more properties like this.
+      },false)
+
+      //💥Output:👆
+      // PointerEvent {isTrusted: true, pointerId: 3, width: 1, height: 1, pressure: 0, …}
+      // isTrusted: true
+      // altKey: false
+      // altitudeAngle: 1.5707963267948966
+      // azimuthAngle: 0
+      // bubbles: true
+      // button: 0
+      // buttons: 0
+      // cancelBubble: false
+      // cancelable: true
+      // clientX: 84
+      // clientY: 107
+      // composed: true
+      // ctrlKey: false
+      // currentTarget: null
+      // defaultPrevented: false
+      // detail: 1
+      // eventPhase: 0
+      // fromElement: null
+      // height: 1
+      // isPrimary: false
+      // layerX: 84
+      // layerY: 107
+      // metaKey: false
+      // movementX: 0
+      // movementY: 0
+      // offsetX: 76
+      // offsetY: 13
+      // pageX: 84
+      // pageY: 107
+      // pointerId: 3
+      // pointerType: "touch"
+      // pressure: 0
+      // relatedTarget: null
+      // returnValue: true
+      // screenX: 188
+      // screenY: 268
+      // shiftKey: false
+      // sourceCapabilities: InputDeviceCapabilities {firesTouchEvents: true}
+      // firesTouchEvents: true
+      // [[Prototype]]: InputDeviceCapabilities
+      // srcElement: div#child
+      // attributeStyleMap: StylePropertyMap 
+      // {size: 0}
+      // attributes: NamedNodeMap {0: id, id: id, length: 1}
+      // autocapitalize: ""
+      // autofocus: false
+      // baseURI: "http://127.0.0.1:5500/UI_FullStack_Demo_Project/chai_aur_code_bbsr/bbsr-js/17_event.html"
+      // childElementCount: 0
+      // childNodes: NodeList[text]
+      // children: HTMLCollection[]
+      // classList: DOMTokenList[value: '']
+      // className: ""
+      // clientHeight: 18
+      // clientLeft: 0
+      // clientTop: 0
+      // clientWidth: 258
+      // contentEditable: "inherit"
+      // dataset: DOMStringMap{}
+      // dir: ""
+      // draggable: false
+      // editContext: null
+      // elementTiming: ""
+      // enterKeyHint: ""
+      // firstChild: text
+      // firstElementChild: null
+      // hidden: false
+      // id: "child"
+      // inert: false
+      // innerHTML: "\n            All event properties\n        "
+      // innerText: "All event properties"
+      // inputMode: ""
+      // isConnected: true
+      // isContentEditable: false
+      // lang: ""
+      // lastChild: text
+      // lastElementChild: null
+      // localName: "div"
+      // namespaceURI: "http://www.w3.org/1999/xhtml"
+      // nextElementSibling: null
+      // nextSibling: text
+      // nodeName: "DIV"nodeType: 1nodeValue: nullnonce: ""offsetHeight: 18offsetLeft: 8offsetParent: bodyoffsetTop: 94offsetWidth: 258onabort: nullonanimationend: nullonanimationiteration: nullonanimationstart: nullonauxclick: nullonbeforecopy: nullonbeforecut: nullonbeforeinput: nullonbeforematch: nullonbeforepaste: nullonbeforetoggle: nullonbeforexrselect: nullonblur: nulloncancel: nulloncanplay: nulloncanplaythrough: nullonchange: nullonclick: nullonclose: nulloncontentvisibilityautostatechange: nulloncontextlost: nulloncontextmenu: nulloncontextrestored: nulloncopy: nulloncuechange: nulloncut: nullondblclick: nullondrag: nullondragend: nullondragenter: nullondragleave: nullondragover: nullondragstart: nullondrop: nullondurationchange: nullonemptied: nullonended: nullonerror: nullonfocus: nullonformdata: nullonfullscreenchange: nullonfullscreenerror: nullongotpointercapture: nulloninput: nulloninvalid: nullonkeydown: nullonkeypress: nullonkeyup: nullonload: nullonloadeddata: nullonloadedmetadata: nullonloadstart: nullonlostpointercapture: nullonmousedown: nullonmouseenter: nullonmouseleave: nullonmousemove: nullonmouseout: nullonmouseover: nullonmouseup: nullonmousewheel: nullonpaste: nullonpause: nullonplay: nullonplaying: nullonpointercancel: nullonpointerdown: nullonpointerenter: nullonpointerleave: nullonpointermove: nullonpointerout: nullonpointerover: nullonpointerrawupdate: nullonpointerup: nullonprogress: nullonratechange: nullonreset: nullonresize: nullonscroll: nullonscrollend: nullonsearch: nullonsecuritypolicyviolation: nullonseeked: nullonseeking: nullonselect: nullonselectionchange: nullonselectstart: nullonslotchange: nullonstalled: nullonsubmit: nullonsuspend: nullontimeupdate: nullontoggle: nullontouchcancel: nullontouchend: nullontouchmove: nullontouchstart: nullontransitioncancel: nullontransitionend: nullontransitionrun: nullontransitionstart: nullonvolumechange: nullonwaiting: nullonwebkitanimationend: nullonwebkitanimationiteration: nullonwebkitanimationstart: nullonwebkitfullscreenchange: nullonwebkitfullscreenerror: nullonwebkittransitionend: nullonwheel: nullouterHTML: "<div id=\"child\">\n            All event properties\n        </div>"outerText: "All event properties"ownerDocument: documentparentElement: div#parentparentNode: div#parentpart: DOMTokenList [value: '']popover: nullprefix: nullpreviousElementSibling: h2previousSibling: textrole: nullscrollHeight: 18scrollLeft: 0scrollTop: 0scrollWidth: 258shadowRoot: nullslot: ""spellcheck: truestyle: CSSStyleDeclaration {accentColor: '', additiveSymbols: '', alignContent: '', alignItems: '', alignSelf: '', …}tabIndex: -1tagName: "DIV"textContent: "\n            All event properties\n        "title: ""translate: truevirtualKeyboardPolicy: ""writingSuggestions: "true"[[Prototype]]: HTMLDivElement(...)tangentialPressure: 0target: div#childtiltX: 0tiltY: 0timeStamp: 2466.199999988079toElement: nulltwist: 0type: "click"view: Window {window: Window, self: Window, document: document, name: '', location: Location, …}which: 1width: 1x: 84y: 107[[Prototype]]: PointerEventaltitudeAngle: (...)azimuthAngle: (...)getCoalescedEvents: ƒ getCoalescedEvents()getPredictedEvents: ƒ getPredictedEvents()height: (...)isPrimary: (...)pointerId: (...)pointerType: (...)pressure: (...)tangentialPressure: (...)tiltX: (...)tiltY: (...)twist: (...)width: (...)constructor: ƒ PointerEvent()Symbol(Symbol.toStringTag): "PointerEvent"altKey: (...)bubbles: (...)button: (...)buttons: (...)cancelBubble: (...)cancelable: (...)clientX: (...)clientY: (...)composed: (...)ctrlKey: (...)currentTarget: (...)defaultPrevented: (...)detail: (...)eventPhase: (...)fromElement: (...)layerX: (...)layerY: (...)metaKey: (...)movementX: (...)movementY: (...)offsetX: (...)offsetY: (...)pageX: (...)pageY: (...)relatedTarget: (...)returnValue: (...)screenX: (...)screenY: (...)shiftKey: (...)sourceCapabilities: (...)srcElement: (...)target: (...)timeStamp: (...)toElement: (...)type: (...)view: (...)which: (...)x: (...)y: (...)get altitudeAngle: ƒ altitudeAngle()get azimuthAngle: ƒ azimuthAngle()get height: ƒ height()get isPrimary: ƒ isPrimary()get pointerId: ƒ pointerId()get pointerType: ƒ pointerType()get pressure: ƒ pressure()get tangentialPressure: ƒ tangentialPressure()get tiltX: ƒ tiltX()get tiltY: ƒ tiltY()get twist: ƒ twist()get width: ƒ width()[[Prototype]]: MouseEventaltKey: (...)button: (...)buttons: (...)clientX: (...)clientY: (...)ctrlKey: (...)fromElement: (...)getModifierState: ƒ getModifierState()initMouseEvent: ƒ initMouseEvent()layerX: (...)layerY: (...)metaKey: (...)movementX: (...)movementY: (...)offsetX: (...)offsetY: (...)pageX: (...)pageY: (...)relatedTarget: (...)screenX: (...)screenY: (...)shiftKey: (...)toElement: (...)x: (...)y: (...)constructor: ƒ MouseEvent()Symbol(Symbol.toStringTag): "MouseEvent"bubbles: (...)cancelBubble: (...)cancelable: (...)composed: (...)currentTarget: (...)defaultPrevented: (...)detail: (...)eventPhase: (...)returnValue: (...)sourceCapabilities: (...)srcElement: (...)target: (...)timeStamp: (...)type: (...)view: (...)which: (...)get altKey: ƒ altKey()get button: ƒ button()get buttons: ƒ buttons()get clientX: ƒ clientX()get clientY: ƒ clientY()get ctrlKey: ƒ ctrlKey()get fromElement: ƒ fromElement()get layerX: ƒ layerX()get layerY: ƒ layerY()get metaKey: ƒ metaKey()get movementX: ƒ movementX()get movementY: ƒ movementY()get offsetX: ƒ offsetX()get offsetY: ƒ offsetY()get pageX: ƒ pageX()get pageY: ƒ pageY()get relatedTarget: ƒ relatedTarget()get screenX: ƒ screenX()get screenY: ƒ screenY()get shiftKey: ƒ shiftKey()get toElement: ƒ toElement()get x: ƒ x()get y: ƒ y()[[Prototype]]: UIEvent
     </script>
   </body>
 </html>
