@@ -33,7 +33,11 @@ only we mentioned <button></button> even then it will react as "submit" button.
 2️⃣"event.target" -- When we are handling any event such as click, submit, mouseover and so on. at that time 
                     we are passing "event" as a parameter in that click event/submit event's parenthesis. 
 
-                    Then It returns refernce of html element, when we click mouse on any html element or when we do mouse over in a html element at that time it select that html element. After click/mouseover in html element we can access all properties of html element such as "id", "class", "name", "title" etc. using "event.target.id" or "event.target.class" like this we can get value of id, class, name or other properties.
-
+                    Then It returns refernce of html element, when we click mouse on any html element or when we do mouse over in a html element at that time it select that html element. After click/mouseover in html element we can access all properties of html element such as "id", "class", "name", "title", "tagName" etc. using "event.target.id" or "event.target.class" like this we can get value of id, class, name or other properties.
+                    # event.target.id        ---- returns id's value
+                    # event.target.class     ---- returns class's value
+                    # event.target.tagName   ---- returns html tag name
+                    # event.target.value     ---- returns value which is given in html element's attribute
+                    # event.target.name      ---- returns name
 3️⃣"event.type"   -- It tells what type of event such as click/submit/moouseover etc.
 ```     
