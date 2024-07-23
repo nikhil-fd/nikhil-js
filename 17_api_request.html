@@ -21,7 +21,7 @@
       // 3	    LOADING	            Downloading; responseText holds partial data.
       // 4	    DONE	            The operation is complete.
 
-      //Example:
+      //🎯Example:1
       const apiUrl = "https://randomuser.me/api/";
       //new: "new" creating a object for xmlHttpRequest() method.
       const xhr = new XMLHttpRequest();
@@ -36,17 +36,15 @@
           //But when that data comeing by url its data type is becoming "string".
           //So we need to convert into object by using "JSON.parse" so that we can access the data from api.
           // let data = this.responseText;
-          //console.log(data);
-          // let data = typeof(this.responseText);
-          //console.log(data);
+          //console.log(typeof data);                 //💥Output: string
 
-          let data = JSON.parse(this.responseText);
-          console.log(typeof data);
-          console.log(data.info);
-          console.log(data.info.seed);
+          let data = JSON.parse(this.responseText);        //👈JSON.parse() convert "string" into "object"
+          console.log(typeof data);                       //💥Output: object
+          console.log(data.info);                        //💥Output: value
+          console.log(data.info.seed);                  //💥Output: value
         }
       };
-      //Above "open" not yet called, for call we need to use "send".
+      //👆Above "open" not yet called, for call we need to use "send()".👇
       xhr.send();
     </script>
   </body>
