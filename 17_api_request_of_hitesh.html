@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Handling</title>
+</head>
+<body>
+    <h2>Handling API By XMLHttpRequest</h2>
+    <p id="msg"></p>
+     <table border="1">
+        <thead>
+            <th id="itemHead"></th>
+        </thead>
+        <tbody>
+            <td id="itemMain"></td>
+        </tbody>
+        <tfoot>
+            <th id="itemFooter"></th>
+        </tfoot>
+     </table>
+</body>
+    <script>
+        const urlApi = "https://api.github.com/users/hiteshchoudhary"
+    const xhr = new XMLHttpRequest()
+    xhr.open('GET', urlApi)
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if(xhr.readyState === 4){
+            const data = JSON.parse(this.responseText)
+            console.log(typeof data);
+            console.log(data);
+
+            const itemHead = document.getElementById("itemHead")
+            itemHead.innerHTML = data.name
+            const itemMain = document.getElementById("itemMain")
+            const img = document.createElement("img")            //👈Created <img> tag/element
+            img.src = data.avatar_url                           //👈Putting image inside <img> tag
+            itemMain.appendChild(img)                          //👈over here adding <img> tag under <tbody> <td>
+            document.getElementById("itemFooter").innerHTML = data.followers   //👈putting followers value in table footer
+        }
+    }  
+    xhr.send();
+    </script>
+</html>
