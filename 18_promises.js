@@ -1,14 +1,21 @@
-//🚩We can request data (access data) from DataBase or API in 3 way.🚩
+//🚩We can request data/access data from DataBase or API in 3 way.🚩
 //1️⃣"Promise()"        -- ".then()" & ".catch()"
-//2️⃣"async" & "await"  -- "try{}" & "catch{}"
-//3️⃣"fetch()"          -- ".then()" & ".catch()"
+//2️⃣"Promise()         --  "async" & "await"  -- "try{}" & "catch{}"
+//3️⃣Only "async" & "await" without "Promise"
+//4️⃣"fetch()"          -- ".then()" & ".catch()"
 
 
 //1️⃣Promise:
-//👉Promise is an object representing the eventual completion or failure of an aynchronous operation.
+//👉The Promise object representing the eventual completion or failure of an aynchronous operation and its resulting value.
+//👉We can use "Promise()" with ".then()" and ".catch()" method, also we can use "promise()" with "async" and "await".
+//  "async"/"await" uses "try" and "catch" for error handling.
+//📌new Promise(function(resolve,reject){}).then().catch().finally().
+//📌new Promise(function(resolve,reject){}) async, await, try, catch.
+//From above You can use any one because both are doing same work.
+
 
 //🖐Creating  Promises
-//🎯Example1: Promise()
+//🎯Example1: Promise() with ".then()" & ".catch()" & "finally()"
 const promiseOne = new Promise(function(resolve, reject){
     setTimeout(() => {
         console.log("Promise executed");
@@ -18,6 +25,9 @@ const promiseOne = new Promise(function(resolve, reject){
 promiseOne.then(() => {
     console.log("Promise Suceessed");
 })
+//💥Output:1️⃣Promise executed
+//         2️⃣Promise Suceessed
+
 //👉above created "new" as object(instance) for Prmoise same like xmlHttpRequest.
 //👉"Promise" takes callback functiion(simple function/arrow func)
 //👉And callback funcion takes 2 parameter "resolve" and "reject".
@@ -43,11 +53,14 @@ new Promise((resolve, reject) => {
 }).then(() => {
     console.log("Promise2 Resolved");
 })
+//💥Output:1️⃣Promise2 Executed
+//         2️⃣Promise2 Resolved
+
 //👆NOTE: In above we didn't store the "Promise" in a variable directly,
 //        after that used "then" method in chainable.
 
 
-//🎯Example2: Promise()
+//🎯Example2: Promise() with ".then()" & ".catch()" & "finally()"
 const promiseThree = new Promise((resolve, reject) => {
     setTimeout(() => {
         console.log("Promise three is executed");
@@ -58,13 +71,15 @@ promiseThree.then((userdata) => {
     console.log(userdata);
     console.log(userdata.username);
 })
+//💥Output:1️⃣{username: "nikhil6032", email: "niil49@google.com"}
+//         2️⃣nikhil6032
 
 //👆Note: In above all same according to Example1 but the difference is,
 //      here in "resolve" we can pass data in object or array format.
 //After that in "then()" method we took a "userdata" as a reference name of object which object placed in "resolve". 
 
 
-//🎯Example3: Promise()
+//🎯Example3: Promise() with ".then()" & ".catch()" & "finally()"
 const promiseFour = new Promise((resolve, reject) => {
     setTimeout(() => {
         let error = true;
@@ -84,18 +99,24 @@ promiseFour.then((userprofile) => {
 }).finally(() => {
     console.log("The Promise either got resolved or rejected");
 })
+//💥Output:1️⃣Error: Something went wrong
+//         2️⃣The Promise either got resolved or rejected
 
 //OR
+//let error = false👇
 promiseFour.then((userprofile) => {
-    console.log(userprofile);
+    console.log(userprofile);           //1️⃣
     return userprofile.profile;
 }).then((profile) => {
-    console.log(profile);
+    console.log(profile);              //2️⃣
 }).catch((error) => {
     console.log(error);
 }).finally(() => {
-    console.log("The Promise either got resolved or rejected");
+    console.log("The Promise either got resolved or rejected");     //3️⃣
 });
+//💥Output:1️⃣{profile: "React JS", experience: 4}
+//         2️⃣React JS
+//         3️⃣The Promise either got resolved or rejected
 
 //👆NOTE: in above example we understood that "then()" method used when returning any data successfully.
 //        And "catch()" method used when any error comeing at that time we use "catch()" to show the error.
@@ -109,7 +130,7 @@ promiseFour.then((userprofile) => {
 //   chainable display that you both(then & catch) dispaly your task now finally display the final message.
 
 
-//2️⃣"async" & "await" 🚩
+//2️⃣Promise() with "async" & "await" 🚩
 //👉"async" makes a function asynchronous. use "async" before a function.
 //👉"async" keyword tranform a regular function into an asynchronous function, becasue it need to return a promise.
 //👉"async" function always returns a promise.
@@ -117,9 +138,11 @@ promiseFour.then((userprofile) => {
 //👉"await" makes a funcion wait for promise.
 //👉"await" makes the code wait until promise returns a value.
 //👉"async" "await" enables use of ordinary "try" "catch" blocks around asynchonous code.
+//👉Where we use "await", when dealing with "network request" or "converting string into json/object etc.",
+//  or dealing with any "data" like object's data and other data.
 
 //🎯Example4: "async" & "await"
-//              "async" & "await" are similar to Promise "then" and "catch" only syntax is different but process same.
+//             👌Promise "async" & "await" are similar to Promise "then" and "catch" only syntax is different but process same.
 const promiseFive = new Promise((resolve, reject) => {
     setTimeout(() => {
         let error = false;
@@ -134,8 +157,8 @@ const promiseFive = new Promise((resolve, reject) => {
 async function executionPromiseFive(){
     try{
         const response = await promiseFive;
-        console.log(response);
-        console.log(response.userskill);
+        console.log(response);                  //💥Output: {userskill: "sap basis", company: "pwc"}
+        console.log(response.userskill);       //💥Output: sap basis
     }catch(error){
         console.log(error);
     }
@@ -160,11 +183,15 @@ executionPromiseFive();
 //✍And "catch" is used to execute "error" or "false" statement/condition.       
 
 
+
+//3️⃣Only "async" & "await" without "Promise"
 //🎯Example5: "async" & "await" request from API 
+//  async function always returns a "Promise".
+//👉Where we use "await" when dealing with "network request" or "converting string into json/object etc."
 async function getUserData(){
     try{
-        const apiResponse = await fetch("https://randomuser.me/api/");
-        const convertJson = await apiResponse.json();
+        const apiResponse = await fetch("https://randomuser.me/api/");      //👈await used in Network request 
+        const convertJson = await apiResponse.json();                      //👈await used in converting string into json
         //Above data comes through url that means that data type is in string format so,
         //".json()" convert the string data into json format.
         console.log(convertJson);
@@ -175,9 +202,9 @@ async function getUserData(){
 getUserData();
 
 
-//3️⃣"fetch()"
+//4️⃣"fetch()"          -- ".then()" & ".catch()"
 //👉"fetch" method starts the process of fetch resources/data from server and returns a promise.
-//👉"fetch" uses ".then()" & ".catch()" similar to Promise.
+//👉"fetch" uses ".then()" & ".catch()" similar to Promise ".then" & ".catch".
 //👉actually "xmlHttpRequest" is a callback-based API.
 //👉But "fetch" is a Promise based API and provides a better alternative that can be used in service workers.
 //👉"fetch" also integrates advanced HTTP concepts such as CORS(Cross Origin Resource Sharing) and othes HTTP extension.
