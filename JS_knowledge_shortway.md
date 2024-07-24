@@ -40,4 +40,9 @@ only we mentioned <button></button> even then it will react as "submit" button.
                     # event.target.value     ---- returns value which is given in html element's attribute
                     # event.target.name      ---- returns name
 3️⃣"event.type"   -- It tells what type of event such as click/submit/moouseover etc.
-```     
+``` 
+# "this" keyword where mostly use?
+```text
+1️⃣we can use "this" keyword inside object using "this" we can access object's        properties but outside object "this" keyword can't access the object's properties.
+2️⃣we can use "this" keyword inside constructor function.
+```    
