@@ -2,7 +2,9 @@
 //           * "class" is a type of function, instead of "function" keyword use "class" keyword,
 //              and the properties are assigned inside a "constructor".
 
-//✍constructor: # "constructor" is executed automatically when a new object is created.
+//✍constructor: # constructor method is a special method in class is used to creating and initializing,
+//                 object in a class.
+//               # "constructor" is executed automatically when a new object is created.
 //               # it is used to initialize object properties.
 //               # Every class having a default constructor because it stores "state".
 //Example:
@@ -25,7 +27,8 @@ console.log(userData);
 console.log(userData.changeUsername());
 console.log(userData.encryptPassword());
 
-//👇Same above Using Function
+
+//🎁Same above Using Function (constructor function)
 //Example:
 
 function Users(username, password, email){
