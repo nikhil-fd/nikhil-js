@@ -23,9 +23,9 @@ class User{
 }
 
 const userData = new User("niil081", "niil@yahoo.com", 7859);
-console.log(userData);
-console.log(userData.changeUsername());
-console.log(userData.encryptPassword());
+console.log(userData);                   //💥Output: User {username: "niil081", email: "niil@yahoo.com", password: 7859}
+console.log(userData.changeUsername());   //💥Output: NIIL081
+console.log(userData.encryptPassword());  //💥Output: 7859
 
 
 //🎁Same above Using Function (constructor function)
@@ -43,9 +43,9 @@ Users.prototype.changeUsersname = function(){
     return `${this.username.toUpperCase()}`
 }
 const usersData = new Users("paanbahar", 6936, "lovely@yoga.com");
-console.log(usersData);
-console.log(usersData.encryptPassword());
-console.log(usersData.changeUsersname());
+console.log(usersData);                    //💥Output: Users{username: "paanbahar", password: 6936, email: "lovely@yoga.com"}
+console.log(usersData.encryptPassword());    //💥Output: 6936
+console.log(usersData.changeUsersname());   //💥Output: PAANBAHAR
 
 //🙏Note: You can approach any 1 between "class" and "function" but in real time industry
 //         mostly used "function" both "function" and "class" doing same thing.
