@@ -28,3 +28,4 @@ const uniqueUser = new UserCourse("mahirat", "mahi@google.com");
 console.log(uniqueUser);
 console.log(User.createUserId());         //Directly it can be access     //💥Output: 590
 console.log(uniqueUser.createUserId());    //It can't be access directly //💥Output: Error
+console.log(uniqueUser instanceof UserCourse);                          //💥Output: true
