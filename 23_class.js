@@ -9,10 +9,10 @@
 //               # "constructor" is executed automatically when a new object is created.
 //               # it is used to initialize object properties.
 //               # Every class having a default constructor because it stores "state".
-//Example:
+//🎯Example:
 class User{
     constructor(username, email, password){
-        this.username = username;
+        this.username = username;           //👈Over here we are storing username, email, password in a variable that variable is "this" variable.
         this.email = email;
         this.password = password;
     }
