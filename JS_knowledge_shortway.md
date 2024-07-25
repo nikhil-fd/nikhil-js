@@ -45,4 +45,5 @@ only we mentioned <button></button> even then it will react as "submit" button.
 ```text
 1️⃣we can use "this" keyword inside object using "this" we can access object's        properties but outside object "this" keyword can't access the object's properties.
 2️⃣we can use "this" keyword inside constructor function.
+3️⃣"this" returns current context that means "this" ko jisne call kiya "this" uski reference or value provide karega.
 ```    
