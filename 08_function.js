@@ -12,6 +12,27 @@
 //👉Callback function mostly used to handle asynchronous operation such as reading files, making network request and handling events.
 //👉Callback function can define in such way inside a function/method -- asynchronous function(), () => {} arrow function.
 
+//🎁Higher order function?
+//A function takes/accept another function as an argument i.e. called Higher order function.
+//🕑Example:
+const add = (a,b) => {
+    return a + b;
+} 
+const sub = (a,b) => {
+    return a - b;
+}
+const multi = (a,b) => {
+    return a * b;
+}
+const divi = (a,b) => {
+    return a / b;
+}
+const calculation = (num1, num2, operator) => {
+    return operator(num1, num2)
+}
+console.log(calculation(5,10,multi));     //💥Output: 5 * 10 =50
+
+
 //🎯How to define function?   
 function myData(){                     //👈function define 
     console.log("Developer Das");
