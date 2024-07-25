@@ -16,16 +16,29 @@
 //✍Example1: In this example we are trying to change "PI" value using writable, enumerable & configurable = true,
 //          but we can't change the "PI" value. So this propery not allow everywhere to change the internal settings,
 //          somewhere it allows to change the property.
-const descriptor = Object.defineProperty(Math, "PI", {
+const piValue = Math.PI;
+Math.PI = 4.256
+console.log(piValue);         //💥Output: 3.141 did not changed to 4.256
+
+const mathValue = Object.getOwnPropertyDescriptor(Math, "PI")
+console.log(mathValue);
+//💥Output:
+// {
+//     value: 3.141592653589793,
+//     writable: false,
+//     enumerable: false,
+//     configurable: false
+//   }
+
+const myObj = Object.defineProperty(Math, "PI", {
     writable: true,
     enumerable: true,
     configurable: true
-});
-console.log(descriptor);
-console.log(Math.PI);
+})
+console.log(myObj);     //💥Output: error--can not redefine property PI
 
 
-//✍Example2: In this example we are trying to stop the iteration of any 1 object's value.
+//✍Example2: In this example we are trying to stop the iteration of any 1 object's property.
 const UserMeal = {
     meal: "chicken-lolipop",
     price: 389,
@@ -49,17 +62,19 @@ for(let [key, value] of Object.entries(UserMeal)){
 }
 
 
-//✍Example3: Here we are preventing iteraration of age value apart from that other value can iterate.
+//✍Example3: Here we are preventing iteraration of age property apart from that other value can iterate.
 let myBio = {
     name: "nikhil",
     age: 38,
     isReady: true
 }
 console.log(Object.getOwnPropertyDescriptor(myBio, "age"));
+//💥Output: { value: 38, writable: true, enumerable: true, configurable: true }
+
 Object.defineProperty(myBio, "age", {
     enumerable: false
 })
 for(let bio of Object.values(myBio)){
-    console.log(bio);
+    console.log(bio);                   //💥Output: nikhil, true
 }
 
