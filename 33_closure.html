@@ -11,7 +11,7 @@
 
     <script>
         function mainFunc(color){
-
+            // document.body.style.backgroundColor = `${color}`
             return function(){
                 document.body.style.backgroundColor = `${color}`
             }
@@ -19,11 +19,13 @@
         document.getElementById("orange").onclick = mainFunc("orange");
         document.getElementById("green").onclick = mainFunc("green");
 
-        //NOTE: So in this scenario "return" keyword not returning only function() but also in behind
+        //👌NOTE:👉So in this scenario "return" keyword not returning only function() but also in behind
         //      it returning lexical scope i.e. function mainFunc(color).
 
-        //      if "return" keyword would not return lexical scope then the "color" value can't access in
-        //      function backgroundcolor = {color}. so behind the scene "return" returns the lexical scope as well.
+        //👉   if we do document.body.style.backgroundColor = `${color}` in mainFunc only without use 
+        //     inner Function(return function) then what's happening when page gets load at that time without clik on button,
+        //     the color getting change in background. so for this problem we defined another function as child inside mainFunc(),
+        //     now background color is changing when click on button, it can be happening because of closure.
     </script>
 </body>
 </html>
