@@ -51,18 +51,15 @@ myObj.country();               //💥Output: Welcome to odisha
 //2️⃣The new object internal "prototype" property is set the same as the prototype of
 //   constructor function.
 //3️⃣The "this" variable is made to point to the newely created object. The "new" keyword
-//  binds the properties that is declared with the "this" keyword, to the new object
+//  binds the properties that is declared with the "this" keyword, to the new object.
 
 //🎯Example1:constructor function.👌
 //🎯constructor function can be converted into class check -- Example2
 function userData(username, age, skill){
-    this.username = username;
+    this.username = username;             
     this.age = age;
     this.skill = skill;
-    //👆In above all, we kept all parameter data inside a variable in object by using "this" because "this" keyword creates a object.
-    //👆We can keep object "key" name same as function property.
-    //👆Here "this" variable binds the declared property to the "new" object (below mentioned).
-    // console.log(this);
+    //👆Here username,age,skill are stored in a variable that variable is "this" variable
 }
 //const userOne = userData("nikhil", 30, "sap");
 // const userTwo = userData("Hitesh", 35, "js");
@@ -70,10 +67,10 @@ function userData(username, age, skill){
 
 //👆In above if we not create "new" instance or "new" object then later on these value can be override.
 //  So, if we create new instance "new"/"new" object then "new" creates a copy of that data,
-//  so that nobody can override that data with a new value.
+//  so that nobody can't override that data with a new value.
 
 const userOne = new userData("nikhil", 30, "sap");
-//Above here we created a "new" instance or "new" object so these data can't be override/replace.
+//👆Above here "new" keyword creates an object with these data and these data can't be override/replace.
 const userTwo = new userData("Hitesh", 35, "js");
 console.log(userOne);       //💥Output: userData{username: "nikhil", age: 30, skill: "sap"}
 console.log(userTwo);      //💥Output: userData{username: "Hitesh", age: 35, skill: "js"}
