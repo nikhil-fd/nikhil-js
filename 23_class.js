@@ -2,6 +2,8 @@
 //           * "class" is a type of function, instead of "function" keyword use "class" keyword,
 //              and the properties are assigned inside a "constructor".
 
+//🎁 In JavaScript "class" members are -- (i)constructor (ii)super (iii)properties (iv)static (v)extends (vi)bind 
+
 //✍constructor: # constructor method is a special method in class is used to creating and initializing,
 //                 object in a class.
 //               # "constructor" is executed automatically when a new object is created.
