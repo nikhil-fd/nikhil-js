@@ -5,10 +5,28 @@
 //4️⃣"fetch()"          -- ".then()" & ".catch()"
 
 
+//************************************************************************************************************************************** */
+//🎁json()
+// When fetch() method fetching data from API at that time fetch API response/return "object".
+// But we need to convert the response object into json format then use json() method.
+
+//🎁JSON.stringify()
+//JSON.stringify() method is used to convert the object or value or array into json string format.
+//it is often used when sending data to webserver/localstorage.
+
+//🎁JSON.parse()
+//JSON.parse() method is used to convert the json string into javascript object/array.
+//it is often used when receiving json data from webserver/localstorage.
+
+//************************************************************************************************************************************************* */
+
+
 //1️⃣Promise:
 //👉The Promise object representing the eventual completion or failure of an aynchronous operation and its resulting value.
 //👉We can use "Promise()" with ".then()" and ".catch()" method, also we can use "promise()" with "async" and "await".
 //  "async"/"await" uses "try" and "catch" for error handling.
+//👉.then(() => {}) and .catch(() => {}) and .finally(() => {}) always takes call back function.
+
 //📌new Promise(function(resolve,reject){}).then().catch().finally().
 //📌new Promise(function(resolve,reject){}) async, await, try, catch.
 //From above You can use any one because both are doing same work.
@@ -188,6 +206,8 @@ executionPromiseFive();
 //🎯Example5: "async" & "await" request from API 
 //  async function always returns a "Promise".
 //👉Where we use "await" when dealing with "network request" or "converting string into json/object etc."
+
+//🕑Example: Using Regular function
 async function getUserData(){
     try{
         const apiResponse = await fetch("https://randomuser.me/api/");      //👈await used in Network request 
@@ -202,9 +222,26 @@ async function getUserData(){
 getUserData();
 
 
+//🕑Example:Using Arrow function
+const collegeUser = async() => {
+    try{
+        const apiData = await fetch("https://jsonplaceholder.typicode.com/users")
+        const convData = await apiData.json();
+        console.log(convData);               //💥Output: [{},{},{},{},{},{},{},{},{},{}]
+        console.log(convData[9].email);     //💥Output: Rey.Padberg@karina.biz 
+    }catch(error){
+        console.log(error);
+    }
+}
+collegeUser();
+
+
+
 //4️⃣"fetch()"          -- ".then()" & ".catch()"
 //👉"fetch" method starts the process of fetch resources/data from server and returns a promise.
+//👉When fetch() method fetching data from API at that time fetch API response/return "object".
 //👉"fetch" uses ".then()" & ".catch()" similar to Promise ".then" & ".catch".
+//👉.then(() => {}) and .catch(() => {}) always takes call back function.
 //👉actually "xmlHttpRequest" is a callback-based API.
 //👉But "fetch" is a Promise based API and provides a better alternative that can be used in service workers.
 //👉"fetch" also integrates advanced HTTP concepts such as CORS(Cross Origin Resource Sharing) and othes HTTP extension.
