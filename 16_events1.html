@@ -147,10 +147,12 @@
         console.log(e.pageX);          //💥Output: 105   (we get this "pageX" properties from "e" event)
         console.log(e.shiftKey);      //💥Output: false
         console.log(e.timeStamp);    //💥Output: 2,356.7
+        console.log(e.clientX);     //💥Output: 568
+        console.log(e.clientY);    //💥Output: 265
         //We can access other more properties like this.
       },false)
 
-      //💥Output:👆
+      //💥Output: "event's" all properties👇
       // PointerEvent {isTrusted: true, pointerId: 3, width: 1, height: 1, pressure: 0, …}
       // isTrusted: true
       // altKey: false
