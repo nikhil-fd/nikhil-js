@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #212121;
+}
+header{
+    background-color: orange;
+    padding: 20px;
+}
+header h1{
+    color: white;
+}
+header h1 i{
+    color: black;
+}
+main{
+    display: flex;
+    justify-content: flex-end;
+}
+button#addBtn{
+    width: 100px;
+    height: 50px;
+    border-radius: 50%;
+    margin:20px 20px 0px 0px;
+    background-color: yellowgreen;
+    font-weight: bold;
+    cursor: pointer;
+}
+button i#addicon{
+    color: red;
+    font-size: 15px;
+}
+
+/* {<div class="mainparent">
+//         <div class="btn-edit-remove">
+//                 <button id="editbtn"><i id="editicon" class="fa-solid fa-pen-to-square"></i></button>
+//                 <button id="removebtn"><i id="removeicon" class="fa-solid fa-trash"></i></button>
+//         </div>
+//          <div class="note-save-div"></div>
+//         <textarea name="txtfield" id="txtfield"></textarea>
+    </div> */
+
+div.mainparent{
+    display: inline-flex;
+    margin: 10px;
+}    
+div.textbox{
+    width: 300px;
+    height: 200px;
+    background-color: white;
+    /* background-color: red; */
+    position: relative;
+}
+div.btn-edit-remove{
+    display: flex;
+    justify-content: flex-end;
+}
+button#editbtn{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    /* padding: 10px; */
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+}
+i#editicon{
+    color: green;
+    text-align: center;
+    font-size: 20px;
+
+}
+button#removebtn{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    /* padding: 10px; */
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+}
+i#removeicon{
+    color: red;
+    text-align: center;
+    font-size: 20px;
+
+}
+div.note-save-div{
+    width: 300px;
+    height: 150px;
+    border: 2px solid white;
+    color: black;
+    background-color: white;
+    position: absolute;
+    z-index: 1;   
+    overflow-y: scroll;             
+    /* using z-index we can set 1 div above another div, so this div comes below that's why 1 */
+}
+textarea{
+    width: 300px;
+    height: 150px;
+    position: absolute;
+    border: 2px solid white;
+    color: black;
+    font-size: 1rem;
+    outline: none;
+    margin-bottom: 50px;
+    left: 0px;
+    z-index: 2;
+    overflow-y: scroll;
+    /* using z-index we can set 1 div above another div, so this testarea comes above div that's why 2 */
+}
+.hidden{
+    display: none;
+}
