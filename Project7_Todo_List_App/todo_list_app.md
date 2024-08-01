@@ -208,8 +208,6 @@ const showTextField = (text = '') => {
 
 
     // mainDiv.innerHTML = htmlData;
-    //parentDiv.appendChild(mainDiv);
-    // document.body.appendChild(parentDiv)
     //OR👇Both are same.
     mainDiv.insertAdjacentHTML("afterbegin", htmlData)
 
@@ -268,6 +266,7 @@ if(getLSData){
 addBtn.addEventListener("click", () => showTextField())
 
 
+//👇Project Summary👇
 //Local storage--local storage store data in our local system web browser in key and value pair i.e. JSON format.
 //               local storage data has no expiration date.And here the data will not be deleted
 //               when broser is closed it will be save there by week by month by year.
