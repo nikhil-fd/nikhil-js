@@ -4,29 +4,97 @@
 //operator is an object that evaluate a value.
 //In javascript operators are classified into following types.
 //1️⃣Assignment Operator
-//2️⃣Comparison Operator
-//3️⃣Arithmatic Operator
+//2️⃣Arithmatic Operator
+//3️⃣Comparison Operator
 //4️⃣Logical Operator
 //5️⃣Ternary Operator
 //6️⃣String Operator
 
 //1️⃣Assignment Operator (=, +=, -=, /=, *=, %=)
 //assignment operator is used to assign value to its left operand based on the value of right operand.
+//🎁"+=" --- how it calculate, if the left operand has string and right operand has number,
+//           then "+=" will concatenate two value and the value will appear like 1st left oprand value then immediate right to right operand value.
+//           Suppose if both left operand and right operand has number then "+=" mathematically adding both value,
+//           and gets store the evaluated value in left operand.
+
+//🎁"-=" --- if left operand has string and right operand has number then "-=" mathematically substract both value,
+//           and the evaluated value will store in left operand.
+//          suppose if both left operand and right operand has string value then "-=" same mathematically substract both value,
+//          and the evaluated value will store in left operand.
+
+//🎁"*=", "/=", "%=" -- These are same performed like "-=" mathematically evaluate both string and number,
+//                      also mathematically evaluate both number and number.
+//Example:
+let btn1 = 1;
+let btn2 = "2";
+let btn3 = "3";
+let btn4 = "4";
+let btn5 = "5";
+btn1 += 10; 
+console.log(btn1);               //💥Output: 11
+console.log(typeof btn1);       //💥Output: number
+
+btn2 += 10;
+console.log(btn2);               //💥Output: 210
+console.log(typeof btn2);       //💥Output: string
+
+btn3 -= 10;
+console.log(btn3);              //💥Output: -7
+console.log(typeof btn3);      //💥Output: number
+
+btn4 *= 10;
+console.log(btn4);              //💥Output: 40
+console.log(typeof btn4);      //💥Output: number
+
+btn4 *= "10";
+console.log(btn4);              //💥Output: 40
+console.log(typeof btn4);      //💥Output: number
+
+btn5 /= 10;
+console.log(btn5);             //💥Output: 0.5
+console.log(typeof btn5);     //💥Output: number
+
+btn5 /= "10";
+console.log(btn5);             //💥Output: 0.5
+console.log(typeof btn5);     //💥Output: number
+
+
+//2️⃣Arithmatic Operator (+, -, *, /, %)
+//It takes a numerical value as their operand and return a single numerical value.
 //Example:
 let x = 10;
 let y = 20;
 console.log(x += y);                 //💥Output -- 30
-console.log(10 + "20");              //💥Output -- 1020
 console.log(10 + 20 + "30");         //💥Output -- 3030
 console.log("30" + 20 + 10);         //💥Output -- 302010
 console.log(10 + 20 + "30" + 40 + 50); //💥Output -- 30304050
-console.log(9 - "5");                //💥Output -- 4
-console.log("10" - 6);               //💥Output -- 4
 console.log("Nikhil" - "swati");     //💥Output -- NaN
 console.log("" + 0);                 //💥Output -- 0
 console.log("" + "");                //💥Output -- empty
 
-//2️⃣Comparison Operator (==, ===, !==, !=, <, >, <=, >=)
+console.log(10 + "20");              //💥Output -- 1020 (string)
+console.log("10" + "20");           //💥Output -- 1020 (string)
+console.log(10 + 20);              //💥Output -- 30 (number)
+console.log("Nikhil" - "swati");     //💥Output -- NaN
+
+console.log(9 - "5");                  //💥Output -- 4 (number)
+console.log("9" - "5");               //💥Output -- 4 (number)
+console.log(9 - 5);                  //💥Output -- 4 (number)
+
+console.log(10 * 20);                 //💥Output -- 200(number)
+console.log("10" * "20");             //💥Output -- 200(number)    
+console.log("10" * 20);             //💥Output -- 200 (number)   
+
+console.log("20" / "10");            //💥Output -- 2(number)
+console.log("20" / 10);            //💥Output -- 2(number)
+console.log(20 / 10);               //💥Output -- 10(number)
+
+console.log(20 % 10);              //💥Output -- 0(number)
+console.log("20" % 10);              //💥Output -- 0(number)
+console.log("20" % "10");              //💥Output -- 0(number)
+
+
+//3️⃣Comparison Operator (==, ===, !==, !=, <, >, <=, >=)
 //comparison operator is used to compare the value with left operand and right operand and return a logical value true or false.
 // "=="  : it compares/checks only vlaue.
 // "==="  : it compares/checks value as well as data types.
@@ -54,13 +122,6 @@ console.log(undefined > 0);    //💥Output -- false
 console.log(undefined < 0);    //💥Output -- false
 console.log(undefined >= 0);    //💥Output -- false
 
-
-//3️⃣Arithmatic Operator (+, -, *, /, %)
-//It takes a numerical value as their operand and return a single numerical value.
-//Example:
-let r = 25
-let s = 35
-console.log(r * s);     //💥Output -- 875
 
 //4️⃣Logical Operator (!, &&, ||)
 //logical operator returns a boolean value.
