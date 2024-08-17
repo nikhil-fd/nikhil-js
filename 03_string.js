@@ -226,9 +226,17 @@ function myWifeyName(str){
     for(let i = str.length -1; i >= 0; i--){
         revName += str[i]
     }
-    console.log(revName);
+    console.log(revName);              //💥Output: sad itaws
 }
 myWifeyName("swati das")
+
+//OR
+let car8 = "landrover";
+    let newCar = '';
+    for(let i = car8.length - 1; 0 <= i; i--){
+        newCar += car8[i]
+    }
+    console.log(newCar);          //💥Output: revordnal
 
 
 //🎯How to get all prototype from browser?
