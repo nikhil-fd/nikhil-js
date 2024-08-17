@@ -86,12 +86,32 @@ console.log(char7.substring(-3));                       //💥Output: lomror
 
 //🎁substr()-
 //substr() method is same like slice() and substring() method but the differnece is if we give -ve value for
-//end argument then it returns empty.
+//end number then it returns empty.
 //substr() method doesn't prefer more. 
 const char8 = "muralidhal"
 console.log(char8.substr(3, 7));              //💥Output: alidhal
 console.log(char8.substr(1, -4));            //💥Output: empty
 console.log(char8.substr(-4));              //💥Output: dhal
+
+//🎯NOTE: Difference between slice() & substring() & substr() ?
+//Difference1️⃣
+//If we pass -ve number for end number in slice() and substr() method then it returns empty,
+//whereas substring() method returns character, it starts extracting from index no. 0 to till before start number,
+//it doesn't include start number.
+let car1 = "mahindra";
+console.log(car1.slice(2, -5));            //💥Output: empty
+console.log(car1.substr(2, -5));          //💥Output: empty
+console.log(car1.substring(2, -5));      //💥Output: ma
+
+//Difference2️⃣
+//If we pass only single -ve number in slice() and substr() method then it starts count reversewise,
+//but it returns extracted character forwardwise and it doesn't include the given number, includes till before the given number. 
+//whereas substring() method returns all character.
+let car2 = "toyota";
+console.log(car2.slice(-4));          //💥Output: yota
+console.log(car2.substr(-4));        //💥Output: yota
+console.log(car2.substring(-4));    //💥Output: toyota
+
 
 //🎁replace()-
 //replace() method is used to replace the new value with existing value. it takes 2 parameter search value
