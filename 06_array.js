@@ -1,6 +1,5 @@
 //🚩Array: We can store multiple element in mutliple data types on a single variable i.e. called Array.
-//          Also we can store function as well.
-//         In array we can store string, number, boolean, array and object as well.
+//         In array we can store string, number, boolean, array, object and function as well.
 
 //🎯We can define Array in 2 ways-
 //1️⃣way-
