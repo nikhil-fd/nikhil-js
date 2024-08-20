@@ -331,6 +331,25 @@ console.log(toyotaCars.price);            //💥Output: 15lacs
 console.log(tataCars.carname);           //💥Output: safari
 console.log(mahindraCars.model);        //💥Output: 2024
 
+
+//🚩Constructor using "class"🚩
+//🎯We can define same above constructor function using "class" declaration🎯
+class LatestCar{
+    constructor(carname, model, price){
+        this.carname = carname;
+        this.model = model;
+        this.price = price;
+        return this;
+    }
+}
+const marutiCars = new LatestCar("wagnor", 2022, "7lacs");
+const fordCars = new LatestCar("figo", 2010, "8lacs");
+const suzukiCars = new LatestCar("xl6", 2023, "13lacs");
+console.log(marutiCars.carname);             //💥Output: wagnor
+console.log(fordCars.price);                //💥Output: 8lacs
+console.log(suzukiCars.model);             //💥Output: 2023
+
+
 //********************************************************************************************* */
 
 //🟠🔴🟡Check all prototype of object
