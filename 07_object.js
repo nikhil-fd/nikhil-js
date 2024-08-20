@@ -100,10 +100,10 @@ const myList = {
     [mySym]: "keynew1",
     film: "julia"
 }
-console.log("A ", myList[mySym]);
-console.log("B ",myList["hero"]);
-console.log("C ", myList);
-console.log(this.heroine);
+console.log("A ", myList[mySym]);              //💥Output: keynew1
+console.log("B ",myList["hero"]);             //💥Output: Sunil
+console.log("C ", myList);                   //💥Output: {hero: "Sunil", heroine: "Anushka", age: 25, [Symbol(key1)]: "keynew1", film: "julia"}
+console.log(this.heroine);                  //💥Output: error 
 
 
 //2️⃣way👉 of define object literal
@@ -151,7 +151,9 @@ const mergeList1 = {...list1,...list2};
 const mergeList = {list1,list2}         //here inside an object another object will come same as in array also.
 console.log(mergeList1);    //💥Output: {a: "dil", b: "mil", c: "fil", x: "sam", y: "bam", z: "jam"}
 console.log(mergeList);    //💥Output: {list1: { a: 'dil', b: 'mil', c: 'fil' },list2: { x: 'sam', y: 'bam', z: 'jam' }}
-//OR
+
+//OR👇
+
 //🎁"Object.assign()" 
 //Object.assign() method is used to combine/merge one or more object.
 //same above we can do through "Object.assign()" method
@@ -279,8 +281,57 @@ function myHotels(rooms){        //👈Rule: This "rooms" is object's name
 myHotels({
     id: 32,
     name: "nikhil"
-});  
+}); 
 
+
+
+//*************************************************************************************** */
+//Same below constructor function explained in file-👉19_this_new_instanceof_constructor_in.js👈
+//so you can skip this topic in 19_this file.
+
+//🎁Constructor Function🎁
+//1️⃣In javascript constructor function is used to create multiple object with same properties
+//  and mthods.
+//2️⃣It acts as a blueprint for object and provides a way to intialize properties when creating an object instance.
+
+//👌constructor function is useful for-- 👌
+//1️⃣multiple object creation with same properties and methods.
+//2️⃣Reusability to maintain DRY principle(Do not Repeat Yourself). means we don't need to define same properties recursively.
+//3️⃣Scalability means in large application, constructor function help to maintain consistency and
+//  structure by creating a object in standardrized way.
+
+//👌When constructor function calling by the "new" keyword then what action happended?👌
+//1️⃣"new" keyword creates an empty object that is called as new instance.
+//2️⃣The new object internal "prototype" property is set the same as the prototype of
+//   constructor function.
+//3️⃣The "this" variable is made to point to the newely created object. The "new" keyword
+//  binds the properties that is declared with the "this" keyword, to the new object.
+
+//❌Example:🕑 
+//NOTE: Here properties are repeating so it's not good in realtime.
+const toyotaCar = {carname: "fortuner", model: 2023, price: "15lacs"}
+const tataCar = {carname: "safari", model: 2021, price: "10lacs"}
+const mahindraCar = {carname: "scorpio", model: 2024, price: "15lacs"}
+console.log(toyotaCar.carname);            //💥Output: fortuner
+console.log(tataCar.carname);             //💥Output: safari
+console.log(mahindraCar.price);          //💥Output: 15lacs
+
+//✅Example:🕑 
+//NOTE: In above example properties are repeating but constructor function do not repeat the code,
+//        constructor function uses DRY(Do not Repeat Yourself) Principle.
+function cars(carname, model, price){
+    this.carname = carname;
+    this.model = model;
+    this.price = price;
+}
+const toyotaCars = new cars("fortuner", 2023, "15lacs");
+const tataCars = new cars("safari", 2021, "10lacs");
+const mahindraCars = new cars("scorpio", 2024, "15lacs");
+console.log(toyotaCars.price);            //💥Output: 15lacs
+console.log(tataCars.carname);           //💥Output: safari
+console.log(mahindraCars.model);        //💥Output: 2024
+
+//********************************************************************************************* */
 
 //🟠🔴🟡Check all prototype of object
 // const obj = {nmae: "sak"}
