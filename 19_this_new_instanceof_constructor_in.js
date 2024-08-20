@@ -45,15 +45,54 @@ myObj.country();               //💥Output: Welcome to odisha
 //👉or we can say "new" keyword creates an empty object{}.
 //👉"new" keyword creates a copy of data so that in future or later no-one can't override these data.
 
-//🎁Constructor Function
-//When constructor function calling by the "new" keyword then what action happended?
+
+//************************************************************************************************************************************ */
+//Same below constructor function already explained in file-👉07_object.js👈
+//so you can skip this topic in 19_this file.
+
+//🎁Constructor Function🎁
+//1️⃣In javascript constructor function is used to create multiple object with same properties
+//  and mthods.
+//2️⃣It acts as a blueprint for object and provides a way to intialize properties when creating an object instance.
+
+//👌constructor function is useful for-- 👌
+//1️⃣multiple object creation with same properties and methods.
+//2️⃣Reusability to maintain DRY principle(Do not Repeat Yourself). means we don't need to define same properties recursively.
+//3️⃣Scalability means in large application, constructor function help to maintain consistency and
+//  structure by creating a object in standardrized way.
+
+//👌When constructor function calling by the "new" keyword then what action happended?👌
 //1️⃣"new" keyword creates an empty object that is called as new instance.
 //2️⃣The new object internal "prototype" property is set the same as the prototype of
 //   constructor function.
 //3️⃣The "this" variable is made to point to the newely created object. The "new" keyword
 //  binds the properties that is declared with the "this" keyword, to the new object.
 
-//🎯Example1:constructor function.👌
+//❌Example:🕑 
+//NOTE: Here properties are repeating so it's not good in realtime.
+const toyotaCar = {carname: "fortuner", model: 2023, price: "15lacs"}
+const tataCar = {carname: "safari", model: 2021, price: "10lacs"}
+const mahindraCar = {carname: "scorpio", model: 2024, price: "15lacs"}
+console.log(toyotaCar.carname);            //💥Output: fortuner
+console.log(tataCar.carname);             //💥Output: safari
+console.log(mahindraCar.price);          //💥Output: 15lacs
+
+//✅Example:🕑 
+//NOTE: In above example properties are repeating but constructor function do not repeat the code,
+//        constructor function uses DRY(Do not Repeat Yourself) Principle.
+function cars(carname, model, price){
+    this.carname = carname;
+    this.model = model;
+    this.price = price;
+}
+const toyotaCars = new cars("fortuner", 2023, "15lacs");
+const tataCars = new cars("safari", 2021, "10lacs");
+const mahindraCars = new cars("scorpio", 2024, "15lacs");
+console.log(toyotaCars.price);            //💥Output: 15lacs
+console.log(tataCars.carname);           //💥Output: safari
+console.log(mahindraCars.model);        //💥Output: 2024
+
+//🕑Example1:constructor function.👌
 //🎯constructor function can be converted into class check -- Example2
 function userData(username, age, skill){
     this.username = username;             
@@ -76,7 +115,7 @@ console.log(userOne);       //💥Output: userData{username: "nikhil", age: 30, 
 console.log(userTwo);      //💥Output: userData{username: "Hitesh", age: 35, skill: "js"}
 
 
-//🎯Example2: Above Example1 converting constructor function into "class" declaration.
+//🕑Example2: Above Example1 converting constructor function into "class" declaration.
 class userData{
     constructor(username, age, skill){
         this.username = username;
