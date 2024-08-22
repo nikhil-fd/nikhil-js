@@ -160,7 +160,21 @@ oracleDb();           //💥Output: Connection Succeed (same execute immediately
 })("Nikhil");                                          //💥Output: Connected to Nikhil user
 
 
-//4️⃣IIFE function uses "return" statement
+//4️⃣IIFE function using anonymous function.
+(function(car1,car2){
+    let totalPrice = car1 + car2;
+    console.log(totalPrice);
+})(5999,4001);                  //💥Output: 10000
+
+//Using "return" statement
+const ownCar =  (function(car1,car2){
+    let totalPrice = car1 + car2;
+    return totalPrice;
+})(5999,4001);
+console.log(ownCar);           //💥Output: 10000
+
+
+//5️⃣IIFE function uses "return" statement
 //🧠NOTE: when use "return" statment in IIFE function then we need to store IIFE functin in a variable.
 const addition = (function(num50, num100){
     let result = num50 + num100;
