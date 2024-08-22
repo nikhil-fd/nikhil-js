@@ -46,4 +46,9 @@ only we mentioned <button></button> even then it will react as "submit" button.
 1️⃣we can use "this" keyword inside object using "this" we can access object's        properties but outside object "this" keyword can't access the object's properties.
 2️⃣we can use "this" keyword inside constructor function.
 3️⃣"this" returns current context that means "this" ko jisne call kiya "this" uski reference or value provide karega.
-```    
+```  
+# "return" statement concept?
+```text
+1️⃣ "return" keywords returns result.
+2️⃣ after use of "return" keyword if you use console.log then it returns error. So  after "return" statement you can't use console.log, so always use console.log before "return" statement then output will render.
+```  
