@@ -129,13 +129,15 @@ for(let m = 0; m < arrTable.length; m++){
     }
 }
 
+
 //👆OR👇 (if the difference between 3 table is same then can prefer this approach here difference is 10)
-for(let x = 10; x <= 30; x = x + 10){
+for(let x = 10; x <= 30; x += 10){
     console.log(`Table of ${x}`);
     for(let y = 1; y <= 10; y++){
         console.log(`${x} * ${y} = ${x * y}`);
     }
 }
+
 //💥Output:👆
 // Table of 10
 // 10 * 1 = 10
@@ -171,6 +173,7 @@ for(let x = 10; x <= 30; x = x + 10){
 // 30 * 9 = 270
 // 30 * 10 = 300
 
+
 //🎯Print table 2 to 10 till 10 each table except table 5 and 7.
 for(let i = 2; i <= 10; i++){
     console.log(`Table of ${i}`);
@@ -200,6 +203,16 @@ for(let i = 2; i <= 10; i++){
         console.log(`${i} * ${j} = ${i * j}`);
     }
 }
+//👆OR👇 More Shorter than Above two
+for (let table = 2; table <= 10; table++) {
+    if (table == 5 || table == 7){
+      continue;
+    }
+    for (let tableNum = 1; tableNum <= 10; tableNum++) {
+      console.log(`${table} * ${tableNum} = ${table * tableNum}`);
+    }
+  }
+
 //💥Output:👇
 // Table of 2
 // 2 * 1 = 2
@@ -291,12 +304,15 @@ for(let score = 0; score < myArr.length; score++){
 }                                       //💥Output: virat rahul jaddu iyer
 
 
-//🎁Using "break" in for..loop👈
-//break: break is used to terminate the current scope/case where condition gets matched with specified value  
+//🎁Using "break" & "continue" in for..loop👈
+//break: "break" is used to terminate the current scope/case where condition gets matched with specified value  
 //       and it won't check ahead except default.
+//       "break" can use without iteration time also.
 
-//continue: continue is used to skip the current scope/case where condition gets matched with specified value
-//          and keep on checking ahead except default.
+//continue: "continue" is used to skip the current scope/case where condition gets matched with specified value
+//          and keep on checking ahead except default. 
+//          continue only can use on iteration time and it willn't render the output where the case value gets 
+//          match with the given condtion but except it remaining other cases it keeps on checking and render output all these cases. 
 
 
 //🕑Example: Print 1 to 10 but we want to stop the number when iteration reached in 5.
