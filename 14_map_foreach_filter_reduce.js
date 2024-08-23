@@ -171,12 +171,26 @@ console.log(totalPrice);               //💥Output: 14000
 
 //🕑Example3:
 const popularCourses = [
-    {course1: "data science", price: 13000},
-    {course2: "fullstack developer", price: 15000},
-    {course3: "reactjs developer", price: 20000},
-    {course4: "database developer", price: 12000},
-    {course4: ".net", price: 22000}
+    {course: "data science", price: 13000},
+    {course: "fullstack developer", price: 15000},
+    {course: "reactjs developer", price: 20000},
+    {course: "database developer", price: 12000},
+    {course: ".net", price: 22000}
 ];
 const courseFiltered = popularCourses.filter((elem) => elem.price <= 15000);
 const totalFilterCoursePrice = courseFiltered.reduce((accu, elem) => accu + elem.price, 0)
 console.log(totalFilterCoursePrice);               //💥Output: 40000
+
+
+//👆In above example only return, which course ends with developer.
+const devCourse = popularCourses.filter((elem) => {
+    return elem.course.endsWith("developer");        //👈endsWith() method
+  })
+  console.log(devCourse);
+ 
+//💥Output:  
+// [
+//     { course: 'fullstack developer', price: 15000 },
+//     { course: 'reactjs developer', price: 20000 },
+//     { course: 'database developer', price: 12000 }
+//   ]
