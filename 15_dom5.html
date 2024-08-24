@@ -73,7 +73,7 @@
         //🎁className
         //How to get class's value off an elment.
 
-        // <h2 id="heading2" title="india" class="main-heading">Champion India</h2>
+        // <h2 id="heading2" title="india" class="footer-head">Champion India</h2>
         document.write(document.getElementById("heading2").className)       //💥Output: footer-head
 
         //🚩child🚩
@@ -121,6 +121,7 @@
 
         //🎁childNodes
         //It returns "NodeList" of all child element, not returning "reference" which belong to body's child element and other element's child element also it includes "text" node(contains space,enter,tab, comment etc..)
+        // "NodeList" looks like array but they are not array if you check the data type of "NodeList" it shows object.
         //So we can get refernce of all child's element from "NodeList" by using "forEach()", for loop and for..of loop.
         //Also we can use map() method but for that we need to convert nodelist to array by using "Array.from(nodelistname)". 
         document.write(document.body.childNodes)             //💥Output: [object NodeList]
@@ -129,10 +130,13 @@
         console.log(document.body.childNodes[0], "bhai re bhai");      //💥Output: #text 
         console.log(document.body.childNodes[1], "yes bro");            //💥Output: div#box1.container
 
+        
         //🎁children
         // It returns "HTMLCollection", not "reference" of  all child/children which belong to body's element or other element's it doesn't include "text" node.
+        // "HTMLCollection" looks like array but they are not array if you check the data type of "HTMLCollection" it shows object.
         // So to get reference from "HTMLCollection" then access as array i.e. chldren[indexno.] or use for loop, for..of loop.
         // You can also use map() and forEach() method but for that we have to convert "HTMLCollection" into "array" by using "Array.from(htmlcollection name)"
+        
 
         console.log(document.body.children);
         //💥Output:👆 HTMLCollection(3) [div#box1.container, div#box2.container, script, box1: div#box1.container, box2: div#box2.container]
