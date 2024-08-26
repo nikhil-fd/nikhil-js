@@ -247,6 +247,8 @@ collegeUser();
 //👉"fetch" also integrates advanced HTTP concepts such as CORS(Cross Origin Resource Sharing) and othes HTTP extension.
 //👉A "fetch" promise only reject when a network error is encountered.
 //👉A "fetch" promise doesn't reject on HTTP errors like 404 or etc.
+//👉when http error occur then it will render in "then" not in "catch".
+//👉when network error encounter then it will render in "catch" not in "then". 
 
 //🎯Example6: "fetch()"
 fetch("https://randomuser.me/api/").then((response) => {
