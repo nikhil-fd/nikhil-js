@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flower Raining</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        div#parent {
+            width: 200px;
+            height: 200px;
+            border: 2px solid yellowgreen;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #212121;
+        }
+        div#child {
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        button {
+            padding: 10px;
+        }
+        button#green {
+            background-color: green;
+            cursor: pointer;
+        }
+        button#red {
+            background-color: red;
+            cursor: pointer;
+        }
+        h1 {
+            color: white;
+        }
+
+        div.flower {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: palevioletred;
+            border-radius: 50%;
+            animation: fall 5s linear infinite;
+        }
+        @keyframes fall {
+            0% {
+                top: -20px;
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                top: 100%;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="parent">
+        <div id="child">
+            <button id="green">Start</button>
+            <h1 id="msg"></h1>
+            <button id="red" disabled>Stop</button>
+        </div>
+    </div>
+
+    <div id="flower-container"></div>
+</body>
+<script>
+    const green = document.getElementById("green");
+    const msg = document.getElementById("msg");
+    const red = document.getElementById("red");
+    let num = 10;
+    let refStop;
+    green.addEventListener(
+        "click",
+        (e) => {
+            refStop = setInterval(() => {
+                msg.innerHTML = num;
+                if (num === 0) {
+                    clearInterval(refStop);
+
+                    function startFlowerRaining() {
+                        const divNew = document.createElement("div");
+                        divNew.className = "flower";
+                        divNew.style.left = `${Math.random() * 100}%`;
+                        const flowContaDiv = document.getElementById("flower-container");
+                        flowContaDiv.appendChild(divNew);
+
+            //👇Remove the flower after it falls out of the screen to prevent memory leaks
+                        divNew.addEventListener(
+                            "animationend",           //gain best insight in below NOTE
+                            function () {
+                                flowContaDiv.removeChild(divNew);
+                            },
+                            false
+                        );
+                    }
+
+                //👇Set a timeout to start the flower raining effect after 1 seconds
+                    setTimeout(function () {
+                        setInterval(startFlowerRaining, 200);    //👈200 means 0.2second 
+                    }, 1000);
+                }
+                num--;
+            }, 1000);
+        },
+        false    //👈event propagation
+    );
+
+    //🎯NOTE:👇
+    //1️⃣"animationend": "animationend" event trigger when css animation gets complete/ends.
+    //2️⃣"animationstart": "animationstart" event trigger when css animation gets start.
+    //3️⃣"animationiteration": event trigger each time when the css animation gets repeat.
+
+</script>
+
+</html>
