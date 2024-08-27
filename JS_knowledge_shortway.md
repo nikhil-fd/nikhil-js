@@ -51,4 +51,10 @@ only we mentioned <button></button> even then it will react as "submit" button.
 ```text
 1️⃣ "return" keywords returns result.
 2️⃣ after use of "return" keyword if you use console.log then it returns error. So  after "return" statement you can't use console.log, so always use console.log before "return" statement then output will render.
-```  
+``` 
+# "class" and "construtor function" uses ?
+```text
+1️⃣ Both "class" and "constructor function" is used to create object.
+2️⃣ Both are used to create multiple object with same properties and methods.
+3️⃣ When we have same properties name in object but object name is different at that time we can't write same properties name again and again because it indicating "code repeating", so to avoid code repeating then we can use "class" or "constructor function" both are avoiding "DRY" principle.
+``` 
