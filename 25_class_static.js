@@ -26,12 +26,13 @@ class UserCourse extends User{
 
 const uniqueUser = new UserCourse("mahirat", "mahi@google.com");
 console.log(uniqueUser);
-console.log(User.createUserId());         //Directly it can be access     //💥Output: 590
-console.log(uniqueUser.createUserId());    //It can't be access indirectly(by another class) //💥Output: Error
-console.log(uniqueUser instanceof UserCourse);        //💥Output: true
-uniqueUser.createUser();               //💥Output: Username: mahirat
+console.log(User.createUserId());                   //💥Output: 590
+console.log(uniqueUser.createUserId());            //💥Output: Error
+console.log(uniqueUser instanceof UserCourse);    //💥Output: true
+uniqueUser.createUser();                         //💥Output: Username: mahirat
 
 
-//👉NOTE: "static" method can access directly, on which class "static" method is define
-//      so it can access by that class name onlt not any new class name.
-//      "static" method can't access other defined properties also here only we can pass direct value. 
+//👉NOTE:
+//1️⃣"static" method can access directly by it's own class name, on which class "static" method is define
+//   but it can't access by other class name.
+//2️⃣"static" method can't access other defined properties also, only we can pass direct value. 
