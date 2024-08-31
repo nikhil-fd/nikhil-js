@@ -77,7 +77,9 @@ console.log(Object.getOwnPropertyDescriptor(myBio, "age"));
 //💥Output: { value: 38, writable: true, enumerable: true, configurable: true }
 
 Object.defineProperty(myBio, "age", {
-    enumerable: false
+    writable: true,
+    enumerable: false,
+    configurable: true
 })
 for(let bio of Object.values(myBio)){
     console.log(bio);                   //💥Output: nikhil, true
@@ -107,6 +109,33 @@ const schoolBags = {
   )
   for(let bagss of Object.values(schoolBags)){
     console.log(bagss);                          //💥Output: 3 2 
+  }
+
+
+//🎯Can we freeze a single properties in object and how?
+//Yes we can freeze single properties in object, by using Object.defineProperty()
+const collegeBags = {
+    book: 3,
+    note: 2,
+    bookname: "MIL",
+    lecture: "sudhanshu"
+  };
+Object.defineProperty(collegeBags, "lecture", {
+    writable: false,
+    enumerable: true,
+    configurable: false
+  });
+  collegeBags.lecture = "sandhyarani"
+  console.log(collegeBags);
+  //💥Output: { book: 3, note: 2, bookname: 'MIL', lecture: 'sudhanshu' }
+
+  Object.defineProperty(collegeBags, "lecture", {
+    writable: true,
+    enumerable: false,
+    configurable: true
+  })
+  for(let clgbags of Object.values(collegeBags)){
+    console.log(clgbags);
   }
 
 
