@@ -1,10 +1,15 @@
 //Advance JS Object prototype.
 //🚩Object.getOwnPropertyDescriptor(Object, "key");
+//👉using this we can check the object's internal configuration.
+
 
 //🚩Object.defineProperty(object, "key", {writable: true, enumerable: true, configurable: true})
 //   Object.defineProperty(object, "key", {}) it takes 3 argument and it uses when we take single key.
+//👉Using this we can redefine and modify single properties on an object with specific object descriptor.
+
 
 //🚩Object.defineProperties(object, "key", {}); 
+//👉Using this we can redefine and modify multiple properties on an object.
 //   same it takes 3 argument but it uses when we take multiple key. 
 
 // Using this prototype we can check all object properties internal setup like,
@@ -77,4 +82,31 @@ Object.defineProperty(myBio, "age", {
 for(let bio of Object.values(myBio)){
     console.log(bio);                   //💥Output: nikhil, true
 }
+
+
+//🕑Example4:
+const schoolBags = {
+    book: 3,
+    note: 2,
+    bookname: "MIL",
+    teacher: "sudhanshu"
+  };
+  console.log(Object.getOwnPropertyDescriptor(schoolBags, "bookname"));
+  //💥Output: { value: 'MIL', writable: true, enumerable: true, configurable: true }
+  
+  Object.defineProperties(schoolBags, {
+    bookname: {
+      value: "MIL",
+      enumerable:false
+    },
+    teacher: {
+      value: "sudhanshu",
+      enumerable: false
+    }
+  } 
+  )
+  for(let bagss of Object.values(schoolBags)){
+    console.log(bagss);                          //💥Output: 3 2 
+  }
+
 
