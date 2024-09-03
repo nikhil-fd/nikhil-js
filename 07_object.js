@@ -293,6 +293,8 @@ myHotels({
 //1️⃣In javascript constructor function is used to create multiple object with same properties
 //  and mthods.
 //2️⃣It acts as a blueprint for object and provides a way to intialize properties when creating an object instance.
+//3️⃣We can define constructor function by using "class" and "function" keyword.
+//4️⃣When "this" uses inside constructor then "this" refers to the new object being created. 
 
 //👌constructor function is useful for-- 👌
 //1️⃣multiple object creation with same properties and methods.
@@ -333,7 +335,7 @@ console.log(mahindraCars.model);        //💥Output: 2024
 
 
 //🚩Constructor using "class"🚩
-//🎯We can define same above constructor function using "class" declaration🎯
+//🎯We can define same above constructor function using "class" declaration/keyword🎯
 class LatestCar{
     constructor(carname, model, price){
         this.carname = carname;
