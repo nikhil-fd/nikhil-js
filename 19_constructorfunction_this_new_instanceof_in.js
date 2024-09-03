@@ -1,12 +1,23 @@
-//🚩Object Literal: "this" concept
+//🚩"this" concept
 //👉"this" refers to object and it returns current context.
 //👉"this" object can have different values depends on where it is placed.
+
+//1️⃣When "this" placed insise an object(object literal)
 //"this" returns current context in 2 place:👇
-//1️⃣If the variable is declared globally that means outside the function here it returns "current context".
-//2️⃣Inside object if there is a simple function defined so in that simple function if we use "this" it returns "current context".
+//#1❌(may not correct)If the variable is declared globally that means outside the function here it returns "current context".
+//#2✅(correct)Inside object if there is a simple function defined so in that simple function if we use "this" it returns "current context".
 //👉"this" can access object's properties inside the object/scope, "this" can't access the 
 //   object's properties outside the object or outside the scope.
 
+//2️⃣When "this" placed inside constructor.
+//In this place "this" refers to the new object being created. 
+//Check "this" example in below constructor function.
+
+//3️⃣When "this" keyword stored in variable.
+//In this place "this" create empty object.
+//Check example below.
+
+//🎁Object Literal: "this" concept
 const userDetails = {
     userName: "niil",
     signedIn: true,
@@ -54,6 +65,8 @@ myObj.country();               //💥Output: Welcome to odisha
 //1️⃣In javascript constructor function is used to create multiple object with same properties
 //  and mthods.
 //2️⃣It acts as a blueprint for object and provides a way to intialize properties when creating an object instance.
+//3️⃣We can define constructor function by using "class" and "function" keyword.
+//4️⃣When "this" uses inside constructor then "this" refers to the new object being created. 
 
 //👌constructor function is useful for-- 👌
 //1️⃣multiple object creation with same properties and methods.
@@ -115,7 +128,7 @@ console.log(userOne);       //💥Output: userData{username: "nikhil", age: 30, 
 console.log(userTwo);      //💥Output: userData{username: "Hitesh", age: 35, skill: "js"}
 
 
-//🕑Example2: Above Example1 converting constructor function into "class" declaration.
+//🕑Example2: Defined constructor function using "class" declaration/keyword.
 class userData{
     constructor(username, age, skill){
         this.username = username;
