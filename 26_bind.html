@@ -20,7 +20,7 @@
         //👉In other words bind() method allows us to easily set which object will be bound by "this" keyword when a 
         //   function or method is invoked.(my words: bind method is used to bind object with this keyword when a function or method is invoked.)
 
-        //🚩Here value passed as hardcore not in "new" that's why no need to mention properties in constructor().
+        //🚩Here value passed as hardcode not in "new" that's why no need to mention properties in constructor().
         class User{
             constructor(){
                 this.website = "mdn";
@@ -59,6 +59,37 @@
         // User();                     //NOTE: if we are using bind() mehod then without new the User() can not be invoked/called.
         const userDatas = new User("mdn", "https://mdn.com");  //NOTE: Here we use new in User() so that it can be invoked/called. 
 
+
+        //✅The above example is defined by "function" keyword in constructor function🚩
+        //👇Here value is not hardcode, value defined in "new" keyword.
+        function canvaUser(url, websitename){
+        this.url = url;
+        this.websitename= websitename;
+
+        canvaUser.prototype.accessUrl = function(){
+            document.querySelector("a").href= this.url;
+        }
+
+        document.querySelector("a").addEventListener("click", this.accessUrl.bind(this));
+    }
+
+    const user1 = new canvaUser("https://www.canva.com/", "canva");
+
+    //👆OR
+    //👇Here value is hardcode, so no need to define the parameter in function parenthesis,
+    //  also no need to mention the value in "new" keyword.
+    function canvaUser(){
+        this.url = "https://www.canva.com/";
+        this.websitename= "canva";
+
+        canvaUser.prototype.accessUrl = function(){
+            document.querySelector("a").href= this.url;
+        }
+
+        document.querySelector("a").addEventListener("click", this.accessUrl.bind(this));
+    }
+
+    const user2 = new canvaUser();
     </script>
 </body>
 </html>
