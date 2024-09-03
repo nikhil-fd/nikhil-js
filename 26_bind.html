@@ -18,12 +18,34 @@
 
         //BEST👇
         //👉In other words bind() method allows us to easily set which object will be bound by "this" keyword when a 
-        //   function or method is invoked.
+        //   function or method is invoked.(my words: bind method is used to bind object with this keyword when a function or method is invoked.)
 
+        //🚩Here value passed as hardcore not in "new" that's why no need to mention properties in constructor().
         class User{
             constructor(){
                 this.website = "mdn";
                 this.server = "https://mdn.com";
+                document
+                .querySelector("a")
+                .addEventListener('click', this.handleClicked.bind(this));
+                //📌Here bind() method it gets all the "this" reference value.
+                //📌handleClicked() method bhitorey object use heichi "this.server" dwara sei object ku
+                //  uparey acccess karaheuchi jetebele sei method ku call kara hauchi ba invoke heuchi, click kole "a" tag re so bind method bind karuchi sei object ku "this" keyword re.
+            }
+            handleClicked(){
+                console.log("Button is clicked");
+                document.querySelector("a").href = this.server;
+            }
+        }
+        // User();                     //NOTE: if we are using bind() mehod then without new the User() can not be invoked/called.
+        const userData = new User();  //NOTE: Here we use new in User() so that it can be invoked/called. 
+
+
+        //🚩👆OR👇 (Here value passed in "new")
+        class User{
+            constructor(website, server){
+                this.website = website;
+                this.server = server;
                 document
                 .querySelector("a")
                 .addEventListener('click', this.handleClicked.bind(this));
@@ -35,7 +57,8 @@
             }
         }
         // User();                     //NOTE: if we are using bind() mehod then without new the User() can not be invoked/called.
-        const userData = new User();  //NOTE: Here we use new in User() so that it can be invoked/called. 
+        const userDatas = new User("mdn", "https://mdn.com");  //NOTE: Here we use new in User() so that it can be invoked/called. 
+
     </script>
 </body>
 </html>
