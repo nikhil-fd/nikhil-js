@@ -1,8 +1,11 @@
+```text
+🚩hoisting👌
+```
+```text
 //Very Very Important👌
 
 //🎁hoisting
-//hoisting is a mechanism in JS where variable and function declaration are moved to top of their scope,
-//before the code execute.
+//hoisting is a mechanism in JS where variable and function declaration are moved to top of their scope, before the code execute.
 
 //🎯hoisting work with which variable keyword?
 //hoisting works with "var" keyword.✅
@@ -10,8 +13,9 @@
 //before initializaion then it will not throw "error" rather it gives "undefined".
 
 //We can hoist also both "let" and "const" keyword without default initializaion.
-//So when access variable before initialization it throw "error".(💥but it is not recommeded) 
-
+//So when access variable before initialization it throw "error".(💥but it is not recommeded)
+```
+```javascript 
 //🕑Example: Variable hoisting🕑
 console.log(`Voter age is ${age}`);    //💥Output: Voter age is undefined
 var age = 20;
@@ -38,3 +42,5 @@ function carFunc(){
     console.log("TATA Car Details Accessed Successfully");
 }
 //💥Output: TATA Car Details Accessed Successfully
+```
+![Alt Text](hoisting)
