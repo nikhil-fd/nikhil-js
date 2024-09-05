@@ -27,7 +27,7 @@ function f3(){
 }
 f3();
 
-//🎁hoisting
+//🎁hoisting  (Best Explained in file 01_ii_hoisting.js👌)
 //hoisting is a mechanism in JS where variable and function declaration are moved to top of their scope,
 //before the code execute.
 //Example
