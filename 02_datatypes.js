@@ -43,6 +43,16 @@ userTwo.username = "nikhil";
 console.log(userOne.username);     //💥Output: nikhil (it returns new value changing the original value)
 
 
+//Example: Heap Memory
+let ticket1 = [100, 150, 200, 250]
+let ticket2 = ticket1;
+ticket2[1] = 499;
+console.log(ticket1[1]);          //💥Output: 499 (ticket1 index no.1 = 150 but here original value get change to 499)
+console.log(ticket2[1]);         //💥Output: 499
+
+
+
+
 //Example: All Datatypes
 //String
 let myFavPlayer = "virat";
