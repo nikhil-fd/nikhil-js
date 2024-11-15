@@ -42,15 +42,12 @@ let userTwo = userOne;
 userTwo.username = "nikhil";
 console.log(userOne.username);     //💥Output: nikhil (it returns new value changing the original value)
 
-
 //Example: Heap Memory
 let ticket1 = [100, 150, 200, 250]
 let ticket2 = ticket1;
 ticket2[1] = 499;
 console.log(ticket1[1]);          //💥Output: 499 (ticket1 index no.1 = 150 but here original value get change to 499)
 console.log(ticket2[1]);         //💥Output: 499
-
-
 
 
 //Example: All Datatypes
@@ -74,8 +71,19 @@ console.log(maxNum);                   //💥Output: 9007199254740991
 console.log(minNum);                  //💥Output:  -9007199254740991
 console.log(bigNum);                 //💥Output:  9007199254741001n
 
+const myPhoneNo = 9999668899;
+const clientPhoneNo = "nehra";
+console.log(isNaN(myPhoneNo));           //💥Output: false
+console.log(isNaN(clientPhoneNo));      //💥Output: true
+if(isNaN(clientPhoneNo)){
+    console.log("please enter client's valid phone number");      //💥Output: please enter client's valid phone number
+}
+
+
 //🚩typeOf() -- it is used to check that what type of data and return that data type.
 //🚩isNaN()  -- it is used to check whether it is a Number or not, and return boolean value true or false.
+//🚩NaN ------- NaN is neither a "value(number value)" nor a "data type", it is a property of global object. 
+//              In other words NaN is a variable in global scope. The initial value of NaN is Not A Number.  
 
 console.table([typeof(myFavPlayer),typeof(playerScore), typeof(isPlayerRetire), typeof(playerAge), typeof(playerCentury), typeof(jerseyNo), typeof(bigNum)]);
 //💥Output👇
@@ -141,4 +149,17 @@ function mySound(){
     console.log(typeof mySound);
 }
 mySound();                                  //💥Output: function
+
+
+//Tips💡
+console.log(NaN === NaN);               //💥Output: false (NaN is not a "value(number value)"" and "datatype", it is property of global object) 
+console.log(Number.NaN === NaN);       //💥Output: false
+console.log(isNaN(NaN));              //💥Output: true
+console.log(isNaN(Number.NaN));      //💥Output: true
+console.log(Number.isNaN(NaN));     //💥Output: true
+
+
+
+
+
 
