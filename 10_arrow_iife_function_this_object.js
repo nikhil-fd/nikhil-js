@@ -190,5 +190,28 @@ const sumNum = ((val1, val2) => {
 console.log(sumNum);                //💥Output: 1700 
 
 
+//🎁Difference between Regular function and Arrow function?
+//👉The main difference is in Regular function we can use "this" keyword because it returns 
+//window object/global object such as setTimeout, setInterval, clearTimeout, clearInterval.
+
+//👉whereas in Arrow function we can't use "this" keyword because it returns empty object{}.
+
+//👉Constructor function can use Regular function and it returns result.
+//👉Constructor function can not use Arrow function and it returns error.
+
+//Example: Regular Function use "this"
+function arrFunc(){
+    console.log(this);         //💥Output: setTimeout, setInterval, clearTimeout, clearInterval 
+}
+arrFunc();
+
+
+//Example: Arrow function uses "this"
+const arrFunc2 = () => {
+    console.log(this);         //💥Output: {}
+    
+}
+arrFunc2();
+
 
 
