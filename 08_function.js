@@ -43,10 +43,12 @@ myData()     //👈function's execution/calling
 
 //🎯what is function parameter?
 //function parameter are the names listed in the function definition.
-//function parameter name can be string, number, boolean, null, undefined, symbol, array and object.
+//function parameter name can be string and cannot start with number.
 
 //🎯what is function argument?
 //function argument are the rela values passed to the function.
+//function argument value can be any data type i.e. primitive or non-primitive or complex such as-string, number,
+//boolean, null, undefined, bigInt, symbol, array, object and function.
 
 //🎈How to render function value in Simple Function🎈
 //1️⃣way -- using parameter and argument:👇
