@@ -131,15 +131,23 @@ console.log(flatArr);
 
 //🎁reduce(): 1.reduce() method is used to reduce the 2dimensional and 3dimensional array into a single dimensional array
 //              also it is used for data manipulation like addition, sub, div, mul and return a single value.
-//              it takes 4 arguments accumulator,element,index & array. accumulator stores the current value. 
+//              it takes 4 arguments accumulator,element,index & array. accumulator stores the initial value and element strores the current value. 
 //            2.reduce() method does not change the original value.
         
+//Example1:
         const myNum = [10,20,30,40,50,60];
         const result = myNum.reduce((accumulator,elem) => {
             return accumulator + elem;
         });
         console.log(result);
 
+//Example2:
+       const primeNum = [50, 500, 5000];
+       const finalPrime = primeNum.reduce((accu, elem) => {
+        return accu += elem; 
+       },10) 
+       console.log(finalPrime);      //💥Output: 5560 (accu = 10 & elem = 50)
+              
         
 //🎁find():  1.find() method is used to search the element/value in an array and returns the 1st occurence element
 //              as per the given condition.
@@ -262,12 +270,14 @@ console.log(flatArr);
 
 //🎁slice(): it returns the extracted element in a new array and it starts extracting from start number 
 //            to till before the end number. it doesn't include end number.
+//**slice() method can be use in both Array and String but subString() and subStr() method can use only String.
 
         let mySkill = ["sap","html","css","js","react js","bootstrap"];
         let sliceValue = mySkill.slice(1,4);
         console.log(sliceValue);             //💥Output: [ 'html', 'css', 'js' ]
         console.log(mySkill);               //💥Output: ['sap', html', 'css', 'js', 'react js', 'bootstrap']
 
+        
 //🎯Difference between slice() and splice() method ?        
 //slice() -- slice() method doesn't mutating(changing) the original array when extracting element in array.
 const extElem = [10,20,30,40,50,60]
