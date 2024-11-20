@@ -123,11 +123,27 @@ console.log(char9.replace("k", "K"));        //💥Output: Virat Kohli
 const char10 = "k,i,n,g,k,o,h,l,i"
 console.log(char10.replace("k","K"));        //💥Output: K,i,n,g,k,o,h,l,i
 
+let char100 = "virat, rohit, sundar, yuzi, rohit, rishab";
+let replChar = char100.replace("rohit", "rahul")
+console.log(replChar);          //💥Output: virat, rahul, sundar, yuzi, rohit, rishab
+console.log(char100);          //💥Output:  virat, rohit, sundar, yuzi, rohit, rishab
+
+
+//🎁replaceAll(): 
+//replaceAll method is used to replaces the new value wherever the all existing value presents.
+//replaceAll() doesn't change the original data.
+let batsman = "virat, rohit, sundar, yuzi, rohit, rishab, bumrah, rohit";
+let rplbats = batsman.replaceAll("rohit", "rahul")
+console.log(rplbats);                //💥Output: virat, rahul, sundar, yuzi, rahul, rishab, bumrah, rahul
+console.log(batsman);               //💥Output: virat, rohit, sundar, yuzi, rohit, rishab, bumrah, rohit
+
+
 //🎁concat()-
 //concat() method is used to conatenate two or more string and return a single string.
 const char11 = "anushka"
 const char12 = "sharma"
 console.log(char11.concat(" ",char12));      //💥Output: anushka sharma  
+
 
 //🎁split()-
 //split() method is used to convert the string into array.
@@ -136,6 +152,7 @@ const char13 = "kiara advani"
 console.log(char13.split(" "));             //💥Output: [ 'kiara', 'advani' ]    
 const char14 = "k,a,t,r,i,n,a"
 console.log(char14.split(","));             //💥Output: ['k', 'a', 't','r', 'i', 'n','a']
+
 
 //🎁toUpperCase()-
 //it converts lowercase to uppercase.
