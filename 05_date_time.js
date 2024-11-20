@@ -1,5 +1,6 @@
 //🚩new Date():
 //It returns date and time.
+//It calculates date and time since 1st January 1970 to till date.
 const date = new Date();
 console.log(typeof(date));                    //💥Output: object
 console.log(new Date());                       //💥Output: 2023-12-21T01:48:00.657Z
