@@ -126,7 +126,13 @@ console.log(myTrip());           //💥Output: Yeah! We got trip to thailand
 //function expression avoids hoisting.
 //function expression often used as anonymous function in event listener, setTimeout() and setInterval(). 
 
-//🕑Example: function expression
+//🕑Example: Function expression
+const funcExp1 = function iplFunc(a,b) {
+    return total = a + b;
+} 
+console.log(funcExp1(10,20));             //💥Output: 30
+
+//🕑Example: Anonymous function expression
 const funcExp = function (playername) {
     return `My fav player is ${playername}`
 }
@@ -179,6 +185,10 @@ console.log(myHot(50,60), "arrow function implicity return");     //💥Output: 
 //        Once "return" keword defined after that you can't render any output using console.log() or any others.
 //        You can do console.log() before "return" statement.
 //        Only "return" value we can do console.log().
+
+//       🚩"return": When javascript reaches in "return" statement then the function will stop executing.
+//                   The return value is returned back to the caller.
+//                   "return" keyword returns the result.
 
 //🕑Example 1:
 function myDetails(a, b){
