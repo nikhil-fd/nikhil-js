@@ -119,6 +119,33 @@ console.log(myTrip());           //💥Output: Yeah! We got trip to thailand
                                 //            undefined  (because of return)        
 
 
+
+
+//🎁what is function expression?
+//Create a function and assign/put it to a variable i.e. called function expression.
+
+//🕑Example: function expression
+const funcExp = function (playername) {
+    return `My fav player is ${playername}`
+}
+console.log(funcExp("virat kohli"));         //💥Output: My fav player is virat kohli
+
+
+//🎁what is the differnece between function declaration and function expression?🚩
+//function declaration means function has a name and it is hoisted(hoisting), that means
+//function can be called before function declaration.
+//Whereas in function expression the function is declared and stored in a variable and it can not be
+//called before the function declaration.
+
+//🕑Example: function declaration
+console.log("frontend developer");      //💥Output" frontend developer
+function f1(skillname) {
+    return `My skill is ${skillname}`
+}
+
+
+
+
 //🎁Arrow function:   (for arrow function follow 10_arrow_function_this_object.js)                             
 //🎈How to render function value in Arrow Function🎈
 //1️⃣way -- using parameter and argument:👇
