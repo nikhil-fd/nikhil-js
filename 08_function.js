@@ -123,6 +123,8 @@ console.log(myTrip());           //💥Output: Yeah! We got trip to thailand
 
 //🎁what is function expression?
 //Create a function and assign/put it to a variable i.e. called function expression.
+//function expression avoids hoisting.
+//function expression often used as anonymous function in event listener, setTimeout() and setInterval(). 
 
 //🕑Example: function expression
 const funcExp = function (playername) {
