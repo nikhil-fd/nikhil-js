@@ -56,11 +56,16 @@ console.log(searchBooks);
 
 
 //🚩array.map()🚩
-//  1. map() mehod is used to return element in a new array when use "return" statement. map() also returns index and array.
-//  2. When not storing map() method into a variable or use console.log instead of "return" statement at that time
+//  1. map() mehod is used to return element in a new array, when not assign map() to an array or when use "return" statement. map() also returns index and array.
+//  2. When not storing/assign map() method into a variable or use console.log instead of "return" statement at that time
 //     it returns value without array.
 //  3. map() method returing value without mutating the original array.
 //  4. map() method is a chainable method after performing map() we can add again map(), filter(), sort(), reduce() etc..
+//  5. if you perform operation like whatever element is there in that array, want to return ther greaterthan(>) or lessthan(<) element,
+//     in this situation map() return boolean value true/false in a new array which element matches the given condition these
+//     element will return as "true" and these ar not matched condition will return as "false". Because greaterthan(>) and lessthan(<)
+//     can perform only through filter() method in map we can perform like addition or multiplication or division etc. and in this scenarion
+//     map() returns all element in a new array without mutating the original array. [👇check out Example3]
 //👉Syntax:
 array.map((element, index, array) => {
     return element, index, array
@@ -93,10 +98,26 @@ const updateOvers = overs.map((elem) => (elem * 6))
 console.log(updateOvers);                                   //💥Output:[26, 32, 38, 44, 50, 56, 62]
 
 
+//🕑Example3:
+let govtExamAge = [17, 18, 19, 20, 21, 22, 23, 24, 25, 30];
+let getGovtCandidate = govtExamAge.map((elem) => {
+    return elem > 20;
+});
+console.log(getGovtCandidate);       //💥Output: [false, false, false, false, true, true, true, true, true, true]
+
+
+//🕑Example4: find square root of all element and return then in an array
+let num = [64, 81, 25, 36, 144]
+let getSqrtNum = num.map((elem) => {
+    return Math.sqrt(num);
+});
+console.log(getSqrtNum);          //💥Output: [ 8, 9, 5, 6, 12 ]
+
+
 //🚩forEach() loop/iterators🚩  (Same forEach() loop explained in file no. 👉13_loops_iterators.js👈)
-// forEach() method returns "undefined" when use "return" statement.
-// forEach() method returns value without array when use console.log instead of return.
-// forEach() returns elment, index and array when we are not storeing in variable.
+// forEach() method returns "undefined" when assign/store forEach() to a variable or use "return" statement.
+// forEach() method returns value without array when not assgin it to a variable and when use console.log instead of return.
+// forEach() returns elment, index and array when we are not assign/storeing to a variable.
 // mostly it is used when you are accessing array of object values.
 // forEach() loop uses callback function.
 // Callback function is a function that is passed as an argument to another function or method and it is executed
