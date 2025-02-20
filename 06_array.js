@@ -100,7 +100,7 @@ console.log(myBday);                                //💥Output: [1992, 1993, 1
 //🎁Difference Between map() method & forEach()🎁     
 // The main difference between map() and forEach() is returning value.
 //✅map() --1. map() mehod is used to return the "element" in a new array when use "return" statement. map() also return "index" and "array".
-//          2. When not storing map() method into a variable and use console.log instead of "return" statement at that time
+//          2. When not storing/assign map() method into a variable and use console.log instead of "return" statement at that time
 //             it returns value without array.
 //          3. map() method returing value without mutating the original array.
 //          4. map() method is a chainable method after performing map() we can add again map(), filter(), sort(), reduce() etc..
@@ -116,10 +116,16 @@ console.log(myBday);                                //💥Output: [1992, 1993, 1
 //🎁join(): it adds all the elements of array into a string and separeated by comma bydefault.
 //          comma is bydefaut but we can add our own symbol instead of comma like arrow,star etc..
 //          it returns value in string.
+//         2. Using join() method we can convert Array element into a string by space(" "), hyphen("-"),
+//            comma(",") and your own symbol as well. it is not mutating the original array.
 const myFavPlayers = ["Virat","Rahul","Rohit"];
 const newArr = myFavPlayers.join();
 console.log(newArr);                    //💥Output: Virat,Rahul,Rohit
 console.log(typeof newArr);            //💥Output: string
+console.log(myFavPlayers.join(" "));   //💥Output: virat Rahul Rohit
+console.log(myFavPlayers.join("-"));   //💥Output: virat-Rahul-Rohit
+
+
 
 //🎁flat(): * It is used to flattern all sub array and return a new array. 
 //          * Returns a new array with all sub-array elements concatenated into it recursively 
@@ -180,7 +186,7 @@ console.log(flatArr);
 
 
 //🎁reverse():  1.reverse() mehod is used to arranges the array element in reverse order.
-//                 (bottom to top / right to left)
+//                from (bottom to top / right to left) and it returns all element in a new array without mutating the original array.
 
         const alphaNumVal = ["P", "S", "N", "R", "B", "J", 4, 2, 3];
         console.log(alphaNumVal.reverse()); //💥Output: [3, 2, 4, 'J', 'B', 'R', 'N', 'S', 'P']
@@ -245,8 +251,8 @@ console.log(flatArr);
         console.log(allGamess);  //💥Output: igi
 
 
-//🎁splice(): this method is usually used for adding and removing element into a specific location
-//            into an array.it takes 3 arguments start index,delete count and new element.
+//🎁splice(): this method is usually used for perform crud operation adding, removing and replace element into a specific location
+//            in an array.it takes 3 arguments start index,delete count and new element.
 //            if you are deleteing any element into an array then it returns the deleted element into an array.
 //            if you are not deleteing any element only adding element then it returns empty array.
 //            delete count strat from 1,2,3....
@@ -268,14 +274,18 @@ console.log(flatArr);
         console.log(favActor); //💥Output: ['salman', 'hrithik', 'bipasa', 'nanapatekar']
 
 
-//🎁slice(): it returns the extracted element in a new array and it starts extracting from start number 
-//            to till before the end number. it doesn't include end number.
+//🎁slice(): 1. it returns the extracted element in a new array and it starts extracting from start number 
+//              to till before the end number. it doesn't include end number. it is not mutating the original array.
+//           2. If you give -ve number only, then it extract only last numbet of element whatever number will be mention.
+//              Suppose mentioned -2 then it will extract only last element.           
 //**slice() method can be use in both Array and String but subString() and subStr() method can use only String.
 
         let mySkill = ["sap","html","css","js","react js","bootstrap"];
         let sliceValue = mySkill.slice(1,4);
         console.log(sliceValue);             //💥Output: [ 'html', 'css', 'js' ]
         console.log(mySkill);               //💥Output: ['sap', html', 'css', 'js', 'react js', 'bootstrap']
+        console.log(mySkill.slice(-2));    //💥Output: ["react js", "bootstrap"]
+        
 
         
 //🎯Difference between slice() and splice() method ?        
