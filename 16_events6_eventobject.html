@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <style>
+        .child1, .child2, .child3, .child4, .child5, .child6{
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+            color: white;
+            margin: 20px 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div class="child1" onclick="confirm('Do you want to continue it?')">Child1</div>
+        <div class="child2" onclick="callFunc()">Child2</div>
+        <div class="child3">Child3</div>
+        <div class="child4">Child4</div>
+        <div class="child5" id="head5" name="last-child" title="5">Child5 event object</div>
+        <div class="child6" name="six-child">Child6</div>
+    </div>
+
+    <script>
+        //2nd way
+        function callFunc(){
+            document.write("calling function is best👌")
+        }
+
+        //3rd way
+        let childThree = document.querySelector(".child3");
+        childThree.onClick = function(){
+            document.write("3rd way event also good📍")
+        }
+
+        //4th way
+        let childFour = document.querySelector(".child4");
+        childFour.addEventListener("click", () => {
+            document.write("In eventlistener is best bcz 1st it listen event then function gets,execute it takes 3 argument click event, event listener, event propagartion by default it takes false")
+        }, false)
+        //in eventlistener we can call same event multiple times, it won't override.
+        //first it listen event then function will execute.
+
+
+        //📍V.V.I📍
+        //5th way  (here using event object)
+        const fifthWay = document.querySelector(".child5");
+
+        const collectEvent = () => {
+            console.log(event);                            //💥Output: It gives all information related to events like clientX, type, clientY etc..    
+            console.log(event.target);                    //💥Output: <div class="child5" id="head5" name="last-child" title="5">Child5 event object</div>
+            console.log(event.type);                      //💥Output: click
+            console.log(event.target.className);         //💥Output: child5
+            console.log(event.clientX);                  //💥Output:102
+            console.log(event.target.id);                //💥Output: head5
+            console.log(event.target.tagName);           //💥Output: DIV
+            console.log(event.target.title);             //💥Output: 5
+            console.log(event.target.innerText);            //💥Output: Child5 event object
+            console.log(event.target.textContent);          //💥Output: Child5 event object
+            console.log(event.target.getAttribute("name"));  //💥Output: last-child
+            console.log(event.target.value);    //💥Output: .value can get value only from inside <input> and <Select><option> element.
+            
+        }
+        fifthWay.addEventListener("click", collectEvent)
+
+        //🚩NOTE: "event.target.value" -- can get value only from inside <input> and <Select><option> element.
+        //        "event.target.innerText/textContent" -- can get value from inside h1,h2,...,p,div,span,li etc..
+
+
+
+        //🎯 What is the reason behind it when pass "e" or your ownname like "nikhil" as event object in function parenthesis()?
+        const child6 = document.querySelector(".child6")
+        function getEventObj(e){
+            console.log(e.target.getAttribute("name"));
+            console.log(e.target.className);
+        }
+        child6.addEventListener("click", getEventObj)
+        //🚩NOTE: instead of "event" we can keep our own name also like "e" or any name but for that
+        //        we need to define/pass "e" in function parenthesis then we use e.target.value or nikhil.target.id etc..
+    </script>
+</body>
+</html>
