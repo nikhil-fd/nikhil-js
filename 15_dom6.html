@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoM | BoM</title>
+</head>
+<body>
+    <div id="parent">
+        <div class="child1">
+            <p>Para1</p>
+        </div>
+        <div class="child2">
+            <p>Para2</p>
+        </div>
+        <div class="child3">
+            <p>Para3</p>
+        </div>
+        <div class="child4">
+            <p>Para4</p>
+        </div>
+    </div>
+
+
+    <script>
+        document.querySelector(".child1").firstElementChild.style.color = "yellow";
+        document.querySelector(".child2").firstElementChild.style.color = "red";
+        document.querySelector(".child3").firstElementChild.style.color = "green";
+        document.querySelector(".child4").firstElementChild.style.color = "orange";
+
+        //👇We can nested to access any level of element
+        let findOutChild = document.body.firstElementChild.firstElementChild.firstElementChild;
+        console.log(findOutChild);      //💥Output: <p>Para1</p>
+    </script>
+</body>
+</html>
