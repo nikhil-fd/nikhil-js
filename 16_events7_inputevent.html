@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Event</title>
+</head>
+<body>
+    <label for="user">Write Your Name Here👉</label>
+    <input type="text" id="user" placeholder="Enter Your Name">
+    <br><br>
+    <label for="icecream">Choose Flavoured IceCream👁‍🗨👁‍🗨</label>
+    <select name="flavor-icecream" id="icecream" onchange="getUserIcecream()">
+        <option value="">Select Icecream</option>
+        <option value="Vanila">Vanila</option>
+        <option value="Butterscotch">Butter-Scotch</option>
+        <option value="Chocolate">Chocolate</option>
+        <option value="orange">Orange</option>
+    </select>
+    <p id="msg"></p>
+
+
+    <script>
+        const msg = document.getElementById("msg");
+
+        const getUserIcecream = () => {
+            const userName = document.getElementById("user").value;
+            const getIceCream = document.getElementById("icecream").value;
+            msg.innerHTML = `<font color="red"> ${userName} </font> choosed <font color="red"> ${getIceCream} </font> ice-cream`
+        }
+    </script>
+</body>
+</html>
