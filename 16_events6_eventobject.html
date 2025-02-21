@@ -23,6 +23,9 @@
         <div class="child4">Child4</div>
         <div class="child5" id="head5" name="last-child" title="5">Child5 event object</div>
         <div class="child6" name="six-child">Child6</div>
+
+        <input type="text" id="username">
+        <p id="msg"></p>
     </div>
 
     <script>
@@ -81,6 +84,17 @@
         child6.addEventListener("click", getEventObj)
         //🚩NOTE: instead of "event" we can keep our own name also like "e" or any name but for that
         //        we need to define/pass "e" in function parenthesis then we use e.target.value or nikhil.target.id etc..
+
+
+        //🚩Keyboard Event🚩
+        const userName = document.getElementById("username")
+        const msg = document.getElementById("msg");
+
+        const checkKeyPress = () => {
+            msg.innerHTML = `You Press Key <font color="red"> ${event.key} </font> and it's code is <font color="red"> ${event.code} </font>`
+        }
+
+        userName.addEventListener("keypress", checkKeyPress);
     </script>
 </body>
 </html>
