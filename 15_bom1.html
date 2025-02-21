@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM</title>
+</head>
+<body>
+    <h2>Which Online Shopping Site You Want To Use <font color="red">Amazon | Flipkart</font></h2>
+    
+
+    <script>
+        if(confirm("Do You Want to Visit Amazon")){
+            window.location.href = "https://www.amazon.in/minitv";
+        }else{
+            window.location.href = "https://www.flipkart.com";
+        }
+
+        //👉NOTE: (no need to mention "window" bcz it is global object) 
+        //         direct you can mention>> location.href = "https://www.amazon.com"
+    </script>
+</body>
+</html>
