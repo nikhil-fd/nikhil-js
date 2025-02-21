@@ -49,16 +49,22 @@
             //👉document.getElementsByTagName("tag name")
 
             
-
-            //🚩Below These 4 through we can get the value and add the value inside html element,
+            //🚩"innerHTML", "innerText", "textContent", "outerHTML", document.createTextNode("value")🚩
+            //Below These 4 through we can get the value and insert the value inside html element,
             // and those element must be container type(those element contains start tag and end tag),
             // like <div></div> <h1></h1> <p></p> etc...🚩
+
+            //NOTE: 📍V.V.I📍
+            // When we inserting value inside html element using "innerHTML", "innerText", "textContent" these are
+            // override/replace the new value inside html element without removing the html element. Whereas inserting value 
+            // inside html element using "outerHTML" here "outerHTML" removing that html element completey and inserting data
+            // without any tag only normal text is adding.
 
             //👉.innerHTML -- it override the new value in existing value inside an element. 
             //                 it allows style format also like we can use <h1><p><div><font> etc..
             //👉.innerText -- it override the new value in existing value inside an element.
             //                 it allows plain text only.No style format allowed.
-            //👉.outerHTML -- it removes the existing value add add the new value in that place.
+            //👉.outerHTML -- it removes the complete existing html element add add the new value in that place without any tag.
             //                 it allows style format also like we can use <h1><p><div><font> etc..
             //👉.textContent -- it bring/display all hide and unhide value. suppose inside an element if,
             //                   you hide any child element then this method can get all hide details also. 
