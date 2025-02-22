@@ -1,8 +1,8 @@
 //🚩Lexical Scoping:
-//Lexical scoping means inner function scope can get access to their parent functions variable,
+//Lexical scoping means inner function scope can get access to their parent functions's variable, and parameter
 //But vice versa not true(that means outer function can not get access inner function variable).
 
-//"var": using "var" keyword vice versa can possible like parent scope function can access inner function variable.
+//"var": using "var" keyword vice versa can possible like parent scope function can access inner function variable. It is not recommended.
 //"let" & "const" : using "let" & "const" only inner function can access outer function variable but
 //                  outer function can't access inner function variable.
 
