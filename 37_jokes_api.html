@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jokes API</title>
+</head>
+<body>
+    <div id="jokes-msg"></div>
+    <br><br>
+    <button id="btn">Next Joke</button>
+
+    <script>
+        //Free API--->https://icanhazdadjoke.com/
+        
+
+        const getJokes = () => {       //3rd
+        const jokesMsg = document.getElementById("jokes-msg");
+        const btn = document.getElementById("btn");
+
+        const setHeader = {        //5th
+            headers: {
+                Accept: "application/json"
+            }
+        }
+
+        fetch("https://icanhazdadjoke.com/", setHeader)   //4th
+        .then((response) => {
+            return response.json();
+        }).then((data) => {
+            jokesMsg.innerHTML = `💥${data.joke}💥`
+        }).catch((error) => {
+            console.log(error);
+        })
+        }
+        btn.addEventListener("click", getJokes)      //1st
+        getJokes();   //2nd
+
+    </script>
+</body>
+</html>
