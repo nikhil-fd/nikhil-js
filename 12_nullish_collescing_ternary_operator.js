@@ -55,6 +55,14 @@ let myArr4 = myArr3 ?.map((elem) => {
 console.log(myArr4);                        //💥Output: [ 'nikhil', 'virat', 'rohit' ]
 
 
+//🕑Example3:
+    let myMovie = null;
+    let newMovie;
+    let todayRelease = "Emergency"
+    let ourMovie = myMovie ?? newMovie ?? todayRelease;
+    console.log(ourMovie);                            //💥Output: Emergency (here it checked 1st left operand i.e. null then it checked right operand i.e. "undefined", then it moved to check right operand i.e "Emergency". so if left operand is null then it keep on checking right operand if right operand is null/undefined then further it kepp on checking ahead.)
+
+
 //🚩Ternary Operator🚩
 //It is the shortest way of if-else condition.
 //Here we can write if-else condition in one line.
