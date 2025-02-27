@@ -181,8 +181,25 @@ console.log(flatArr);
 //              and return these element in a new array.
 //           It arranges 1st-negative number, 2nd-positive number, 3rd-special charcter, 4th-charcter/alphabet
 
-        const alphaVal = ["P", "S", "N", "R", "B", "J", 4, 2, 3, -10, 10, "@niil"];
-        console.log(alphaVal.sort());  //💥Output: [-10, 10, 2, 3, 4, '@niil', 'B', 'J', 'N', 'P', 'R', 'S']
+// 2.when we are sorting "number" from small number to large number meanwhile we need to pass a callback function
+//   in sort() method then it will arrange all number element from small number to large number.
+//   sort((a,b) => a - b)
+
+// 3.When we are sorting "string" then no nedd to pass callback function in sort() method only
+//  simple use sort() then it will arrange all string element in ascending order.
+//sort()
+let age = [25, 30, 2, 12, 20, 52];
+console.log(age.sort((a,b) => a - b));  //💥output: [ 2, 12, 20, 25, 30, 52 ]
+console.log(age.sort());            //💥Output: [ 12, 2, 20, 25, 30, 52 ]
+console.log(age);                  //💥Output: [ 12, 2, 20, 25, 30, 52 ]
+
+
+let members = ["vishal", "ayush", "suyash", "arjit", "nikhil"]
+console.log(members.sort());       //💥output: [ 'arjit', 'ayush', 'nikhil', 'suyash', 'vishal' ]
+console.log(members);             //💥output: [ 'arjit', 'ayush', 'nikhil', 'suyash', 'vishal' ]
+
+const alphaVal = ["P", "S", "N", "R", "B", "J", 4, 2, 3, -10, 10, "@niil"];
+console.log(alphaVal.sort());  //💥Output: [-10, 10, 2, 3, 4, '@niil', 'B', 'J', 'N', 'P', 'R', 'S']
 
 
 //🎁reverse():  1.reverse() mehod is used to arranges the array element in reverse order.
