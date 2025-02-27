@@ -199,7 +199,9 @@ console.log("1" + 3 + 2);
 console.log(2 + 3 + "1");
 console.log(6 + 8 * 12 - 5);
 
-// this concept is good for real time project
+//⏳Production Level Code: 
+//  If there is multiple arithmatic operation to perform then must use () parenthesis becayse,
+//  it improves code readability and clean.
 console.log((6 + 8) * (12 - 5));
 console.log(((6 + 8) * 12) - 5);
 
@@ -219,3 +221,5 @@ console.log(f);      //💥Output: 50
 
 //🔔NOTE: Typescript doesn't allow you to compare with different data types.
 //        Whereas Javascript allow you to compare with different data types.
+
+//       In behind the scene "null" means 0.
