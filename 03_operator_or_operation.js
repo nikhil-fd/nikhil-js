@@ -222,4 +222,4 @@ console.log(f);      //💥Output: 50
 //🔔NOTE: Typescript doesn't allow you to compare with different data types.
 //        Whereas Javascript allow you to compare with different data types.
 
-//       In behind the scene "null" means 0.
+//👉👉In behind the scene we assume that "null" means 0 but javascript is saying "null" means empty value not 0.
