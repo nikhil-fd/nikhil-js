@@ -5,9 +5,58 @@
 //🔔Difference between "var" "let" "const".
 //🎁"var"
 //var is used to define function scope variable.
-//you can declare and initialize the variable in any block of a function and this variable's value can access
-//it another block in same function.
 //var allows initialization, declaration, assigning, shadowing and hoisting.
+//📌NOTE: Don't use "var" because it doesn't maintain block scope only maintain function scope>
+//        function scope: It means if the var is declared inside function then it can access
+//                        only within the function.
+//        block scope: It means if the variable is declared using "var" then it can access inside block scope,
+//                     as well as outside block scope. so it's not good, that's why now-a-days evenrybody prefer "let" and "const",
+//                     because "let" and "const" is used to define block scope they can access only within the block not outside block.
+
+//🕑Example: "var" define in function scope
+function sum() {
+    var a = 20;
+    var b = 30;
+    return sum = a + b;
+}
+console.log(sum());         //💥Output: 50
+var c = a - b;
+console.log(c);          //💥output: Error "a is not defined"
+
+
+//🕑Example: "var" defined in block scope
+function multiply() {
+    if (true) {
+        var x = 100;
+    }
+    console.log(x);              //💥Output: 100
+}
+multiply();
+
+//"let" & "const" defined in block scope
+function divisionFunc() {
+    if (true) {
+        let z = 200;
+    }
+    // console.log(z);           //💥Output: Error ("z" is not defined) same for "const"
+}
+divisionFunc();
+
+//🕑Example: block scope
+if (true) {
+    var y = 300;
+}
+console.log(y);         //💥Output: 300
+
+if (true) {
+    let p = 300;
+}
+console.log(p);         //💥Output: Error p is not defined
+
+if (true) {
+    const t = 300;
+}
+console.log(t);         //💥Output: Error t is not defined
 //Example:
 var empId = 78569
 empId = 3659
@@ -92,3 +141,4 @@ console.table([accountId, accountName, accountPwd, instaId]);
 //🔔NOTE: variable re amey to jemiti hou value assign karidauchey, not only variable but also 
 //        other javascript code, but taku final analyse/check nkaruchi "NodeJS" whether the written code
 //        is correct or not if correct then "NodeJS" execute the code orelese return error.
+//       "NodeJS" is the engine of JavaScript because "NodeJs" checks all code of javascript.
