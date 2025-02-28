@@ -117,7 +117,8 @@ console.log(car2.substring(-4));    //💥Output: toyota
 //replace() method is used to replace the new value with existing value. it takes 2 parameter search value
 //and replace value and returns a new string.
 //it replaces the 1st match value only as per specified value. if there is multiple same character then it won't
-//replace all character, it will replace only 1st matched character.
+//replace all character, it will replace only 1st matched character. 
+//It will not mutate the original string.
 const char9 = "Virat kohli"
 console.log(char9.replace("k", "K"));        //💥Output: Virat Kohli   
 const char10 = "k,i,n,g,k,o,h,l,i"
@@ -131,7 +132,7 @@ console.log(char100);          //💥Output:  virat, rohit, sundar, yuzi, rohit,
 
 //🎁replaceAll(): 
 //replaceAll method is used to replaces the new value wherever the all existing value presents.
-//replaceAll() doesn't change the original data.
+//replaceAll() doesn't mutate the original data.
 let batsman = "virat, rohit, sundar, yuzi, rohit, rishab, bumrah, rohit";
 let rplbats = batsman.replaceAll("rohit", "rahul")
 console.log(rplbats);                //💥Output: virat, rahul, sundar, yuzi, rahul, rishab, bumrah, rahul
@@ -214,11 +215,36 @@ console.log(char23.toLocaleString('En-In'));    //💥Output: 5,00,000
 //NOTE: follow Sudhakar sharma note.
 
 //🎁startsWith()-
-//NOTE: follow Sudhakar sharma note.
+//NOTE: Also can follow Sudhakar sharma note.
+//🕑Example:
+let mySbiCardNum = 503596786589;
+//1st we need to convert the number into string datatype so that we can use string's method i.e. startsWith().
+let convSbiCardNumToStr = String(mySbiCardNum);
+console.log(convSbiCardNumToStr);                //💥Output: 503596786589
+console.log(typeof convSbiCardNumToStr);        //💥Output: string
+
+if (convSbiCardNumToStr.startsWith(20)) {
+    console.log("VISA CARD");
+} else if (convSbiCardNumToStr.startsWith(50)) {
+    console.log("RUPAY CARD");
+} else {
+    console.log("MASTER CARD");
+}
+//💥Output: RUPAY CARD
 
 
 //🎁endsWith()-
-//NOTE: follow Sudhakar sharma note.
+//NOTE: Also can follow Sudhakar sharma note.
+//🕑Example:
+let customerEmail = "niranjan@gmail.com";
+if (customerEmail.endsWith("yahoo.com")) {
+    console.log("This user is Valid for 'Developer'");
+} else if (customerEmail.endsWith("gmail.com")) {
+    console.log("This user is valid for 'Support'"); 
+} else {
+    console.log("This user is not our employee.");
+}
+//💥output: This user is valid for 'Support'
 
 
 //🎯How to use all prototype of string?
@@ -234,6 +260,36 @@ console.log(latestMovie.indexOf("y"));       //💥Output: 5
 //     revName += myWifeName[i]
 //     console.log(revName);
 // }
+
+
+//🎁padStart()
+//padStart and padEnd takes 2 argument maxlength and fillstring.
+let myAge = "25";
+let incrAge = myAge.padStart(4, 30)
+console.log(incrAge);                  //💥Output: 3025
+
+
+//🎁padEnd()
+let myAges = "25";
+let incrAges = myAge.padEnd(4, 30)
+console.log(incrAges);                  //💥Output: 2530
+
+
+//🕑Example: padStart & padEnd
+// suppose i want to create my userid is the combination of my firstname and it will place in first first includes
+// my year of birth place it in the end. like "nikhil1993" 
+
+let nameInputFieldData = "nikhil"
+let dateOfBirth = "06/06/1993"
+let extractYear = dateOfBirth.slice(dateOfBirth.length - 4)
+console.log(extractYear);      //💥Output: 1993
+
+let makeUserName = nameInputFieldData.padEnd(nameInputFieldData.length + 4, extractYear)
+console.log(makeUserName, "mycredit");    //💥Output: nikhil1993
+
+//📍OR (without padStart and padEnd simple use concat)
+let userName = nameInputFieldData + extractYear;
+console.log(userName);
 
 
 //🔴🟠🟡Very Very Important--Interview Question
@@ -254,6 +310,19 @@ let car8 = "landrover";
         newCar += car8[i]
     }
     console.log(newCar);          //💥Output: revordnal
+
+
+//🎁we can convert string into number using --
+//parseInt(string)
+//parseFloat(string)
+//📌Number(sring) -- Always prefer this technique, because it mostly used in production level.
+
+
+//🎁we can convert number into string using --
+//.toString()
+//📌String(number)    -- Always prefer this technique, because it mostly used in production level.
+
+
 
 
 //🎯How to get all prototype from browser?
