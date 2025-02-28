@@ -22,9 +22,13 @@
 
 //Primitive data types uses Stack memory.
 //Non-Primitive data types uses Heap memory.
-// Stack memory : When you are changing value in variable it gives a copy of that variable.
-// Heap memory : when you are changing value in array and object then it changing the value in
-//               array's and object's original value.
+//🚩 Stack memory :
+// When we change a value in a primitive datatype, it does not provide a reference to the original value.
+// Instead, it creates a copy of the original variable, and any modifications are made to this copy.
+
+//🚩 Heap memory : 
+// When we change a value in a non-primitive datatype (array or object), it gives a reference to the original value
+// instead of creating a copy. As a result, the original array or object gets modified."
 
 //Example: Stack Memory
 let myYoutubeName = "Cric Mic";
