@@ -28,9 +28,10 @@ console.log(date.getHours());
 console.log(date.getMinutes());
 console.log(date.getSeconds());
 
+//👇Below method described at the last of page please check curiously
 console.log(date.toLocaleString("default", {
     weekday: "long"
-}));
+}));                 //💥Output: Monday
 
 //🚩getMonth(): 
 //It returns month in number.
@@ -86,4 +87,26 @@ console.log(myDt.toLocaleString("default", {            //use ctrl+space for sug
 
 //💥Output- June 20, 2024
 
+
+
+//🎁How to get Month Name Full letter & Day Name Full Letter & Timezone and many more defined below. 
+let bringFullDayDate = new Date().toLocaleString("default", {dateStyle:"full"})
+let bringDayPeriod = new Date().toLocaleString("default", {dayPeriod:"long"})
+let bringFormatWatcher = new Date().toLocaleString("default", {formatMatcher:"basic"})
+let bringHour = new Date().toLocaleString("default", {hour:"numeric"})
+let bringMinute = new Date().toLocaleString("default", {minute:"numeric"})
+let bringMonth = new Date().toLocaleString("default", {month:"long"})
+let bringTimeStyle = new Date().toLocaleString("default", {timeStyle:"full"})
+let bringTimeZoneName = new Date().toLocaleString("default", {timeZoneName:"long"})
+let bringWeekday = new Date().toLocaleString("default", {weekday:"long"})
+let bringYear = new Date().toLocaleString("default", {year:"numeric"})
+console.log(bringFullDayDate);         //💥output: Friday, 28 February, 2025
+console.log(bringDayPeriod);        //💥output: in the evening
+console.log(bringFormatWatcher);    //💥output: 28/2/2025, 8:15:30 pm
+console.log(bringMinute);          //💥output: 22
+console.log(bringMonth);          //💥output: February
+console.log(bringTimeStyle);     //💥output: 8:24:30 pm India Standard Time
+console.log(bringTimeZoneName);    //💥output: 28/2/2025, 8:25:57 pm India Standard Time
+console.log(bringWeekday);        //💥output: Friday
+console.log(bringYear);          //💥output: 2025
 
