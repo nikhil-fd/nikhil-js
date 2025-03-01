@@ -140,21 +140,45 @@ console.log(flatArr);
 //              it takes 4 arguments accumulator,element,index & array. accumulator stores the initial value and element strores the current value. 
 //            2.reduce() method does not change the original value.
         
-//Example1:
+//🕑Example1:
         const myNum = [10,20,30,40,50,60];
         const result = myNum.reduce((accumulator,elem) => {
             return accumulator + elem;
         });
-        console.log(result);
+        console.log(result);          //💥Output: 210
 
-//Example2:
+//🕑Example2:
        const primeNum = [50, 500, 5000];
        const finalPrime = primeNum.reduce((accu, elem) => {
         return accu += elem; 
        },10) 
        console.log(finalPrime);      //💥Output: 5560 (accu = 10 & elem = 50)
               
+
+//🕑Example3:  V.V.I
+//1st get the student who scored above 80, then calculate their average score individually. 
+
+let passStudent = [68, 75, 82, 80, 95, 70, 98];
+let getResult = passStudent
+    .filter((elem) => elem > 80)       //[82, 95, 98]
+    .reduce((acc, score, _, arr) => acc + score / arr.length, 0);
+console.log(getResult);
+//💥Output: 91.67
+
+//👆V.V.I  (how line no. 163 calculating explained below👇)
+//.reduce((acc, score, _, arr) => acc + score / arr.length, 0)
+//Now "acc" = 0 and "score" = 82 and arr.length = 3 >>> here 0 + 82 = 82 / 3❌ NO
+
+//⏳Applied "ବ ର ହ ଗୁ ମି ଫେ" sutra (ବ--ବନ୍ଧନୀ  ର    ହ--ହରଣ   ଗୁ--ଗୁଣନ   ମି--ମିଶାଣ   ଫେ--ଫେଡ଼ାଣ )
+//⏳BODMAS (Bracket, Order, Division, Multiplication, Addition, Subtraction)
+//According to this formula below are calculating👇.
+
+//1️⃣iteration-->Now "acc" = 0 and "score" = 82 and arr.length = 3 >>> here 0 + 82 / 3✔ here 1st 82/3 is dividing and result is 27.33 whatever value got, that value add with 0 i.e. 0 + 27.33 = 27.33
+//2️⃣iteration-->Now "acc" = 27.33 and "score" = 95 and arr.length = 3 >>> here 27.33 + 95 / 3✔ here 1st 95/3 is dividing and result is 31.67 whatever value got, that value add with 27.33 i.e. 27.33 + 31.67 = 59.00
+//3️⃣iteration-->Now "acc" = 59.00 and "score" = 98 and arr.length = 3 >>> here 59.00 + 98 / 3✔ here 1st 98/3 is dividing and result is 32.67 whatever value got, that value add with 31.67 i.e. 31.67 + 32.67 = 91.67
         
+
+
 //🎁find():  1.find() method is used to search the element/value in an array and returns the 1st occurence element
 //              as per the given condition.
 //            2.if condition not matched then it returns undefined.
