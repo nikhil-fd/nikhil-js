@@ -168,7 +168,8 @@ console.log(flatArr);
         
 //🎁filter():  1.filter() method is used to search the element/value in an array and returns all matched element/value
 //                in a new array as per the given condition.
-//              2.If the condition not matched then it returns empty array [].
+//             2.If the condition not matched then it returns empty array [].
+//             3.It is not mutating the original array. 
 
         const preAge = [15, 18, 22, 26, 28, 30];
         const preResult = preAge.filter((elem) => {
@@ -179,17 +180,21 @@ console.log(flatArr);
         
 //🎁sort():  1.sort() method is used to arranges the array element in ascending order,
 //              and return these element in a new array.
-//           It arranges 1st-negative number, 2nd-positive number, 3rd-special charcter, 4th-charcter/alphabet
+//           2.It arranges 1st-negative number, 2nd-positive number, 3rd-special charcter, 4th-charcter/alphabet
+//          📍3.It is mutating the origianl array.
 
-// 2.when we are sorting "number" from small number to large number meanwhile we need to pass a callback function
-//   in sort() method then it will arrange all number element from small number to large number.
-//   sort((a,b) => a - b)
+// 4.when we are sorting "number" from small number to large number meanwhile we need to pass a callback function
+//   in sort() method then it will arrange all number element from small number to large number or large to small.
+//   sort((a,b) => a - b) -- small to large number
+//   sort((a,b) => b - a) -- large to small number
 
-// 3.When we are sorting "string" then no nedd to pass callback function in sort() method only
+
+// 5.When we are sorting "string" value then no nedd to pass callback function in sort() method only
 //  simple use sort() then it will arrange all string element in ascending order.
 //sort()
 let age = [25, 30, 2, 12, 20, 52];
 console.log(age.sort((a,b) => a - b));  //💥output: [ 2, 12, 20, 25, 30, 52 ]
+console.log(age.sort((a,b) => b - a));  //💥output: [ 52, 30, 25, 20, 12, 2 ]
 console.log(age.sort());            //💥Output: [ 12, 2, 20, 25, 30, 52 ]
 console.log(age);                  //💥Output: [ 12, 2, 20, 25, 30, 52 ]
 
@@ -203,10 +208,12 @@ console.log(alphaVal.sort());  //💥Output: [-10, 10, 2, 3, 4, '@niil', 'B', 'J
 
 
 //🎁reverse():  1.reverse() mehod is used to arranges the array element in reverse order.
-//                from (bottom to top / right to left) and it returns all element in a new array without mutating the original array.
+//                from (bottom to top / right to left) and it returns all element in a new array 
+//             📍2.It is mutating the original array.
 
         const alphaNumVal = ["P", "S", "N", "R", "B", "J", 4, 2, 3];
-        console.log(alphaNumVal.reverse()); //💥Output: [3, 2, 4, 'J', 'B', 'R', 'N', 'S', 'P']
+        console.log(alphaNumVal.reverse());    //💥Output: [3, 2, 4, 'J', 'B', 'R', 'N', 'S', 'P']
+        console.log(alphaNumVal);             //💥Output: [3, 2, 4, 'J', 'B', 'R', 'N', 'S', 'P']
 
 
 //🎁findIndex():  1. findIndex() metod can serach and returns the index no. of 1st occurnece of element,
@@ -235,7 +242,8 @@ console.log(alphaVal.sort());  //💥Output: [-10, 10, 2, 3, 4, '@niil', 'B', 'J
         console.log(playResults);
 
 //🎁push():  1.push() method is used to add one or more element in the end of an array.
-//              And returns the new length of an array.        
+//              And returns the new length of an array.
+//          📍2.It is mutating the original array.        
 
         const films = ["fadar", "rohini", "tejas"];
         const allFilms = films.push("animals", "tiger3");
@@ -244,7 +252,8 @@ console.log(alphaVal.sort());  //💥Output: [-10, 10, 2, 3, 4, '@niil', 'B', 'J
 
 
 //🎁unshift():   1.unshift() method is used to add one or more element in the beginning of an array.
-//                 And returns the new length of an array.        
+//                 And returns the new length of an array. 
+//              📍2.It is mutating the original array.       
 
         const favGames = ["igi", "nfs", "gta"];
         const allGames = favGames.unshift("spy", "bird");
@@ -254,6 +263,7 @@ console.log(alphaVal.sort());  //💥Output: [-10, 10, 2, 3, 4, '@niil', 'B', 'J
 
 //🎁pop():   1. pop() method is used to remove the last element of an array and return the removed element.
 //           2. This method changes the length of an array.
+//          📍3. It is mutating the original array.
         
         const filmss = ["fadar", "rohini", "tejas"];
         const allFilmss = filmss.pop();
@@ -262,6 +272,7 @@ console.log(alphaVal.sort());  //💥Output: [-10, 10, 2, 3, 4, '@niil', 'B', 'J
 
 //🎁shift(): 1. shift() method is used to remove the first elment of an array and returns that removed element.
 //           2. This method changes the length of an array.
+//          📍3. It is mutating the original array.
 
         const favGamess = ["igi", "nfs", "gta"];
         const allGamess = favGamess.shift();
@@ -292,8 +303,9 @@ console.log(alphaVal.sort());  //💥Output: [-10, 10, 2, 3, 4, '@niil', 'B', 'J
 
 
 //🎁slice(): 1. it returns the extracted element in a new array and it starts extracting from start number 
-//              to till before the end number. it doesn't include end number. it is not mutating the original array.
-//           2. If you give -ve number only, then it extract only last numbet of element whatever number will be mention.
+//              to till before the end number. it doesn't include end number. 
+//          📍2.it is not mutating the original array.
+//           3.If you give -ve number only, then it extract only last numbet of element whatever number will be mention.
 //              Suppose mentioned -2 then it will extract only last element.           
 //**slice() method can be use in both Array and String but subString() and subStr() method can use only String.
 
