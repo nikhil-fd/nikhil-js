@@ -302,6 +302,26 @@ console.log(alphaVal.sort());  //💥Output: [-10, 10, 2, 3, 4, '@niil', 'B', 'J
         const allGamess = favGamess.shift();
         console.log(allGamess);  //💥Output: igi
 
+//🎁some()
+// some() mthod takes a callback function and it checks every array elements 1 by 1 as per the
+// given condition as soon as the condition gets matched with "true" fromthere to ahead it will stop checking other elements,
+// and returns "true" if the condition not matched with all elements then it returns "false".
+const arr = [1, 2, 3, 4, 5]
+console.log(arr.some((element) => element === 2))       //💥Output: true
+
+//🎁every()
+// every() mthod takes a callback function and it checks every array elements 1 by 1 as per the
+// given condition as soon as the condition gets matched with "false" fromthere to ahead it will stop checking other elements,
+// and returns "false" if the condtion not matched with all elements then it return "true".
+const names = [
+    {name: "nikhil", answer: "yes"},
+    {name: "mohan", answer: "yes"},
+    {name: "manoj", answer: "no"},
+    {name: "ajay", answer: "yes"},
+];
+console.log(names.every((name) => name.answer === "yes"))   //💥Output: false
+
+
 
 //🎁splice(): this method is usually used for perform crud operation adding, removing and replace element into a specific location
 //            in an array.it takes 3 arguments start index,delete count and new element.
