@@ -53,3 +53,39 @@ for(let car in carDetails){
 // brand - audi
 // price - 3589900
 ```
+```test
+3️⃣🎁unary operators
+```
+- unary plus (+)
+- unary minus (-)
+- increment operator (++)
+- decrement operator (--)
+- logical operator (!)
+
+
+*** here below that unary operator converts boolean value true into number i.e 1,
+
+***same false convert into 0.
+```js
+console.log(+true);      //Output: 1
+console.log(+false);    //Output: 0
+```
+
+```test
+4️⃣ What will be the output and explain how it possible?
+```
+```js
+- array.some() method
+const arr = [1, 2, 3, 4, 5]
+console.log(arr.some((element) => element === 2))       //Output: true
+
+- array.every() method
+const names = [
+    {name: "nikhil", answer: "yes"},
+    {name: "mohan", answer: "yes"},
+    {name: "manoj", answer: "no"},
+    {name: "ajay", answer: "yes"},
+];
+console.log(names.every((name) => name.answer === "yes"))   //Output: false
+
+```
