@@ -10,7 +10,8 @@
 //👉Callback function is a function that passed as an argument to another function or method and it is executed after some operation,
 //   has been completed.
 //👉Callback function mostly used to handle asynchronous operation such as reading files, making network request and handling events.
-//👉Callback function can define in such way inside a function/method -- asynchronous function(), () => {} arrow function.
+//👉callback function doesn't contain name, callback function always define without name.
+//👉Callback function can define in such way inside a function/method -- asynchronous function>>> function(), () => {} arrow function.
 
 //🎁Higher order function?
 //A function takes/accept another function as an argument i.e. called Higher order function.
