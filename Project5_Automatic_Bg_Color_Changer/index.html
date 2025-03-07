@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatic Color Change</title>
+</head>
+<body>
+    <h2>Can do Start/Stop Background color Automatically</h2>
+    <button id="colorstart">Automatic Color Change <span id="hexcolor"></span></button>
+    <button id="colorstop">Stop Color Change</button>
+
+
+    <script>
+        const colorstart = document.getElementById("colorstart");
+        const colorstop = document.getElementById("colorstop");
+       
+        //1️⃣👇This Function generating hexa code (#25da68)
+        const generateHexaColor = () => {
+            let hexaColorRange = "0123456789abcdef";
+            let hexaColor = "#";
+            for(let i = 0; i < 6; i++){
+                let createRandomNum = Math.trunc(Math.random() * 16)
+                hexaColor += hexaColorRange[createRandomNum]
+            }
+            return hexaColor;      //👈Actually we need hexcode and here hexacode has generated in "hexaColor" variable,
+                                    //  but "hexaColor" variable's value i.e. hexacode(#258de5) we will use it another function,
+                                    //  not in this function that's why we are returning that "hexaColor" variable's value using "return" keyword.
+        }
+      
+
+        //2️⃣👇This function doing Color chnage
+        let intervalId;
+        const colorChnage = () => {
+            /*👇for better optimization*/
+            if(!intervalId){
+                intervalId = setInterval(() => {
+                document.body.style.backgroundColor = generateHexaColor();      //👈generateHexaColor() function returning hexacode like #48ea36.
+                document.getElementById("hexcolor").innerHTML = generateHexaColor();
+            }, 1000)
+            }
+
+            /*👇for normal optimization*/
+
+            // intervalId = setInterval(() => {
+            //     document.body.style.backgroundColor = generateHexaColor();
+            //     document.getElementById("hexcolor").innerHTML = generateHexaColor();
+            // }, 1000)
+        };
+        colorstart.addEventListener("click", colorChnage);
+
+
+        //3️⃣👇This function doing stop color change
+        const stopChnageColor = () => {
+            clearInterval(intervalId);
+            /*👇for better optimization*/
+            intervalId = null;
+            console.log("stopped");
+        };
+        colorstop.addEventListener("click", stopChnageColor);
+        
+    </script>
+</body>
+</html>
