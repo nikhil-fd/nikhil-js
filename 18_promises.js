@@ -1,3 +1,7 @@
+//📌NOTE:"Here we have defined Promise in 7th way when you are accessing data from database or api then you can,
+//use any 1 of them, But must preferred way is Process4️⃣5️⃣6️⃣7️⃣.📌
+
+
 //🚩We can request data/access data from DataBase or API in 3 way.🚩
 //1️⃣"Promise()"        -- ".then()" & ".catch()"
 //2️⃣"Promise()         --  "async" & "await"  -- "try{}" & "catch{}"
@@ -32,7 +36,8 @@
 //From above You can use any one because both are doing same work.
 
 
-//🖐Creating  Promises
+//************************************************************************************************************************** */
+//🖐Creating Promises: PROCESS1️⃣
 //🎯Example1: Promise() with ".then()" & ".catch()" & "finally()"
 const promiseOne = new Promise(function(resolve, reject){
     setTimeout(() => {
@@ -60,9 +65,8 @@ promiseOne.then(() => {
 //👉"finally()" method it takes callback function and it returns the final message whether Promise is resoved or rejected.
 //              "finally()" can use as a chainable. 
 
- 
-//🤘OR🤘
-
+//*************************************************************************************************************** */ 
+//🖐Creating Promises: PROCESS2️⃣
 new Promise((resolve, reject) => {
     setTimeout(() => {
         console.log("Promise2 Executed");
@@ -78,6 +82,8 @@ new Promise((resolve, reject) => {
 //        after that used "then" method in chainable.
 
 
+//******************************************************************************************************* */
+//🖐Creating Promises: PROCESS3️⃣
 //🎯Example2: Promise() with ".then()" & ".catch()" & "finally()"
 const promiseThree = new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -97,6 +103,9 @@ promiseThree.then((userdata) => {
 //After that in "then()" method we took a "userdata" as a reference name of object which object placed in "resolve". 
 
 
+//***************************************************************************************************************** */
+//🖐Creating Promises: PROCESS4️⃣     👍BEST BEST
+
 //🎯Example3: Promise() with ".then()" & ".catch()" & "finally()"
 const promiseFour = new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -110,23 +119,10 @@ const promiseFour = new Promise((resolve, reject) => {
 })
 
 promiseFour.then((userprofile) => {
-    console.log(userprofile);
-    console.log(userprofile.profile);
-}).catch((error) => {
-    console.log(error);
-}).finally(() => {
-    console.log("The Promise either got resolved or rejected");
-})
-//💥Output:1️⃣Error: Something went wrong
-//         2️⃣The Promise either got resolved or rejected
-
-//OR
-//let error = false👇
-promiseFour.then((userprofile) => {
     console.log(userprofile);           //1️⃣
-    return userprofile.profile;
+    return userprofile.profile;        //👈but here "return" --"error", it is not returning the data so that in next step one more time used ".then" and now it is returning value i.e. userprofile.profile
 }).then((profile) => {
-    console.log(profile);              //2️⃣
+    console.log(profile);              //2️⃣💥Output: React JS
 }).catch((error) => {
     console.log(error);
 }).finally(() => {
@@ -147,6 +143,9 @@ promiseFour.then((userprofile) => {
 //   after done chainable to both "then" and "catch" then we can use "finally" as a chainable,
 //   chainable display that you both(then & catch) dispaly your task now finally display the final message.
 
+
+//*********************************************************************************************************************************** */
+//🖐Creating Promises: PROCESS5️⃣   👍BEST BEST
 
 //2️⃣Promise() with "async" & "await" 🚩
 //👉"async" makes a function asynchronous. use "async" before a function.
@@ -201,6 +200,8 @@ executionPromiseFive();
 //✍And "catch" is used to execute "error" or "false" statement/condition.       
 
 
+//************************************************************************************************************************************* */
+//🖐Creating Promises: PROCESS6️⃣   👍BEST BEST
 
 //3️⃣Only "async" & "await" without "Promise"
 //🎯Example5: "async" & "await" request from API 
@@ -236,6 +237,8 @@ const collegeUser = async() => {
 collegeUser();
 
 
+//******************************************************************************************************************************* */
+//🖐Creating Promises: PROCESS7️⃣   👍BEST BEST
 
 //4️⃣"fetch()"          -- ".then()" & ".catch()"
 //👉"fetch" method starts the process of fetch resources/data from server and returns a promise.
