@@ -1,9 +1,18 @@
  //CC JS Vdo Part2 : Time Stamp : 7:42:00
 
  //🎁Prototype:🎁
- //In javascript "prototype" is used to add/create methods and properties to object.
- //Syntax:
+// In Javascript through "prototype" we can create our own method for array, object and string.
+// In JavaScript, you can use prototypes to add your own methods to built-in objects like Array, Object, and String,
+// This allows you to extend their functionality.
+
+ //⏳Syntax:
  //👉ConstructorfunctionName.prototype.MethodName(give any name) = function(){}👈
+ //👇For Object 
+ //Objec.prototype.nikhilmethod = function(){}
+ //👇For Array
+ //Array.prototype.nikhilmethod = function(){}
+ //👇For String
+ //String.prototype.nikhilmethod = function(){}
 
  //✅Where we can use "prototype"?
  //"prototype" is used in constructor function to create methods and properties.
