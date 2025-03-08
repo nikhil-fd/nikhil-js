@@ -9,6 +9,12 @@
 //               # "constructor" is executed automatically when a new object is created.
 //               # it is used to initialize object properties.
 //               # Every class having a default constructor because it stores "state".
+
+//🔔NOTE: 
+//📍 In "class" we need to create method inside class using anyname suppose changePassword(){} or nikhilMethod(){} etc..
+//📍 In "function" we need to create method outside function scope using prototype like,
+// functionname.prototype.methodname = function(){}
+
 //🎯Example:
 class User{
     constructor(username, email, password){
