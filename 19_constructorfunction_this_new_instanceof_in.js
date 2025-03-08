@@ -55,6 +55,8 @@ myObj.country();               //💥Output: Welcome to odisha
 //👉"new" keword creates a new instance(like create copy of existing data) of an object that has a constructor function.
 //👉or we can say "new" keyword creates an empty object{}.
 //👉"new" keyword creates a copy of data so that in future or later no-one can't override these data.
+//👉if we not use new keyword then the new value will be override with existing value.
+//👉constructor function gets call because of "new" keyword.
 
 
 //************************************************************************************************************************************ */
