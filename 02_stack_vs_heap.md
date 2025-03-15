@@ -1,0 +1,1 @@
+![stack memory vs heap memory](stack-memory-vs-heap-memory.PNG)
