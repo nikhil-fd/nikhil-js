@@ -5,6 +5,11 @@
 //👉"this" object can have different values depends on where it is placed.
 //👉"this" can use only inside object, if you use inside function then it unable to return current context.
 
+//👌BEST: "this" defination👌
+//💥"this" value always depends on current object and "this" value will be "current object",
+// like now we are talking about which object suppose we are talking about current object i.e. "pen" then "this" value will be pen.
+// suppose we are talking about samsung phone then "this" value will be samsung phoen.
+
 //🟢"this" returns current context in 1 place:👇
 //1️⃣ Inside object if there is a simple function defined so in that simple function if we use "this" it returns "current context",
 //    instead of simple function if we use arrow function then it returns window object not current context.
