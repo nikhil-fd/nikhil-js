@@ -54,21 +54,24 @@ let originalObject = {
 }
 
 //covt object ----> string
-let convOriginalObj4Deep = JSON.stringify(originalObj);
+let convOriginalObj4Deep = JSON.stringify(originalObject);
 //covt string ----> object
 let deepCopyObj = JSON.parse(convOriginalObj4Deep)
-console.log(deepCopyObj);                             //💥Output: { studentname: 'pratikshya', details: { age: 30, city: 'cuttack' } }
-//👇Here we gonna change value in nested object details in deepcopyobj.
-//The changes only reflect on deepcopyobj but won't reflect in originalobj.
-deepCopyObj.details.age = 40;
-console.log(deepCopyObj);         //💥Output: { studentname: 'pratikshya', details: { age: 30, city: 'cuttack' } }
-console.log(originalObj);        //💥Output: { studentname: 'pratikshya', details: { age: 30, city: 'cuttack' } }
+console.log(deepCopyObj);                             //💥Output: { employeename: "sudhanshu", location: "bengaluru", profile: {skill: "sap", salary: 35000} }
 
-//👇Now we change value in nested object in original object.
-//The changes will reflect on original object the changes won't reflect on deepcopyobj.
-originalObj.details.city = "bhubaneswar";
-console.log(originalObj);                 //💥Output: { studentname: 'pratikshya', details: { age: 40, city: 'cuttack' } } 
-console.log(deepCopyObj);                //💥 Output: { studentname: 'pratikshya', details: { age: 40, city: 'cuttack' } }
+//👇Here we gonna change value in deepcopyobj's original object and it's nested object.
+//The changes only reflect on deepcopyobj but won't reflect in originalobject.
+deepCopyObj.location = "hyderabad";
+deepCopyObj.profile.salary = 55000;
+console.log(deepCopyObj);         //💥Output: { employeename: "sudhanshu", location: "hyderabad", profile: {skill: "sap", salary: 55000} }
+console.log(originalObject);        //💥Output: { employeename: "sudhanshu", location: "bengaluru", profile: {skill: "sap", salary: 35000} }
+
+//👇Now we change value in originalObject's original object and it's nested object.
+//The changes will reflect only on originalObject but changes won't reflect on deepcopyobj.
+originalObject.employeename = "sonam";
+originalObject.skill = "react js";
+console.log(originalObject);                 //💥Output: { employeename: "sonam", location: "bengaluru", profile: {skill: "react js", salary: 35000} }
+console.log(deepCopyObj);                //💥 Output: { employeename: "sudhanshu", location: "hyderabad", profile: {skill: "sap", salary: 55000} }
 
 
 
