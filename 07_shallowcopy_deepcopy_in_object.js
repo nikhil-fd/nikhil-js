@@ -4,6 +4,11 @@
 //Define in My Own way:👇
 // In a shallow copy, if we change the value in a child (inner) object of the existing object,
 // the value will also change in the new object because only references of nested objects are copied, not the actual objects.
+//**When we are copying an existing object to a new object, this copy can be happen by using spread operetor, and this copy is called as shallow copy */
+
+//Piyush Sir:
+//**shallow copy only copy the 1st level peoprty(keys) of object it will not copy the nested object's property, only it keeps/copy the referece of nested object./
+
 
 //Define chatgpt way:👇
 // A shallow copy creates a new object, but it only copies references of nested objects instead of duplicating them.
