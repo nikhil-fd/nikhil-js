@@ -53,18 +53,32 @@ myObj.country();               //💥Output: Welcome to odisha
 //🚩"new"
 //👉"new" keyword is known as constructor function.
 //👉"new" keword creates a new instance(like create copy of existing data) of an object that has a constructor function.
-//👉or we can say "new" keyword creates an empty object{}.
+//👉or we can say "new" keyword creates an empty object{} in heap memory i.e. also called as instance of an object.
 //👉"new" keyword creates a copy of data so that in future or later no-one can't override these data.
 //👉if we not use new keyword then the new value will be override with existing value.
 //👉constructor function gets call because of "new" keyword.
 
+//🕑Example: "new" keyword
+//  here below person11 is the reference of newely created object and this reference has stored in stack memory.
+//  but the person11 value will be address i.e. object which is stroed in heap memory.
+class personBio{
+    constructor(fname, lname, age) {
+        this.fname = fname;
+        this.lname = lname;
+        this.age = age;
+    }
+}
+const person11 = new personBio("mukul", "yadav", 35)
+const person22 = new personBio("ankit", "sharma", 40)
+console.log(person11.lname);                            //💥Output: yadav
+console.log(person11 instanceof personBio);             //💥Output: true
 
 //************************************************************************************************************************************ */
 //Same below constructor function already explained in file-👉07_object.js👈
 //so you can skip this topic in 19_this file.
 
 //🎁Constructor Function🎁
-//1️⃣In javascript constructor function is used to create multiple object with same properties
+//1️⃣In javascript constructor function is used to create multiple object with same properties/same structure
 //  and mthods.
 //2️⃣It acts as a blueprint for object and provides a way to intialize properties when creating an object instance.
 //3️⃣We can define constructor function by using "class" and "function" keyword.
@@ -130,6 +144,11 @@ console.log(userOne);       //💥Output: userData{username: "nikhil", age: 30, 
 console.log(userTwo);      //💥Output: userData{username: "Hitesh", age: 35, skill: "js"}
 
 
+//📍class: 
+//👉 using class we are creating object which is follow the DRY principle and yes using class we can create,
+//   multiple object with same structure but value will be different.
+//👉 agar class ko object bana na hey to hum ko constructor chahiyeh.
+
 //🕑Example2: Defined constructor function using "class" declaration/keyword.
 class userData{
     constructor(username, age, skill){
@@ -140,7 +159,12 @@ class userData{
     }
 }
 const userThree = new userData("manish", 40, "angular")
-console.log(userThree);  //💥Output: userData {username: "manish", age: 40, skill: "angular"}
+const userThirty = new userData("mayank", 30, "react-js")
+console.log(userThree);                  //💥Output: userData {username: "manish", age: 40, skill: "angular"}
+console.log(userThirty.skill);                 //💥Output: react-js  
+console.log(userThirty instanceof userData);     //💥Output: true
+
+
 
 //******************************************************************************************************* */
 //🚩instanceOf(): Operator
