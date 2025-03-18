@@ -314,7 +314,7 @@ myHotels({
 //so you can skip this topic in 19_this file.
 
 //🎁Constructor Function🎁
-//1️⃣In javascript constructor function is used to create multiple object with same properties
+//1️⃣In javascript constructor function is used to create multiple object with same properties/same structure
 //  and mthods.
 //2️⃣It acts as a blueprint for object and provides a way to intialize properties when creating an object instance.
 //3️⃣We can define constructor function by using "class" and "function" keyword.
