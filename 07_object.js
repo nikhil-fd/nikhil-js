@@ -1,4 +1,28 @@
 //🚩object: 
+
+//🎯CoHort: "Object" Defination
+//👉object is an entity which has some properties and functionalities i.e. called object.
+//Example: suppose taking "tv remote", it is an entity and it contains
+//         properttes like    -- remotebrand: "samsung", battery: "2aa"
+//         functionality like -- function(){ several button working diffently}
+
+
+//📍What is method?
+//method is a function which is part of/which is belong to object i.e. called method.
+
+
+//📍What is function?
+//function is a standalone and it belongs to our code.
+
+
+//📍Why in js everything is object?
+//👉Everthing like boolean, string, number, array, object, function has "Object" as its last prototype or __proto__.
+//👉in blueprint     -- ".prototype" hota hey
+//👉in Actual Object -- ".__proto__" hota hey blueprint prototype ka
+
+/****************************************************cohort-end**************************************************************************/
+
+//🎯chai aur code: Object Defination
 //          object is a collection of properties, properties contains key and value pair
 //          properties value can be a fucntion and different data types.
 //          object defined in two ways 1️⃣object literals 2️⃣object constructor
