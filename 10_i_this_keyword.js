@@ -12,6 +12,46 @@
 // like now we are talking about which object suppose we are talking about current object i.e. "pen" then "this" value will be pen.
 // suppose we are talking about samsung phone then "this" value will be samsung phoen.
 
+
+//⏳NOTE: Why "this" keyword doesn't work in Arrow Function?
+        //✅ "The this keyword doesn't work the same way in arrow functions. If you use this in an arrow function, 
+        //    it doesn't refer to the function's own context. Instead, it lexically inherits this from its surrounding scope.
+        //    In a browser's global context, this would be the window object."
+        //✅ If we use "this" in arrow function it returns window object. except arrow function we can use "this"
+        //    remaining other function like anonymous function etc..
+
+//<!DOCTYPE html>
+// <html lang="en">
+// <head>
+//     <meta charset="UTF-8">
+//     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//     <title>dom</title>
+// </head>
+// <body>
+//     <h3>Change Your Web Page Background Color</h3>
+//     <button id="red">color red</button>
+//     <button id="white">color white</button>
+//     <button id="green">color green</button>
+
+//     <script>
+//         function changeBgColor(color){
+//             document.body.style.backgroundColor = color;
+//         }
+
+//         const btnList = document.querySelectorAll("button")
+//         btnList.forEach((elem) => {       //👇arrow function❌ anonymous function✅
+//             elem.addEventListener("click", () => {
+//                 changeBgColor(this.id);    //💥Output: empty
+//                 console.log(this);        //💥Output: window object
+//             })
+//         })
+      
+//     </script>
+// </body>
+// </html>
+
+
+
 //🟢"this" returns current context in 1 place:👇
 //1️⃣ Inside object if there is a simple function defined so in that simple function if we use "this" it returns "current context",
 //    instead of simple function if we use arrow function then it returns window object not current context.
