@@ -6,6 +6,8 @@
 //👉"this" can use only inside object, if you use inside function then it unable to return current context.
 
 //👌BEST: "this" defination👌
+//💥"this" ko jisne bulaya or call kiya wo bangeya "this" ki value/context.
+//   (a best example you can check about "this" in file 15_dom7_cohort.html)🧡
 //💥"this" value always depends on current object and "this" value will be "current object",
 // like now we are talking about which object suppose we are talking about current object i.e. "pen" then "this" value will be pen.
 // suppose we are talking about samsung phone then "this" value will be samsung phoen.
