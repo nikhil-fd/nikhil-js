@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+</head>
+<body>
+    <h2>DOM</h2>
+    <button id="green">Color green</button>
+    <button id="white">Color white</button>
+    <script>
+        //👇Here i used IIFE function but we can use any function not an issue.
+        (function(){
+            let getBtnRef = document.querySelectorAll("button")
+            getBtnRef.forEach((elem) => {
+                elem.onclick = function(e){
+                    document.body.style.backgroundColor = this.id;    
+                    console.log(this);
+                    console.log(this.id);   
+                    //👆V.V.I.--here "this.id" also getting same data like "event.target.id" or "e.target.id". 
+                    //          "this" means this ko jisne bulaya so here hmm execute kar raha hey ek function ko, button click per-
+                    //           so jis button pe user click kiya ush button bon geya "this" ka value/context. after got element,
+                    //           now we can get the access of that element's all attribute like id, class, name, title etc by "this.id" or "this.class" or "this.name".
+
+                    //OR👇
+                    // document.body.style.backgroundColor = e.target.id;
+
+                    //OR👇 (without passing event as "e" as a parameter in function we can access the element by "event.target")
+                    // document.body.style.backgroundColor = event.target.id;
+                }
+            })
+        })();
+    </script>
+</body>
+</html>
