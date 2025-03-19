@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DarkMode Button</title>
+</head>
+<body>
+    <button id="dark-btn">Darkmode</button>
+
+
+    <script>
+        let darkBtnRef = document.getElementById("dark-btn")
+        function changeBodyBgColor(color){
+            document.body.style.backgroundColor = color;
+        }
+        
+        darkBtnRef.addEventListener("click", function(){
+            let currentColor = document.body.style.backgroundColor;
+            console.log(currentColor);                        //💥Output: nothing
+            if(!currentColor || currentColor == "white"){
+                changeBodyBgColor("black");
+            }else{
+                changeBodyBgColor("white");
+            }
+            });
+    </script>
+</body>
+</html>
