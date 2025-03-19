@@ -22,7 +22,9 @@
                     //          "this" means this ko jisne bulaya so here hmm execute kar raha hey ek function ko, button click per-
                     //           so jis button pe user click kiya ush button bon geya "this" ka value/context. after got element,
                     //           now we can get the access of that element's all attribute like id, class, name, title etc by "this.id" or "this.class" or "this.name".
-
+                     //🧠But rememeber Most important thing about "this":👉
+                    //  "this" will not work in arrow function, except arrow function "this" keyword will work on remaining all function.
+                    //  if we use "this" in arrow function then it will return window object in brower.
                     //OR👇
                     // document.body.style.backgroundColor = e.target.id;
 
@@ -31,6 +33,11 @@
                 }
             })
         })();
+
+        //⏳NOTE: Why "this" keyword doesn't work in Arrow Function?
+        //✅ "The this keyword doesn't work the same way in arrow functions. If you use this in an arrow function, 
+        //    it doesn't refer to the function's own context. Instead, it lexically inherits this from its surrounding scope.
+        //    In a browser's global context, this would be the window object."
     </script>
 </body>
 </html>
