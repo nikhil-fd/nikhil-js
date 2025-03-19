@@ -6,7 +6,7 @@
     <title>DarkMode Button</title>
 </head>
 <body>
-    <button id="dark-btn">Darkmode</button>
+    <button id="dark-btn">Dark Mode</button>
 
 
     <script>
@@ -20,13 +20,18 @@
             console.log(currentColor);                        //💥Output: nothing
             if(!currentColor || currentColor == "white"){
                 changeBodyBgColor("black");
+                darkBtnRef.innerHTML = "Normal Mode";
             }else{
                 changeBodyBgColor("white");
+                darkBtnRef.innerHTML = "Dark Mode";
             }
             });
+    </script>
+</body>
+</html>
 
 
-            //🔔NOTE: In a single button we can change page background color from white to black and black to white like dark mode button.
+    //🔔NOTE: In a single button we can change page background color from white to black and black to white like dark mode button.
     </script>
 </body>
 </html>
