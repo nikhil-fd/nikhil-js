@@ -151,13 +151,27 @@ console.log(storeValues);                  //💥Output: undefined
 
 
 //🚩array.reduce()🚩
-// reduce() method is used for flattern the array and data manipulation like add,sub,mul,div etc,
-// and it returns a single value.
-// It takes 4 arguments -
+//👉 reduce() method is used for flattern the array and data manipulation like add,sub,mul,div etc,
+//   and it returns a single value.
+//👉 It takes 4 arguments -
 //                  (1) accumulator
 //                  (2) current value
 //                  (3) current index
 //                  (4) source array
+//👉For accumulator we can pass a initial value(either stiring, number, array and object etc.),
+//  when pass "initial value" to accumulator then callbackfn's element value becomes array's 1st value that is present in array's 0th index.   
+//  If we haven't passed initial value then accumulator is initialized(accumulator value is set) to first element of array that is present in array's 0th index,
+//  and then callbackfn element value becomes array's 2nd element to till the last element of array that is index 1 to till the last index.
+//👉reduce() method does not change/mutate the original value.
+
+//👇V.V.I                                    
+//reduce() method what returns?
+//👉reduce method returns, accumulator value in accumulator what type of data will be there it will return same data type,
+//  suppose in accumulator there is array it returns array suppose if in accumulator has object returns object,
+//  if accumulator has string or number returns string or number.
+//👉In initial value we can pass arbitary data like string, number, array, object etc. for accumulator and
+//   it will return whatever initial value has datatype returns that datatype.
+
 
 //👉Syntax:
 // Here accumulator stores the initial value i.e. here we mentioned 0 only once accumulator takes initial value,
@@ -167,6 +181,23 @@ array.reduce((accumulator, currentValue, index, array) => {
     return condition
 },0);              //👈instead of 0 we can give any number(1,2,3..) this number holds as initial value of "accumulator" 
 
+
+//🕑Example: V.V.I
+//Want to get total amount of all category like  {food: 80, utilities: 150}
+let expenses = [
+    { description: "groceries", amount: 50, category: "food" },
+    { description: "electricityb ill", amount: 100, category: "utilities" },
+    { description: "dinner", amount: 30, category: "food" },
+    { description: "internet bill ", amount: 50, category: "utilities" }
+];
+
+
+let getExpenseReport = expenses.reduce((acc, elem) => {
+    acc[elem.category] += elem.amount;             //👈{food: 0 + 50, utilities: 0}   1st iterate element
+    return acc;                                   //👆{food: 50, utilities: 0 + 100}  2nd iterate element
+}, {food: 0, utilities: 0})                       //👆{food: 50 + 30, utitlities: 100}  3rd iterate element
+console.log("Expense Report", getExpenseReport);  //👆{food: 80, utitlities: 100 + 50}   4th iterate element
+//💥Output: {food: 80, utilities: 150}
 
 //🕑Example1:
 const series = [1,2,3,4,5,6];
