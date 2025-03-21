@@ -134,12 +134,24 @@ const favJesey = [18,7,1,[17,25,100],[65,87,95]];
 const flatArr = favJesey.flat(Infinity);
 console.log(flatArr);
 
-
+//👇V.V.I//👇V.V.I
 //🎁reduce(): 1.reduce() method is used to reduce the 2dimensional and 3dimensional array into a single dimensional array
 //              also it is used for data manipulation like addition, sub, div, mul and return a single value.
-//              it takes 4 arguments accumulator,element,index & array. accumulator stores the initial value and element strores the current value. 
-//            2.reduce() method does not change the original value.
-        
+//              it takes 4 arguments accumulator,element,index & array. 
+//            2.For accumulator we can pass a initial value(either stiring, number, array and object etc.),
+//              when pass "initial value" to accumulator then callbackfn's element value becomes array's 1st value that is present in array's 0th index.   
+//              If we haven't passed initial value then accumulator is initialized(accumulator value is set) to first element of array that is present in array's 0th index,
+//              and then callbackfn element value becomes array's 2nd element to till the last element of array that is index 1 to till the last index.
+//            3.reduce() method does not change the original value.
+
+//👇V.V.I                                    
+//reduce() method what returns?
+//👉reduce method returns, accumulator value in accumulator what type of data will be there it will return same data type,
+//  suppose in accumulator there is array it returns array suppose if in accumulator has object returns object,
+//  if accumulator has string or number returns string or number.
+//👉In initial value we can pass arbitary data like string, number, array, object etc. for accumulator and
+//   it will return whatever initial value has datatype returns that datatype.
+
 //🕑Example1:
         const myNum = [10,20,30,40,50,60];
         const result = myNum.reduce((accumulator,elem) => {
