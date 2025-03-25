@@ -23,8 +23,42 @@
 //it is often used when receiving json data from webserver/localstorage.
 
 //************************************************************************************************************************************************* */
+//🎁Promise
+//✅CoHort✅
+//👉When we call api using fetch() then we get Promise instantly instead of getting value
+//  because it's value gets delay due to traveling from server so later Promise returns value or error.
+//👉If promise gets fullfilled then it returns "data" in .then() method if promise gets rejected then
+//   it returns "error" in .catch() method and when promise gets settled then "finally" gets invoked.
+//👉Promise has 3 stage "pending" -- "fulfill" -- "rejected"
+
+//🕑Example: Promise
+console.log("Hii Nikhil Babu");
+const data = fetch("https://api.freeapi.app/api/v1/public/quotes/quote/random")
+            .then((response) => response.json())           //👌here response.json() is used to convert object into json format. But response.json() returns promise so we can use .then() and .catch() and we used .then in next line for code readability. 
+            .then((dataitems) => console.log(dataitems.data.content))   //💥Promise fullfilled O/P: 4️⃣I never think of the future - it comes soon enough.
+            .catch((error) => console.log(error))
+            .finally(() => console.log("finally promise got return"))
+console.log(data);
+console.log("Bye Nikhil Jiii");
+//💥Output:
+//1️⃣Hii Nikhil Babu
+//2️⃣Promise { <pending> }
+//3️⃣Bye Nikhil Jiii
+//4️⃣I never think of the future - it comes soon enough.
+//5️⃣finally promise got return
+
+//📍synchronouse operation -- jo turant instantly hoga
+//Example:
+// let a = 20;   let sum = a + b;  yeh sab instantly hota hey
+
+//📍asynchronous operation -- jisko time lagta hey aur badd me hoga
+//Example:
+//fetch("https://amazon.com") -- yeh request server pe jata hey phir server se response aata he to yeh to
+//  instantly nehi horaha hey taking time this is why it is asynchornous.
+//So to track the asynchronous operation we need Promise.
 
 
+//✅Youtube: Chai Aur JS✅
 //1️⃣Promise:
 //👉The Promise object representing the eventual completion or failure of an aynchronous operation and its resulting value.
 //👉We can use "Promise()" with ".then()" and ".catch()" method, also we can use "promise()" with "async" and "await".
