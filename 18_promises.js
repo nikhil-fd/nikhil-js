@@ -186,6 +186,11 @@ promiseFour.then((userprofile) => {
 //🖐Creating Promises: PROCESS5️⃣   👍BEST BEST
 
 //2️⃣Promise() with "async" & "await" 🚩
+//👌An async function always returns a Promise.
+//👌Inside async function all code will run synchronously until it reaches in await statement,
+//  await makes the function wait for "Promise" to resolve.
+//👌Other code outside the function continues to run without waiting for the "async" function.
+
 //👉"async" makes a function asynchronous. use "async" before a function.
 //👉"async" keyword tranform a regular function into an asynchronous function, becasue it need to return a promise.
 //👉"async" function always returns a promise.
@@ -212,10 +217,12 @@ const promiseFive = new Promise((resolve, reject) => {
 async function executionPromiseFive(){
     try{
         const response = await promiseFive;
-        console.log(response);                  //💥Output: {userskill: "sap basis", company: "pwc"}
-        console.log(response.userskill);       //💥Output: sap basis
+        console.log(response);                  //1️⃣💥Output: {userskill: "sap basis", company: "pwc"}
+        console.log(response.userskill);       //2️⃣💥Output: sap basis
     }catch(error){
         console.log(error);
+    }finally{
+        console.log("All Completed");         //3️⃣Output: All Completed
     }
 }
 executionPromiseFive();
@@ -256,6 +263,8 @@ async function getUserData(){
         console.log(convertJson);
     }catch(error){
         console.log("Jio Network", error);
+    }finally{
+        console.log("All code execution done")
     }
 }
 getUserData();
@@ -270,6 +279,8 @@ const collegeUser = async() => {
         console.log(convData[9].email);     //💥Output: Rey.Padberg@karina.biz 
     }catch(error){
         console.log(error);
+    }finally{
+        console.log("all done!");
     }
 }
 collegeUser();
