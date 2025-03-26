@@ -27,8 +27,10 @@
 //✅CoHort✅
 //👉When we call api using fetch() then we get Promise instantly instead of getting value
 //  because it's value gets delay due to traveling from server so later Promise returns value or error.
-//👉If promise gets fullfilled then it returns "data" in .then() method if promise gets rejected then
-//   it returns "error" in .catch() method and when promise gets settled then "finally" gets invoked.
+//👉🔥When promise gets fullfilled then it returns "data" in .then() method.
+//  🔥If promise gets rejected then it returns "error" in .catch() method
+//  🔥and when promise gets settled(means promise either fulfilled or rejected) then "finally" gets invoked, 
+//    finally() will be invoked in both cases .then() and .catch() as well. 
 //👉Promise has 3 stage "pending" -- "fulfill" -- "rejected"
 
 //🕑Example: Promise
@@ -47,11 +49,13 @@ console.log("Bye Nikhil Jiii");
 //4️⃣I never think of the future - it comes soon enough.
 //5️⃣finally promise got return
 
-//📍synchronouse operation -- jo turant instantly hoga
+//📍synchronouse code/operation -- jo turant instantly execute hoga.
+//                             -- synchronous code is called as blocking code.
 //Example:
 // let a = 20;   let sum = a + b;  yeh sab instantly hota hey
 
-//📍asynchronous operation -- jisko time lagta hey aur badd me hoga
+//📍asynchronous code/operation -- jisko time lagta hey aur badd me hoga.
+//                              -- asynchronous code is called non-blocking code.
 //Example:
 //fetch("https://amazon.com") -- yeh request server pe jata hey phir server se response aata he to yeh to
 //  instantly nehi horaha hey taking time this is why it is asynchornous.
