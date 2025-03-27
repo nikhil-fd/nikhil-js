@@ -25,13 +25,42 @@
 //************************************************************************************************************************************************* */
 //🎁Promise
 //✅CoHort✅
-//👉When we call api using fetch() then we get Promise instantly instead of getting value
+
+//V.V.I
+//🚩Why we use "Promise" insead of "Callback hell"?
+//👍 callback hell function(means callback function) goes to callback task queue -- then event loop push it into call stack -- for execution
+//    But When we use Promise it goes to microtask queue and then evnet loop push it into call stack top position so here,
+//    Promise also doing same work like callback hell but Promise goes to microtask queue and microtask queue has high priority,
+//    if task queue has "callback hell" and microtask queue has "Promise" then at first promise will execute then callback hell will excute,
+//    this is the difference to use "callback hell" and "promise".
+//👍 Also "Promise" may create "starvation" if starvation get create then callback hell function will be delayed more as callback hell function waiting in "callback tack queue."
+//👍 In order to overcome from callback hell we use "Promise" as "Promise" imporves the performance.
+
+
+//🚩When we call api using fetch() then we get Promise instantly instead of getting value
 //  because it's value gets delay due to traveling from server so later Promise returns value or error.
 //👉🔥When promise gets fullfilled then it returns "data" in .then() method.
 //  🔥If promise gets rejected then it returns "error" in .catch() method
 //  🔥and when promise gets settled(means promise either fulfilled or rejected) then "finally" gets invoked, 
-//    finally() will be invoked in both cases .then() and .catch() as well. 
+//    finally() will be invoked in both cases .then() and .catch() as well but it is optional you may use it or may not use it. 
 //👉Promise has 3 stage "pending" -- "fulfill" -- "rejected"
+
+//🕑Example: without async
+//Here Without async function returned number. 
+function test() {
+    return 100
+}
+const x = test();
+console.log(x);     //💥Output: 100
+
+//🕑Example: used async in function
+//When we start adding async in a function then that function will not return number/string etc.,
+//that function will return only Promise, after got Promise then we use .then for fullfilled and .catch for rejected but finally is optional to use. 
+async function test() {
+    return 100
+}
+const y = test();              //Here Y returns Promise not number. As it is returning Promise so we used .then() & .catch() below.
+y.then((e) => console.log(e))    //💥Output: 100
 
 //🕑Example: Promise
 console.log("Hii Nikhil Babu");
@@ -39,7 +68,7 @@ const data = fetch("https://api.freeapi.app/api/v1/public/quotes/quote/random")
             .then((response) => response.json())           //👌here response.json() is used to convert object into json format. But response.json() returns promise so we can use .then() and .catch() and we used .then in next line for code readability. 
             .then((dataitems) => console.log(dataitems.data.content))   //💥Promise fullfilled O/P: 4️⃣I never think of the future - it comes soon enough.
             .catch((error) => console.log(error))
-            .finally(() => console.log("finally promise got return"))
+            .finally(() => console.log("finally promise got return"))    //Finally use is optional
 console.log(data);
 console.log("Bye Nikhil Jiii");
 //💥Output:
