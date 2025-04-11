@@ -135,7 +135,53 @@ let biggerData = score.nikhilFilter((elem) => {
 console.log(biggerData);     //💥Output: [220, 260, 280]
 console.log(score);         //💥Output: [150, 180, 200, 220, 260, 280]
 
+//🎁reduce() polyfills as myReduce()🚩
+//reduce polyfills as myReduce()🚩
+//1️⃣reduce takes a parameter i.e. callback function, initial value.
+//2️⃣callback function takes parameter accumulator, element, index and array.
+//3️⃣reduce method returns output accumulator if accumulator value is number, string, array & object etc.,
+//  it returns that accumulator value.
 
+let arra100 = [100, 200, 300, 400, 500];
+//My technique👇
+if (!Array.prototype.myReduce) {
+    Array.prototype.myReduce = function (callbackfn, initialvalue = undefined) {   //like point1️⃣
+        let accu = initialvalue ?? this[0];  //👈here it checks accumulator contains initial value or array's 0th element. Also instead of nullish colleascing (??) we can use OR (||)
+        if (!initialvalue) {                    //👈if initial value not given then new array's element value will be existing array's 1th index and accumulator value will be array's 0th index.
+            for (let i = 1; i < this.length; i++){
+                accu = callbackfn(accu, this[i], i, this);
+            }
+        } else {                                     //👈if initial value given then new array's element value will be existing array's 0th index and accumulator value will be initial value.
+            for (let i = 0; i < this.length; i++){
+                accu = callbackfn(accu, this[i], i, this)
+            }
+        }
+        return accu;
+    }
+} 
+
+const res = arra100.myReduce((acc, elem) => {
+    return acc + elem;
+});
+console.log(res);   //💥Output: 1500
+
+
+//👌👌piyush sir technique myReduce()👇 
+if (!Array.prototype.myReduce) {
+    Array.prototype.myReduce = function (callbackfn, initialvalue = undefined) {
+        let acc = initialvalue ?? this[0];      //👈Checking for accumulator value
+        let index = initialvalue ? 0 : 1;       //👈Checking for new array element = if initial value given then element value will be existing array's 0th index, if initial value not given then element value will be existing array's 1st index.
+            for (let i = index; i < this.length; i++){
+                acc = callbackfn(acc, this[index], index, this);
+            }
+        return acc;
+    }
+} 
+
+const result = arra100.myReduce((acc, elem) => {
+    return acc + elem;
+});
+console.log(result, "nikhil");   //💥Output: 1500 nikhil
 
 
 
