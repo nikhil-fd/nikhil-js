@@ -33,7 +33,7 @@
 //5️⃣At last forEach() method returns output "element", "index" & "array".
 //NOTE: Write all polyfills about all method in this approach.
 
-//🎁forEach() polyfills as myForEach()
+//🎁forEach() polyfills as myForEach()🚩
 let arra = [10, 20, 30, 40, 50];
 if (!Array.prototype.myForEach) {
     Array.prototype.myForEach = function (callback) { //👈why we wrote callback because in forEach() method has parameter i.e. callback function thats why we passed "callback" as a callback function and callback function takes 3 argument i.e. element, index & array.
@@ -51,18 +51,22 @@ arra.myForEach((elem, index) => console.log(`${elem} -- ${index}`));  //💥Outp
 //map() method takes a callback function that is user function.
 
 //🎁 map() polyfills as nikhilMap()🚩
+//1️⃣First of all understand the signature of that method suppose here i am taking "map()" method.
+//2️⃣Understand map() method what input takes and what output returns?
+//3️⃣map(() => {}) method takes a callback function as a parameter.
+//4️⃣And that callback function takes 3 parameter i.e. "element", "index" & "array".
+//5️⃣At last map() method returns output "element", "index" & "array" in a new array.
 
 let arr100 = [100, 200, 300, 400, 500];
 
-if (!Array.prototype.nikhilMap) {        //👈if nikhilMao() not available then we are creating polyfills as nikhilMap() in below
-    Array.prototype.nikhilMap = function (callbackfunc) {         //👈Here we are passing callback function(callbackfunc) as a parameter so that it will return element, index, array.
-        const newArr = [];
+if (!Array.prototype.nikhilMap) {        //👈if nikhilMap() not available then we are creating polyfills as nikhilMap() in below
+    Array.prototype.nikhilMap = function (callbackfunc) {         //👈Like point 3️⃣ here we are passing callback function(callbackfunc) as a parameter like map() method.
+        const newArr = [];                                  //👈here we created a new array that new array returns "element", "index" & "array" without mutating the original array (arr100).
         for (let i = 0; i < this.length; i++){          //👈"this" value always current object's value like currently we are talking about which object, here currently we are talking about array i.e. "arr100" so "this" value is "arr100".
-            let data = callbackfunc(this[i], i, this)        //👈here we are calling that callbackfunc() (or we can say user function) like in map() method also calls a callback function and it return element and index and array.
+            let data = callbackfunc(this[i], i, this)        //👈here we are calling that callbackfunc() (or we can say user function) like in map() method also calls a callback function and it return "element (this[i])"" and "index (i)" and "array (this)".
             newArr.push(data)
         }
-
-        return newArr;
+        return newArr;                       //like point 5️⃣
     }
 }
 const getData = arr100.nikhilMap((elem, index, arr) => {
