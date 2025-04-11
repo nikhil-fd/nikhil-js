@@ -1,4 +1,8 @@
 //🎁Polyfills  (TimeStamp 01:30:00 -- 01:40:00)
+
+//🔥What is polyfills?
+//👉A polyfills in js is a piece of code that allows older browser to use modern javascript features.
+
 //When we access array then that array contains some method like map(), filter(), reduce() and many more.
 //Why or how these method showing in browser as these method defined in Array.prototype.map,
 //thats why when we use array then bydefault these method display.
@@ -19,16 +23,35 @@
 //💥"this" value always depends on current object and "this" value will be "current object",
 // like now we are talking about which object suppose we are talking about current object i.e. "pen" then "this" value will be pen.
 // suppose we are talking about samsung phone then "this" value will be samsung phoen.
+//🔥"this" always use when calling an object.
 
-//👉When we are makeing polyfills 1st we should think about that method(map/foreach/filter),
-//  what it returns and what it takes as an input/argument the according start writing code.
-//👉1st we should think what map() method returns and what it takes as an input/argument.
+//🎁How to write polyfills?
+//1️⃣First of all understand the signature of that method suppose here i am taking "forEach" method.
+//2️⃣Understand forEach() method what input takes and what output returns?
+//3️⃣forEach(() => {}) method takes a callback function as a parameter.
+//4️⃣And that callback function takes 3 parameter i.e. "element", "index" & "array".
+//5️⃣At last forEach() method returns output "element", "index" & "array".
+//NOTE: Write all polyfills about all method in this approach.
+
+//🎁forEach() polyfills as myForEach()
+let arra = [10, 20, 30, 40, 50];
+if (!Array.prototype.myForEach) {
+    Array.prototype.myForEach = function (callback) { //👈why we wrote callback because in forEach() method has parameter i.e. callback function thats why we passed "callback" as a callback function and callback function takes 3 argument i.e. element, index & array.
+        for (let i = 0; i < this.length; i++){
+            callback(this[i], i, this);  //👈here defined point 4
+        }    
+    }
+}
+arra.myForEach((elem, index) => console.log(`${elem} -- ${index}`));  //💥Output: 10 -- 0 20 -- 1 30 -- 2 40 -- 3 50 -- 4 
+
+
+
 //i want to use map() it reutrn all value in a new array with multiply by 3.
 //map() not mutating the original array.
 //map() method takes a callback function that is user function.
 
-
 //🎁 map() polyfills as nikhilMap()🚩
+
 let arr100 = [100, 200, 300, 400, 500];
 
 if (!Array.prototype.nikhilMap) {        //👈if nikhilMao() not available then we are creating polyfills as nikhilMap() in below
