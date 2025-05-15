@@ -156,14 +156,18 @@ console.log(char14.split(","));             //💥Output: ['k', 'a', 't','r', 'i
 
 
 //🎁toUpperCase()-
-//it converts lowercase to uppercase.
+//it converts the charcters to uppercase, But original value can't change.
 const char15 = "hitesh chaudhary";
 console.log(char15.toUpperCase());          //💥Output:  HITESH CHAUDHARY
+console.log(char15);                       //💥Output: hitesh chaudhary
+
 
 //🎁toLowerCase()-
-//it converts lowercase to uppercase.
+//it converts the characters to lowercase, but original value can't change.
 const char16 = "HITESH CHAUDHARY";
-console.log(char15.toLowerCase());          //💥Output:   hitesh chaudhary
+console.log(char16.toLowerCase());          //💥Output:   hitesh chaudhary
+console.log(char16);                       //💥Output: HITESH CHAUDHARY
+
 
 //🎁trim()-
 //trim() method is used to remove the white spaces from both start side and end side of character.
