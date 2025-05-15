@@ -53,7 +53,7 @@ for(let car in carDetails){
 // brand - audi
 // price - 3589900
 ```
-```test
+```text
 3️⃣🎁unary operators
 ```
 - unary plus (+)
@@ -67,17 +67,17 @@ for(let car in carDetails){
 
 ***same false convert into 0.
 ```js
-console.log(+true);      //Output: 1
-console.log(+false);    //Output: 0
+console.log(+true);      //💥Output: 1
+console.log(+false);    //💥Output: 0
 ```
 
-```test
+```text
 4️⃣ What will be the output and explain how it possible?
 ```
 ```js
 - array.some() method
 const arr = [1, 2, 3, 4, 5]
-console.log(arr.some((element) => element === 2))       //Output: true
+console.log(arr.some((element) => element === 2))       //💥Output: true
 
 - array.every() method
 const names = [
@@ -86,6 +86,16 @@ const names = [
     {name: "manoj", answer: "no"},
     {name: "ajay", answer: "yes"},
 ];
-console.log(names.every((name) => name.answer === "yes"))   //Output: false
+console.log(names.every((name) => name.answer === "yes"))   //💥Output: false
 
+```
+```text
+5️⃣How can I generate random whole numbers between two specified variables in JavaScript,
+e.g. min = 10 and max = 20 and output should be any of 10, 11, 12, 13, 14, 15?
+```
+```javascript
+const min = 10;
+const max = 15;
+console.log(Math.floor(Math.random() * (max - min + 1)) + min);
+//💥Output: 12 or 13 or 10 or 15 etc..
 ```
