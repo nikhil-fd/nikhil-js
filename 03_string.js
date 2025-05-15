@@ -315,6 +315,14 @@ let car8 = "landrover";
     }
     console.log(newCar);          //💥Output: revordnal
 
+ 
+//🔴🟠🟡Very Very Important--Interview Question
+//How can I generate random whole numbers between two specified variables in JavaScript,
+//e.g. min = 10 and max = 15 and output should be any of 10, 11, 12, 13, 14, 15?
+const min = 10;
+const max = 15;
+console.log(Math.floor(Math.random() * (max - min + 1)) + min);    
+
 
 //🎁we can convert string into number using --
 //parseInt(string)
